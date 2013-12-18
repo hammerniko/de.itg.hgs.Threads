@@ -1,5 +1,7 @@
 package A_ThreadErzeugen;
 
+import java.util.Scanner;
+
 public class StartKlasse {
 	
 	public static void main(String[] args) {
@@ -7,12 +9,17 @@ public class StartKlasse {
 		System.out.println("Main Thread gestartet");
 		
 		//Thread Objekt erzeugen
-		MyThread t = new MyThread("A",300);
-		MyThread t2 = new MyThread("B",100);
+		MyThread a = new MyThread("a",300);
+		MyThread x = new MyThread("x",100);
 		
 		//Thread starten
-		t.start();
-		t2.start();
+		
+		a.start();
+		
+		
+		x.start();
+		
+		
 		
 		System.out.println("Main Thread zuende");
 
