@@ -13,7 +13,7 @@ public class StartKlasse {
 		MyThread t3 = new MyThread("C",500);
 		
 		
-		//Thread nebenlŠufig starten
+		//Thread nebenlaeufig starten
 		t.start();
 		t2.start();
 		t3.start();
