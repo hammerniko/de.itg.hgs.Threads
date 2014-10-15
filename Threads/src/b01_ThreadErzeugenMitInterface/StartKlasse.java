@@ -1,4 +1,4 @@
-package C_ThreadsMitZeit;
+package b01_ThreadErzeugenMitInterface;
 
 public class StartKlasse {
 
@@ -8,15 +8,16 @@ public class StartKlasse {
 		System.out.println("Main Thread gestartet");
 		
 		//Thread Objekt erzeugen
-		MyThread t = new MyThread("A",100);
-		MyThread t2 = new MyThread("B",300);
-		MyThread t3 = new MyThread("C",500);
-		
+		MyThread t = new MyThread("A",0,'C');
+		MyThread t2 = new MyThread("B",4000,'G');
+		MyThread t3 = new MyThread("C",8000,'E');
+		MyThread t4 = new MyThread("D",12000,'E');
 		
 		//Thread nebenlaeufig starten
 		t.start();
 		t2.start();
 		t3.start();
+		t4.start();
 		
 		//Ende main-Thread
 		System.out.println("Main Thread zuende");

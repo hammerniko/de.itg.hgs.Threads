@@ -1,15 +1,14 @@
-package C_ThreadsMitZeit;
+package a01_ThreadErzeugen;
 
-public class MyThread implements Runnable {
+public class MyThread extends Thread {
 
-	int waitingTime;
 	String name;
-	Thread t;
+	int wait;
 	
-	public MyThread(String name, int time){
-		waitingTime=time;
+	public MyThread(String name, int wait){
 		this.name = name;
-		t=new Thread(this);
+		this.wait=wait;
+		
 	}
 	
 	
@@ -18,18 +17,15 @@ public class MyThread implements Runnable {
 		
 		for (int i = 0; i < 100; i++) {
 			System.out.println(name+": "+i);
+			
 			try {
-				Thread.sleep(waitingTime);
+				Thread.sleep(wait);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		
-	}
-	
-	public void start(){
-		t.start();
 	}
 
 }

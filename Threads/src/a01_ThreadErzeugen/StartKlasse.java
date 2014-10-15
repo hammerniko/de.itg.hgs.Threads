@@ -1,4 +1,4 @@
-package A_ThreadErzeugen;
+package a01_ThreadErzeugen;
 
 import java.util.Scanner;
 

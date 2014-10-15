@@ -1,4 +1,4 @@
-package B_ThreadErzeugenMitInterface;
+package b01_ThreadErzeugenMitInterface;
 
 import javax.swing.text.DefaultEditorKit.BeepAction;
 
