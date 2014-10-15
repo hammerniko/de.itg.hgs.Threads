@@ -2,7 +2,7 @@ package a02_Ampel;
 
 public class Ampel extends Thread {
 	
-	//Konstanten f??r Zust??nde
+	//Konstanten fuer Zustaende
 	public static final int AUS = 0;
 	public static final int ROT = 1;
 	public static final int ROTGELB = 2;
@@ -106,6 +106,9 @@ public class Ampel extends Thread {
 		}
 	}
 	
+	/**
+	 * Ausgabe Methode
+	 */
 	public void ausgabe(){
 		System.out.println(name+":\t"+zustandStr[aktZustand]);
 	}
