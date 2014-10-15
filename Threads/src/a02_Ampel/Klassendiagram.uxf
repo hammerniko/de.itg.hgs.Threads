@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.0">
+  <zoom_level>14</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>70</y>
+      <w>294</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>StarteAmpel
+--
+ 
+--
+_+main(args:Text[])_
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>462</x>
+      <y>70</y>
+      <w>294</w>
+      <h>378</h>
+    </coordinates>
+    <panel_attributes>Ampel
+--
+_+AUS:GZ=0_
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>168</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>210</x>
+      <y>462</y>
+      <w>280</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>Die Beziehung zwischen der Startklasse und der 
+Klasse Ampel ist eine Dependency</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
