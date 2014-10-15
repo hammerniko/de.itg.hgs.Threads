@@ -29,6 +29,8 @@ public class Ampel extends Thread {
 		this.dauerGruen = dauerGruen;
 		this.dauerGelb = dauerGelb;
 	}
+	
+	
 
 	public int getAktZustand() {
 		return aktZustand;
@@ -86,7 +88,8 @@ public class Ampel extends Thread {
 					blinken();
 					warte(dauerBlinken);
 				}
-			}
+			}//ende switch case
+			
 		}
 		
 	}

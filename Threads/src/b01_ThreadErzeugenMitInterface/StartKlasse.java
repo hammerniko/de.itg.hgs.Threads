@@ -7,6 +7,8 @@ public class StartKlasse {
 		//beginn main Thread
 		System.out.println("Main Thread gestartet");
 		
+		
+		
 		//Thread Objekt erzeugen
 		MyThread t = new MyThread("A",0,'C');
 		MyThread t2 = new MyThread("B",4000,'G');
