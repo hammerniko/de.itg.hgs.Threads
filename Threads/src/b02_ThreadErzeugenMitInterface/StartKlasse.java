@@ -1,4 +1,4 @@
-package b01_ThreadErzeugenMitInterface;
+package b02_ThreadErzeugenMitInterface;
 
 public class StartKlasse {
 
@@ -10,10 +10,10 @@ public class StartKlasse {
 		
 		
 		//Thread Objekt erzeugen
-		MyThread t = new MyThread("A",0,'C');
-		MyThread t2 = new MyThread("B",4000,'G');
-		MyThread t3 = new MyThread("C",8000,'E');
-		MyThread t4 = new MyThread("D",12000,'E');
+		SongPlayer t = new SongPlayer("A",0,'C');
+		SongPlayer t2 = new SongPlayer("B",4000,'G');
+		SongPlayer t3 = new SongPlayer("C",8000,'E');
+		SongPlayer t4 = new SongPlayer("D",12000,'E');
 		
 		//Thread nebenlaeufig starten
 		t.start();

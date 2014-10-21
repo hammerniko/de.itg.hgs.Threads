@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.0">
-  <zoom_level>7</zoom_level>
+  <zoom_level>11</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>84</x>
-      <y>350</y>
-      <w>147</w>
-      <h>133</h>
+      <x>0</x>
+      <y>418</y>
+      <w>231</w>
+      <h>209</h>
     </coordinates>
     <panel_attributes>StarteAmpel
 --
@@ -21,10 +21,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>406</x>
-      <y>259</y>
-      <w>301</w>
-      <h>308</h>
+      <x>363</x>
+      <y>308</y>
+      <w>473</w>
+      <h>484</h>
     </coordinates>
     <panel_attributes>Ampel
 --
@@ -41,14 +41,14 @@ _+ZUSTAND_STR:text[]={"Aus",...,"Blinken"}_
 -dauerGruen=0
 -dauerGelb=0
 -dauerBlinken=1000
-
+-t:Thread
 --
 Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,  
 +run()
 +blinken()
 +warte(dauer:GZ)
 +ausgabe()
-
++start()
 +getDauerRot():GZ
 +setDauerRot(dauer:GZ)
 ...
@@ -58,53 +58,48 @@ Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>224</x>
-      <y>413</y>
-      <w>196</w>
-      <h>35</h>
+      <x>220</x>
+      <y>517</y>
+      <w>165</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>260.0;30.0;10.0;10.0</additional_attributes>
+    <additional_attributes>130.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>357</x>
-      <y>616</y>
-      <w>140</w>
-      <h>63</h>
+      <x>198</x>
+      <y>847</y>
+      <w>220</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>Die Beziehung zwischen der Startklasse und der 
 Klasse Ampel ist eine Dependency</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>UMLInterface</id>
     <coordinates>
-      <x>357</x>
-      <y>49</y>
-      <w>147</w>
-      <h>133</h>
+      <x>165</x>
+      <y>0</y>
+      <w>88</w>
+      <h>88</h>
     </coordinates>
-    <panel_attributes>Thread
+    <panel_attributes>Runnable
 --
-
---
-+run()
-+start()
-+stop()
-...</panel_attributes>
++run()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>469</x>
-      <y>175</y>
-      <w>21</w>
-      <h>98</h>
+      <x>209</x>
+      <y>22</y>
+      <w>407</w>
+      <h>308</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;350.0;260.0</additional_attributes>
   </element>
 </diagram>
