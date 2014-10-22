@@ -1,0 +1,19 @@
+Erzeugen eines nebenläufigen Objektes über Vererbung. 
+
+1.) Klasse erbt von der Klasse Thread. D.h. es ensteht eine spezielles
+    Threadobjekt mit den geerbten Methoden der Klasse Thread.
+   
+2.) Überschreiben der Methode run() aus der Klasse Thread.
+    Bisher wurde nur der main-Thread der in der main()-Methode implementiert 
+    ist ausgeführt. Für ein nebenläufiges Objekt muss dieses über eine Methode
+    verfügen, in welcher der Ablauf implementiert ist. Dies ist immer die 
+    run()-Methode.
+    
+3.) Erzeugen der Objekte in einer ausführbaren Java-Klasse (mit main()-Methode).
+    Die Objekte werden wie alle anderen Objekte auch über den Aufruf des Konstruktors
+    erstellt.
+    
+    Bsp. Meineklasse meinObjekt = new Meineklasse(...Übergabeparameter...);
+    
+4.) Starten der Threadfähigen Objekte von aussen über den Aufruf der Methode
+    start(), welche aus der Klasse Thread geerbt wurde.
