@@ -1,6 +1,6 @@
-package b02_AmpelMitInterface;
+package a02_AmpelthreadErbtVonThread;
 
-public class Ampel extends Thread implements Runnable{
+public class Ampel extends Thread {
 	
 	//Konstanten fuer Zustaende
 	public static final int AUS = 0;
@@ -9,7 +9,7 @@ public class Ampel extends Thread implements Runnable{
 	public static final int GRUEN = 3;
 	public static final int GELB = 4;
 	public static final int BLINKEN = 5;
-	public static final String[] ZUSTAND_STR = {"Aus","Rot","RotGelb","Gruen","Gelb","Blinken"};
+	public static final String[] zustandStr = {"Aus","Rot","RotGelb","Gruen","Gelb","Blinken"};
 	
 	//Variablen
 	private String name=null;
@@ -19,11 +19,9 @@ public class Ampel extends Thread implements Runnable{
 	private int dauerGruen = 0;
 	private int dauerGelb = 0;
 	private int dauerBlinken = 1000;
-	private Thread t;
 	
 	public Ampel(String name,int aktZustand, int dauerRot, int dauerRotGelb,
 			int dauerGruen, int dauerGelb) {
-		t=new Thread(this);
 		this.name = name;
 		this.aktZustand = aktZustand;
 		this.dauerRot = dauerRot;
@@ -115,13 +113,7 @@ public class Ampel extends Thread implements Runnable{
 	 * Ausgabe Methode
 	 */
 	public void ausgabe(){
-		System.out.println(name+":\t"+ZUSTAND_STR[aktZustand]);
-	}
-	
-	public void start(){
-		if(!t.isAlive()){
-			t.start();
-		}
+		System.out.println(name+":\t"+zustandStr[aktZustand]);
 	}
 
 }

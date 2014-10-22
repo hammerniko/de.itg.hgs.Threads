@@ -1,4 +1,4 @@
-package a02_Ampel;
+package b02_AmpelthreadMitInterfaceRunnable;
 
 public class StartAmpel {
 	

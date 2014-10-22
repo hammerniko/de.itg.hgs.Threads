@@ -1,4 +1,4 @@
-package b03_ThreadErzeugenMitInterface;
+package b03_ThreadSongplayerMitInterface;
 
 public class StartKlasse {
 

@@ -1,4 +1,4 @@
-package b02_AmpelMitInterface;
+package a02_AmpelthreadErbtVonThread;
 
 public class StartAmpel {
 	

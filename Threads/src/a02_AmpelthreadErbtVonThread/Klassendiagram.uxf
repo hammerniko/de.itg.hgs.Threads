@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>84</x>
-      <y>350</y>
+      <y>294</y>
       <w>147</w>
       <h>133</h>
     </coordinates>
@@ -21,8 +21,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>406</x>
-      <y>259</y>
+      <x>476</x>
+      <y>224</y>
       <w>301</w>
       <h>308</h>
     </coordinates>
@@ -59,12 +59,12 @@ Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,
     <id>Relation</id>
     <coordinates>
       <x>224</x>
-      <y>413</y>
-      <w>196</w>
-      <h>35</h>
+      <y>357</y>
+      <w>266</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>260.0;30.0;10.0;10.0</additional_attributes>
+    <additional_attributes>360.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
@@ -81,8 +81,8 @@ Klasse Ampel ist eine Dependency</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>357</x>
-      <y>49</y>
+      <x>427</x>
+      <y>21</y>
       <w>147</w>
       <h>133</h>
     </coordinates>
@@ -99,12 +99,12 @@ Klasse Ampel ist eine Dependency</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>469</x>
-      <y>175</y>
+      <x>539</x>
+      <y>147</y>
       <w>21</w>
-      <h>98</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
   </element>
 </diagram>
