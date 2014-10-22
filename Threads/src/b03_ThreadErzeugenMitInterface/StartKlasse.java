@@ -1,4 +1,4 @@
-package b02_ThreadErzeugenMitInterface;
+package b03_ThreadErzeugenMitInterface;
 
 public class StartKlasse {
 

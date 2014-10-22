@@ -1,4 +1,6 @@
-package b02_ThreadErzeugenMitInterface;
+package b03_ThreadErzeugenMitInterface;
+
+import java.awt.event.ActionListener;
 
 import javax.swing.text.DefaultEditorKit.BeepAction;
 
@@ -8,10 +10,12 @@ import org.jfugue.Rhythm;
 
 public class SongPlayer implements Runnable {
 
-    String name;
-    int wait;
-    char note;
-    Thread t;
+    private String name;
+    private int wait;
+    private char note;
+    
+    //Threadobjekt
+    private Thread t;
     
     Player player;
     Rhythm rythm; 
@@ -28,7 +32,10 @@ public class SongPlayer implements Runnable {
         this.note = note;
         this.name = name;
         this.wait = wait;
+        
+        //Threadobjekt erzeugen
         t = new Thread(this);
+        
         pattern1 = new Pattern("I[Piano] C5q D5q E5q C5q");
 
         // "Dormez-vous?"

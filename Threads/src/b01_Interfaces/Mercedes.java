@@ -1,4 +1,4 @@
-package INterfaces;
+package b01_Interfaces;
 
 public class Mercedes implements Autosteuerung {
 
@@ -13,5 +13,7 @@ public class Mercedes implements Autosteuerung {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 }

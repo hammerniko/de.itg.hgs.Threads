@@ -1,4 +1,4 @@
-package b01_AmpelMitInterface;
+package b02_AmpelMitInterface;
 
 public class StartAmpel {
 	

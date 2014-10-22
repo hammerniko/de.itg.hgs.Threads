@@ -1,4 +1,4 @@
-package INterfaces;
+package b01_Interfaces;
 
 public interface Autosteuerung {
 	public final int MEINEKONSTANTE = 10;
