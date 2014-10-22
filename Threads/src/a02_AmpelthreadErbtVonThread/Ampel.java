@@ -99,7 +99,7 @@ public class Ampel extends Thread {
 		System.out.println(name+":\tblinken");		
 	}
 
-	public void warte(int dauer){
+	private void warte(int dauer){
 		try {
 			ausgabe();
 			Thread.sleep(dauer);
@@ -112,7 +112,7 @@ public class Ampel extends Thread {
 	/**
 	 * Ausgabe Methode
 	 */
-	public void ausgabe(){
+	private void ausgabe(){
 		System.out.println(name+":\t"+zustandStr[aktZustand]);
 	}
 

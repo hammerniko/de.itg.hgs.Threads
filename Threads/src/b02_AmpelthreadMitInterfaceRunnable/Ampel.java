@@ -1,6 +1,6 @@
 package b02_AmpelthreadMitInterfaceRunnable;
 
-public class Ampel extends Thread implements Runnable{
+public class Ampel implements Runnable{
 	
 	//Konstanten fuer Zustaende
 	public static final int AUS = 0;
@@ -101,7 +101,7 @@ public class Ampel extends Thread implements Runnable{
 		System.out.println(name+":\tblinken");		
 	}
 
-	public void warte(int dauer){
+	private void warte(int dauer){
 		try {
 			ausgabe();
 			Thread.sleep(dauer);
@@ -114,7 +114,7 @@ public class Ampel extends Thread implements Runnable{
 	/**
 	 * Ausgabe Methode
 	 */
-	public void ausgabe(){
+	private void ausgabe(){
 		System.out.println(name+":\t"+ZUSTAND_STR[aktZustand]);
 	}
 	

@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>84</x>
-      <y>294</y>
+      <y>273</y>
       <w>147</w>
       <h>133</h>
     </coordinates>
@@ -21,8 +21,8 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>476</x>
-      <y>224</y>
+      <x>329</x>
+      <y>161</y>
       <w>301</w>
       <h>308</h>
     </coordinates>
@@ -45,9 +45,9 @@ _+ZUSTAND_STR:text[]={"Aus",...,"Blinken"}_
 --
 Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,  
 +run()
-+blinken()
-+warte(dauer:GZ)
-+ausgabe()
+-blinken()
+-warte(dauer:GZ)
+-ausgabe()
 
 +getDauerRot():GZ
 +setDauerRot(dauer:GZ)
@@ -59,18 +59,18 @@ Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,
     <id>Relation</id>
     <coordinates>
       <x>224</x>
-      <y>357</y>
-      <w>266</w>
-      <h>56</h>
+      <y>329</y>
+      <w>119</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
-    <additional_attributes>360.0;60.0;10.0;10.0</additional_attributes>
+    <additional_attributes>150.0;10.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
       <x>357</x>
-      <y>616</y>
+      <y>595</y>
       <w>140</w>
       <h>63</h>
     </coordinates>
@@ -82,7 +82,7 @@ Klasse Ampel ist eine Dependency</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>427</x>
-      <y>21</y>
+      <y>0</y>
       <w>147</w>
       <h>133</h>
     </coordinates>
@@ -99,12 +99,12 @@ Klasse Ampel ist eine Dependency</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>539</x>
-      <y>147</y>
-      <w>21</w>
-      <h>91</h>
+      <x>392</x>
+      <y>126</y>
+      <w>168</w>
+      <h>49</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>220.0;10.0;10.0;50.0</additional_attributes>
   </element>
 </diagram>
