@@ -1,5 +1,5 @@
 package d01_waitAndNotify;
-
+//Beispiel für wait und notify
 class MyThread implements Runnable {
 	  MyResource myResource;
 
