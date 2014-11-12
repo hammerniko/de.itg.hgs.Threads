@@ -14,7 +14,7 @@ public class MeinInterpreter {
 	 */
 	public void openFileBrowser() {
 
-		// Neuen Thread erzeugen
+		// Neuen Thread innerhalb der Methode erzeugen
 		Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
