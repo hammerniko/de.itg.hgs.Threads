@@ -7,16 +7,17 @@ import java.io.InputStreamReader;
 public class MeinInterpreter {
 
 	/**
-	 * Ruft den Dateibrowser des Systems auf. 
+	 * Ruft den Dateibrowser des Systems auf. Über die Systemeigenschaft os.name
+	 * wird überprüft, welches OS gerade läuft. Wenn Windows läuft wird der
+	 * Explorer gestartet, wenn Mac OS X läuft wird der Finder gestartet.
 	 * 
 	 */
 	public void openFileBrowser() {
-		System.out.println("Print Dir");
 
+		// Neuen Thread erzeugen
 		Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
-				
 				String os = System.getProperty("os.name");
 				String command = "";
 				Process p = null;
@@ -26,9 +27,9 @@ public class MeinInterpreter {
 						System.out.println("Windows");
 						command = "explorer.exe";
 						p = Runtime.getRuntime().exec(command);
-						
-					} else if(os.contains("OS X")){
-						
+
+					} else if (os.contains("OS X")) {
+
 						command = ".";
 						p = Runtime.getRuntime().exec(
 								new String[] { "open", command });
@@ -36,16 +37,14 @@ public class MeinInterpreter {
 				}
 
 				catch (Exception e) {
-					
 					e.printStackTrace();
 				}
+			}//End run()
+		});// End Thread
 
-			}
-		});
-		if(!t.isAlive()){
+		// Thread starten
+		if (!t.isAlive()) {
 			t.start();
 		}
-		
-	}
-
-}
+	}// End Method
+}// End class
