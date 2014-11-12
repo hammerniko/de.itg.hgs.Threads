@@ -3,6 +3,7 @@ package e01_Prozesse_Runtime;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Properties;
 
 public class MeinInterpreter {
 
@@ -18,6 +19,7 @@ public class MeinInterpreter {
 		Thread t = new Thread(new Runnable() {
 			@Override
 			public void run() {
+
 				String os = System.getProperty("os.name");
 				String command = "";
 				Process p = null;
@@ -30,7 +32,7 @@ public class MeinInterpreter {
 
 					} else if (os.contains("OS X")) {
 
-						command = ".";
+						command = "."; // Startet den Mac Finder
 						p = Runtime.getRuntime().exec(
 								new String[] { "open", command });
 					}
@@ -39,7 +41,7 @@ public class MeinInterpreter {
 				catch (Exception e) {
 					e.printStackTrace();
 				}
-			}//End run()
+			}// End run()
 		});// End Thread
 
 		// Thread starten
@@ -47,4 +49,39 @@ public class MeinInterpreter {
 			t.start();
 		}
 	}// End Method
+
+	public int getVirtualMemory() {
+
+		Thread t = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				Process p = null;
+				try {
+					p = Runtime.getRuntime().exec("cmd /c dir");
+				
+					BufferedReader in = new BufferedReader(
+							new InputStreamReader(p.getInputStream()));
+
+					for (String s; (s = in.readLine()) != null;) {
+						System.out.println(s);
+
+					}
+
+					in.close();
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+			}
+		});
+
+		if (t.isAlive()) {
+			t.start();
+		}
+
+		return 0;
+	}
 }// End class

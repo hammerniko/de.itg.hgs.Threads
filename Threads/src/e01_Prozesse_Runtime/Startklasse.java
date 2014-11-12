@@ -4,7 +4,8 @@ public class Startklasse {
 
 	public static void main(String[] args) {
 		MeinInterpreter mi = new MeinInterpreter();
-		mi.openFileBrowser();
+		//mi.openFileBrowser();
+		mi.getVirtualMemory();
 
 	}
 
