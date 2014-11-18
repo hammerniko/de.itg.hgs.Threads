@@ -2,13 +2,13 @@ package b04_ThreadSynchronizedZugriff;
 import java.lang.*;
  import java.io.*;
  /**
-  * Wird in der Methode GetID das Schlüsselwort synchronized weggelassen,
+  * Wird in der Methode GetID das SchlÃ¼sselwort synchronized weggelassen,
   * kann es vorkommen, das einige Threadobjekte die gleiche ID bekommen.
   * Da evtl. mehrere Threads gleichzeitig auf die Methode zugereifen.
   * Synchronized verhindert diesen gleichzeitigen Zugriff und "locked" die Methode
-  * für andere Threads, so lange ein Thread sie bearbeitet.
+  * fï¿½r andere Threads, so lange ein Thread sie bearbeitet.
   * 
-  * Durch entfernen des Schlüsselwortes synchronized kann 
+  * Durch entfernen des Schlï¿½sselwortes synchronized kann 
   * das Szenario getestet werden. Synchronized kostet Performance.
   * @author hr
   *

@@ -6,7 +6,7 @@ public class Main {
 	    
 	    new MyThread("MyThread", sObj);
 	    for (int i = 0; i < 10; i++) {
-	      Thread.sleep(500);
+	      Thread.sleep(100);
 	      System.out.print(".");
 	    }
 	    sObj.start();

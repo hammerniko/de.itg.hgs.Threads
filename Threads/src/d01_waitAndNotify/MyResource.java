@@ -9,6 +9,7 @@ class MyResource {
 
 	    System.out.println(Thread.currentThread().getName() + " resuming execution.");
 	  }
+	  
 	  synchronized void start() {
 	    ready = true;
 	    notify();
