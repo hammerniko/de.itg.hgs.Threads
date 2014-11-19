@@ -6,14 +6,14 @@ import java.lang.*;
   * kann es vorkommen, das einige Threadobjekte die gleiche ID bekommen.
   * Da evtl. mehrere Threads gleichzeitig auf die Methode zugereifen.
   * Synchronized verhindert diesen gleichzeitigen Zugriff und "locked" die Methode
-  * f�r andere Threads, so lange ein Thread sie bearbeitet.
+  * für andere Threads, so lange ein Thread sie bearbeitet.
   * 
   * Durch entfernen des Schl�sselwortes synchronized kann 
   * das Szenario getestet werden. Synchronized kostet Performance.
   * @author hr
   *
   */
- class ObjectID {
+ class  ObjectID {
   
   private static int seq=0;
 
@@ -23,17 +23,17 @@ import java.lang.*;
      return seq++;
    }
 
-   public ObjectID() {
+  public  ObjectID() {
      id = getID();
      
    }
 
-  public void print() {
+  public  void print() {
      System.out.println("ID: " + id);
    }
 
    public static void main(String[] args) {
-	   long startZeit=System.currentTimeMillis();
+	  
 	   
      for (int i=0; i<100; ++i) {
        new Thread(new Runnable() {
@@ -41,15 +41,14 @@ import java.lang.*;
            try {
             Thread.currentThread().sleep(100);
            } catch (Exception e) {
+        	   System.out.println("Fehler");
            }
-           ObjectID o = new ObjectID();
+           final ObjectID o = new ObjectID();
            o.print();
          }
        }).start();
      }
-    long endZeit = System.currentTimeMillis();
-    
-     System.out.println("Zeit:"+(endZeit-startZeit)+"ms");
+     
      
    }
  }
