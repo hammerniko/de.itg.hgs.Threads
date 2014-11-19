@@ -20,7 +20,7 @@ public class EarlyNotify extends Object {
         print("done with wait()");
       }
       String item = (String) list.remove(0);
-
+      print(item+" removed");
       return item;
     }
   }
@@ -45,7 +45,7 @@ public class EarlyNotify extends Object {
   public static void main(String[] args) {
     final EarlyNotify enf = new EarlyNotify();
 
-    Runnable runA = new Runnable() {
+    Runnable runRemove = new Runnable() {
       public void run() {
         try {
           String item = enf.removeItem();
@@ -58,24 +58,24 @@ public class EarlyNotify extends Object {
       }
     };
 
-    Runnable runB = new Runnable() {
+    Runnable runAdd = new Runnable() {
       public void run() {
         enf.addItem("Hello!");
       }
     };
 
     try {
-      Thread threadA1 = new Thread(runA, "A1");
+      Thread threadA1 = new Thread(runRemove, "A1");
       threadA1.start();
 
       Thread.sleep(500);
 
-      Thread threadA2 = new Thread(runA, "A2");
+      Thread threadA2 = new Thread(runRemove, "A2");
       threadA2.start();
 
       Thread.sleep(500);
 
-      Thread threadB = new Thread(runB, "B");
+      Thread threadB = new Thread(runAdd, "B1");
       threadB.start();
 
       Thread.sleep(1000);
