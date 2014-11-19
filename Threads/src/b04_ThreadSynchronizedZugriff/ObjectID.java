@@ -22,11 +22,11 @@ import java.io.*;
  */
 class ObjectID {
 
-	private static int seq = 0;
+	private static int anzahlObjekteIDs = 0;
 	private int id;
 
 	private synchronized static int erhoeheID(){
-		return seq++;
+		return anzahlObjekteIDs++;
 	}
 	
 	private int getID() {
