@@ -11,11 +11,15 @@ import java.io.*;
  * lange ein Thread sie bearbeitet.
  * 
  * Durch entfernen des Schlüsselwortes synchronized kann das Szenario getestet
- * werden. Synchronized kostet Performance.
+ * werden. Synchronized kostet Performance, da Threads auf andere Threads warten müssen.
  * 
  * Es ist darauf zu achten, das der Mutex(Gültigkeitsbereich der Sperre) nicht
  * nur innerhalb des Objekts gilt. Synchronized Blöcke oder Methoden gelten nur innerhalb eines Objektes.
  * Static Methoden gelten dann für alle Threads, die auf diese Methode zugreifen.
+ *
+ * Bei synchronized beginnt die Sperre immer mit der geschweiften Klammer des betroffenen
+ * Codeblocks und endet mit der schliessenden Klammer automatisch. (Nicht wie bei Lock, wo die Sperre von Hand
+ * gesetzt werden muss.)
  * 
  * @author hr
  * 
