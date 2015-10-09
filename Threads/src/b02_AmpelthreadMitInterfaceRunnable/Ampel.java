@@ -106,7 +106,7 @@ public class Ampel implements Runnable{
 			ausgabe();
 			Thread.sleep(dauer);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}

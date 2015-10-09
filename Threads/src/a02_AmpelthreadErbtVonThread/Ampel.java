@@ -104,7 +104,7 @@ public class Ampel extends Thread {
 			ausgabe();
 			Thread.sleep(dauer);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
