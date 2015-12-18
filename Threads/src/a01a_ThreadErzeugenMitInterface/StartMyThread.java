@@ -1,4 +1,4 @@
-package a01_ThreadErzeugen;
+package a01a_ThreadErzeugenMitInterface;
 
 import java.util.Scanner;
 
@@ -15,8 +15,6 @@ public class StartMyThread {
 		//Thread starten
 		a.start();
 		x.start();
-		
-		
 		
 		System.out.println("Main Thread zuende");
 
