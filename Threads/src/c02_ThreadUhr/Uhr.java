@@ -14,7 +14,6 @@ public class Uhr implements Runnable{
 	
 	public Uhr(){
 		
-		
 		date = new Date();
 		format = DateFormat.getTimeInstance(DateFormat.MEDIUM);
 		isRunning = true;

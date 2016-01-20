@@ -10,6 +10,7 @@ public class MyThread implements Runnable{
 		t = new Thread(this);
 		this.name = name;
 		this.wait=wait;
+		
 	}
 	
 	@Override
