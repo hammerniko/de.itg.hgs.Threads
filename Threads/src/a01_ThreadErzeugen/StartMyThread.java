@@ -16,8 +16,6 @@ public class StartMyThread {
 		a.start();
 		x.start();
 		
-		
-		
 		System.out.println("Main Thread zuende");
 
 	}

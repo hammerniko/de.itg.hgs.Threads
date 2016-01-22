@@ -8,6 +8,7 @@ public class MyThread implements Runnable{
 	
 	public MyThread(String name, int wait){
 		t = new Thread(this);
+		
 		this.name = name;
 		this.wait=wait;
 		
