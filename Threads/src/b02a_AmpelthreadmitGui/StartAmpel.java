@@ -1,4 +1,4 @@
-package b02a;
+package b02a_AmpelthreadmitGui;
 
 public class StartAmpel {
 	

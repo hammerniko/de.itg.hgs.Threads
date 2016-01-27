@@ -1,4 +1,4 @@
-package b02a;
+package b02a_AmpelthreadmitGui;
 
 import java.awt.Color;
 import java.awt.Graphics;
