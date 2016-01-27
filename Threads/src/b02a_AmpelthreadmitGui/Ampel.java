@@ -132,11 +132,21 @@ public class Ampel implements Runnable{
 		System.out.println(name+":\t"+ZUSTAND_STR[aktZustand]);
 	}
 	
-	public void start(){
-		if(!t.isAlive()){
-			 
+	public synchronized void start(){
+		if(t==null){
+			t=new Thread(this);
 			t.start();
 		}
+		else{
+			t.start();
+		}
+		
+		
+	}
+	
+	public void stop(){
+		t.stop();
+		t=null;
 	}
 
 }

@@ -30,16 +30,10 @@ public class Gui extends JFrame {
 			contentPane.setLayout(new FlowLayout());
 			a1 = new PanelAmpel("A",1000);
 			a2 = new PanelAmpel("B",800);
-			a3 = new PanelAmpel("C",600);
-			a4 = new PanelAmpel("D",400);
-			a5 = new PanelAmpel("E",200);
-			a6 = new PanelAmpel("F",100);
+			
 			contentPane.add(a1);
 			contentPane.add(a2);
-			contentPane.add(a3);
-			contentPane.add(a4);
-			contentPane.add(a5);
-			contentPane.add(a6);
+			
 			contentPane.setDoubleBuffered(true);
 			
 			btStart = new JButton("Start");
@@ -71,12 +65,13 @@ public class Gui extends JFrame {
 		protected synchronized void stopClicked() {
 			System.out.println("Beenden geklickt");
 			a1.beendeAmpel();
+			a2.beendeAmpel();
 			
 		}
 
 		protected void startClicked() {
 			a1.starteAmpel();
-			
+			a2.starteAmpel();
 		}
 
 		@Override
@@ -86,11 +81,6 @@ public class Gui extends JFrame {
 			super.finalize();
 			a1.beendeAmpel();
 			a2.beendeAmpel();
-			a3.beendeAmpel();
-			a4.beendeAmpel();
-			a5.beendeAmpel();
-			a6.beendeAmpel();
-			
 		}
 		
 		
