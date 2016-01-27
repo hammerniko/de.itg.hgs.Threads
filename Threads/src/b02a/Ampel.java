@@ -34,6 +34,7 @@ public class Ampel implements Runnable{
 		this.dauerRotGelb = dauerRotGelb;
 		this.dauerGruen = dauerGruen;
 		this.dauerGelb = dauerGelb;
+		
 	}
 	
 	
@@ -42,8 +43,10 @@ public class Ampel implements Runnable{
 		return aktZustand;
 	}
 
-	public void setAktZustand(int aktZustand) {
+	public synchronized void setAktZustand(int aktZustand) {
+		System.out.println("Threadzustand geändert");
 		this.aktZustand = aktZustand;
+		
 	}
 
 	public int getDauerRot() {
@@ -84,7 +87,11 @@ public class Ampel implements Runnable{
 		while(aktZustand!=AUS){
 			switch (aktZustand) {
 			
-			case AUS:break;			
+			case AUS:
+					System.out.println("Thread wartet ");
+					t.interrupt();
+					break;	
+				
 			case ROT:			warte(dauerRot); 		aktZustand=ROTGELB;		break;
 			case ROTGELB:		warte(dauerRotGelb); 	aktZustand=GRUEN;		break;
 			case GRUEN:			warte(dauerGruen);		aktZustand=GELB;	    break;
@@ -112,8 +119,9 @@ public class Ampel implements Runnable{
 			panel.setzeAmpel(aktZustand);
 			Thread.sleep(dauer);
 		} catch (InterruptedException e) {
+		
+				e.printStackTrace();
 			
-			e.printStackTrace();
 		}
 	}
 	

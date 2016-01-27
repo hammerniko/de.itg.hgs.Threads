@@ -23,8 +23,10 @@ public class PanelAmpel extends JPanel{
 			a = new Ampel(name, ROT, zeit, zeit, zeit, zeit,this);
 			this.name = name;
 			
+			setDoubleBuffered(true);
 			setLayout(new GridLayout(4,1));
 			lbName = new JLabel(name);
+			lbName.setAlignmentX(CENTER_ALIGNMENT);
 			lbRot = new LabelLampe(Color.red);
 			lbGelb = new LabelLampe(Color.yellow);
 			lbGruen = new LabelLampe(Color.green);
@@ -32,9 +34,8 @@ public class PanelAmpel extends JPanel{
 			add(lbRot);
 			add(lbGelb);
 			add(lbGruen);
+						
 			
-			
-			a.start();
 				
 		}
 		
@@ -71,4 +72,17 @@ public class PanelAmpel extends JPanel{
 			// TODO Auto-generated method stub
 			g.drawString(name, 10, 10);
 			
-		}}
+		}
+		
+		public synchronized void beendeAmpel(){
+			System.out.println("Zustand auf AUS gesetzt");
+			a.setAktZustand(Ampel.AUS);
+			
+		}
+		
+		public void starteAmpel(){
+			a.start();
+		}
+}
+
+		

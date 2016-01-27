@@ -19,7 +19,7 @@ public class LabelLampe extends JLabel {
 		groesse = 30;
 		setPreferredSize(new Dimension(groesse, groesse));
 		setOpaque(true);
-		
+		setDoubleBuffered(true);
 	}
 
 	@Override
@@ -27,6 +27,7 @@ public class LabelLampe extends JLabel {
 		this.g = g;
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
+		
 		g.setColor(aktFarbe);
 		int w = getWidth();
 		int h = getHeight();
