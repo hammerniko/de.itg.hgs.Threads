@@ -29,17 +29,25 @@ public class Gui extends JFrame {
         
         start.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                aniPanel.setActive(true);
-                
+            	startClick();
             }
         });
         
         stop.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                aniPanel.setActive(false);
-            }
+            	stopClick();
+             }
         });
     }
+
+	protected void stopClick() {
+		aniPanel.setActive(false);
+		
+	}
+
+	protected void startClick() {
+		aniPanel.setActive(true);
+	}
 
 	private void initialize() {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,9 +63,5 @@ public class Gui extends JFrame {
         this.getContentPane().add(panel, BorderLayout.SOUTH);
         this.setVisible(true);
 	}
-
-    
-
-    
 }
  
