@@ -58,7 +58,7 @@ public class Gui extends JFrame {
         this.getContentPane().add(aniPanel,BorderLayout.CENTER);
         JPanel panel = new JPanel(new GridLayout(1, 2));
         panel.add(start = new JButton("Start"));
-        panel.add(stop = new JButton("Pause"));
+        panel.add(stop = new JButton("Stop"));
         
         this.getContentPane().add(panel, BorderLayout.SOUTH);
         this.setVisible(true);
