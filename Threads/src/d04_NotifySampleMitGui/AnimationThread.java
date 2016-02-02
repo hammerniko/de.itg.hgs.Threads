@@ -4,6 +4,7 @@ class AnimationThread implements Runnable {
 	
 	//Gemeinsames Objekt des Threads
     private AnimationPanel panel;
+    
     public AnimationThread(AnimationPanel panel) {
         this.panel = panel;
     }
@@ -11,9 +12,10 @@ class AnimationThread implements Runnable {
     public void run() {
         int i = 0;
         while (true) {
-            System.out.println(i++ + ". Schleifendurchlauf des Threads");
-            if (panel.isActive())
-                panel.increaseIndex();
+            
+            if (panel.isActive()){
+            	System.out.println(i++ + ". Schleifendurchlauf des Threads");
+                panel.increaseIndex();}
             else
                 try {
                     synchronized(panel) {
@@ -23,7 +25,7 @@ class AnimationThread implements Runnable {
                     exc.printStackTrace();
                 }
             try {
-                Thread.sleep(100);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
