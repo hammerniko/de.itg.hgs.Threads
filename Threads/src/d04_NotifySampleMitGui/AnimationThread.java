@@ -18,17 +18,23 @@ class AnimationThread implements Runnable {
                 panel.increaseIndex();}
             else
                 try {
+                	
+                	//Synchronized Block for wait notify
                     synchronized(panel) {
                         panel.wait();
                     }
                 } catch (InterruptedException exc) {
                     exc.printStackTrace();
                 }
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            warte();
         }
     }
+
+	private void warte() {
+		try {
+		    Thread.sleep(500);
+		} catch (InterruptedException e) {
+		    e.printStackTrace();
+		}
+	}
 }
