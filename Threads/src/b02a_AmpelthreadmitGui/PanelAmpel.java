@@ -74,7 +74,7 @@ public class PanelAmpel extends JPanel{
 			
 		}
 		
-		public synchronized void beendeAmpel(){
+		public void beendeAmpel(){
 			System.out.println("Zustand auf AUS gesetzt");
 			a.setAktZustand(Ampel.AUS);
 			a.stop();
