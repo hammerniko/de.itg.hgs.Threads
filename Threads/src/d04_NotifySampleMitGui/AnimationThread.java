@@ -33,7 +33,7 @@ class AnimationThread implements Runnable {
 	private void warte() {
 		try {
 
-		    Thread.sleep(500);
+		    Thread.sleep(50);
 		} catch (InterruptedException e) {
 		    e.printStackTrace();
 		}
