@@ -32,6 +32,7 @@ class AnimationThread implements Runnable {
 
 	private void warte() {
 		try {
+<<<<<<< HEAD
 
 		    Thread.sleep(50);
 		} catch (InterruptedException e) {
@@ -39,3 +40,11 @@ class AnimationThread implements Runnable {
 		}
 	}
 }
+=======
+		    Thread.sleep(50);
+		} catch (InterruptedException e) {
+		    e.printStackTrace();
+		}
+	}
+}
+>>>>>>> branch 'master' of https://github.com/hammerniko/de.itg.hgs.Threads.git
