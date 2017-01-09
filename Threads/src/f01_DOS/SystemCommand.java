@@ -16,7 +16,7 @@ public class SystemCommand {
 	public static void main(String[] args){
 		Runtime rt = Runtime.getRuntime();
 		SystemCommand sc = new SystemCommand();
-		printOutput errorReported, 
+		//printOutput errorReported, 
 		
 	}
 	
