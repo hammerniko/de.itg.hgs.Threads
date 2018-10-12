@@ -12,7 +12,7 @@ public class StartMyThread {
 		MyThread a = new MyThread("a",30);
 		MyThread x = new MyThread("x",100);
 		
-		//Thread starten
+		//Thread nebenläufig starten
 		a.start();
 		x.start();
 		

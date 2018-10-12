@@ -8,9 +8,7 @@ public class MyThread extends Thread {
 	public MyThread(String name, int wait){
 		this.name = name;
 		this.wait=wait;
-		
 	}
-	
 	
 	@Override
 	public void run() {
