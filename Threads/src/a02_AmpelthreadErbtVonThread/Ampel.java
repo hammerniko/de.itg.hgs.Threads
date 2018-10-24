@@ -90,6 +90,8 @@ public class Ampel extends Thread {
 				}
 			}//ende switch case
 			
+			ausgabe();
+			
 		}
 		
 	}
@@ -101,7 +103,7 @@ public class Ampel extends Thread {
 
 	private void warte(int dauer){
 		try {
-			ausgabe();
+			
 			Thread.sleep(dauer);
 		} catch (InterruptedException e) {
 			

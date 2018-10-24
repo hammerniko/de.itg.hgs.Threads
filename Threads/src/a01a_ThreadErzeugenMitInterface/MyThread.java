@@ -1,5 +1,7 @@
 package a01a_ThreadErzeugenMitInterface;
 
+import java.awt.event.ActionListener;
+
 public class MyThread implements Runnable{
 
 	String name;

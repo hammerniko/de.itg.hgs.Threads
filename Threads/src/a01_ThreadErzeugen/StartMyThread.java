@@ -13,7 +13,7 @@ public class StartMyThread {
 		MyThread x = new MyThread("x",100);
 		
 		//Thread nebenläufig starten
-		a.start();
+		a.start(); //ruft nebenläufig die run() Methode auf
 		x.start();
 		
 		System.out.println("Main Thread zuende");
