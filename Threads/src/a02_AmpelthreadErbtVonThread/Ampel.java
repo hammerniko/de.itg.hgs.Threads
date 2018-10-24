@@ -20,6 +20,8 @@ public class Ampel extends Thread {
 	private int dauerGelb = 0;
 	private int dauerBlinken = 1000;
 	
+	
+	//Konstruktor
 	public Ampel(String name,int aktZustand, int dauerRot, int dauerRotGelb,
 			int dauerGruen, int dauerGelb) {
 		this.name = name;
@@ -74,8 +76,8 @@ public class Ampel extends Thread {
 
 	@Override
 	public void run() {
-		
 		while(aktZustand!=AUS){
+			
 			switch (aktZustand) {
 			case AUS:break;			
 			case ROT:			warte(dauerRot); 		aktZustand=ROTGELB;		break;
@@ -89,26 +91,23 @@ public class Ampel extends Thread {
 					warte(dauerBlinken);
 				}
 			}//ende switch case
-			
 			ausgabe();
-			
 		}
 		
 	}
 	
 	private void blinken() {
-		
 		System.out.println(name+":\tblinken");		
 	}
 
 	private void warte(int dauer){
 		try {
-			
 			Thread.sleep(dauer);
 		} catch (InterruptedException e) {
-			
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 	
 	/**

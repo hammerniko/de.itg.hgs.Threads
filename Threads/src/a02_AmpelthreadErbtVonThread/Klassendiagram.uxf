@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>5</zoom_level>
+  <zoom_level>12</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>115</x>
-      <y>200</y>
-      <w>105</w>
-      <h>95</h>
+      <x>0</x>
+      <y>480</y>
+      <w>252</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>StarteAmpel
 --
@@ -21,10 +21,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>125</y>
-      <w>215</w>
-      <h>220</h>
+      <x>396</x>
+      <y>300</y>
+      <w>516</w>
+      <h>528</h>
     </coordinates>
     <panel_attributes>Ampel
 --
@@ -43,7 +43,7 @@ _+ZUSTAND_STR:text[]={"Aus",...,"Blinken"}_
 -dauerBlinken=1000
 
 --
-Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,  
++Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,  
 +run()
 -blinken()
 -warte(dauer:GZ)
@@ -58,10 +58,10 @@ Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>215</x>
-      <y>245</y>
-      <w>75</w>
-      <h>15</h>
+      <x>240</x>
+      <y>588</y>
+      <w>180</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
@@ -69,10 +69,10 @@ Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>160</x>
-      <y>325</y>
-      <w>100</w>
-      <h>45</h>
+      <x>108</x>
+      <y>780</y>
+      <w>240</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>Die Beziehung zwischen der Startklasse und der 
 Klasse Ampel ist eine Dependency</panel_attributes>
@@ -81,10 +81,10 @@ Klasse Ampel ist eine Dependency</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
+      <x>372</x>
       <y>0</y>
-      <w>105</w>
-      <h>95</h>
+      <w>252</w>
+      <h>228</h>
     </coordinates>
     <panel_attributes>Thread
 --
@@ -99,10 +99,10 @@ Klasse Ampel ist eine Dependency</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>325</x>
-      <y>90</y>
-      <w>40</w>
-      <h>45</h>
+      <x>504</x>
+      <y>216</y>
+      <w>96</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>60.0;10.0;10.0;70.0</additional_attributes>

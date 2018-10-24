@@ -30,9 +30,11 @@ public class Gui extends JFrame {
 			contentPane.setLayout(new FlowLayout());
 			a1 = new PanelAmpel("A",1000);
 			a2 = new PanelAmpel("B",800);
+			a3 = new PanelAmpel("C",100);
 			
 			contentPane.add(a1);
 			contentPane.add(a2);
+			contentPane.add(a3);
 			
 			contentPane.setDoubleBuffered(true);
 			
@@ -72,6 +74,7 @@ public class Gui extends JFrame {
 		protected void startClicked() {
 			a1.starteAmpel();
 			a2.starteAmpel();
+			a3.starteAmpel();
 		}
 
 		@Override
@@ -81,6 +84,7 @@ public class Gui extends JFrame {
 			super.finalize();
 			a1.beendeAmpel();
 			a2.beendeAmpel();
+			a3.beendeAmpel();
 		}
 		
 		
