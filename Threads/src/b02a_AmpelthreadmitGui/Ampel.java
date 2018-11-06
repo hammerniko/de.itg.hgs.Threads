@@ -2,19 +2,20 @@ package b02a_AmpelthreadmitGui;
 
 public class Ampel implements Runnable{
 	
-	//zugehöriges Panel
+	//zugehï¿½riges Panel
 	PanelAmpel panel;
 	
 	//Konstanten fuer Zustaende
-	public static final int AUS = 0;
+	public static final int WARTEN = 0;
 	public static final int ROT = 1;
 	public static final int ROTGELB = 2;
 	public static final int GRUEN = 3;
 	public static final int GELB = 4;
 	public static final int BLINKEN = 5;
-	public static final String[] ZUSTAND_STR = {"Aus","Rot","RotGelb","Gruen","Gelb","Blinken"};
+	public static final String[] ZUSTAND_STR = {"warten...","Rot","RotGelb","Gruen","Gelb","Blinken"};
 	
 	//Variablen
+	private volatile boolean isRunning=false;
 	private String name=null;
 	private int aktZustand = ROT;
 	private int dauerRot = 0;
@@ -34,7 +35,8 @@ public class Ampel implements Runnable{
 		this.dauerRotGelb = dauerRotGelb;
 		this.dauerGruen = dauerGruen;
 		this.dauerGelb = dauerGelb;
-		
+		setAktZustand(WARTEN);
+		start();
 	}
 	
 	
@@ -44,9 +46,8 @@ public class Ampel implements Runnable{
 	}
 
 	public synchronized void setAktZustand(int aktZustand) {
-		System.out.println("Threadzustand geändert");
-		this.aktZustand = aktZustand;
-		
+		System.out.println("Threadzustand geaendert");
+		this.aktZustand = aktZustand;	
 	}
 
 	public int getDauerRot() {
@@ -84,29 +85,22 @@ public class Ampel implements Runnable{
 	@Override
 	public void run() {
 		System.out.println("Ampel gestartet");
-		while(aktZustand!=AUS){
+		
+		while(isRunning){
 			switch (aktZustand) {
-			
-			case AUS:
-					System.out.println("Thread wartet ");
-					t.interrupt();
-					break;	
-				
+			case WARTEN: 		warte(1000);	break;
 			case ROT:			warte(dauerRot); 		aktZustand=ROTGELB;		break;
 			case ROTGELB:		warte(dauerRotGelb); 	aktZustand=GRUEN;		break;
 			case GRUEN:			warte(dauerGruen);		aktZustand=GELB;	    break;
 			case GELB:			warte(dauerGelb);		aktZustand=ROT;			break;		
 
-			case BLINKEN:
-				while(aktZustand==BLINKEN){
-					blinken();
-					warte(dauerBlinken);
+			case BLINKEN: blinken(); break;
 				}
 			}//ende switch case
 			
 		}
 		
-	}
+	
 	
 	private void blinken() {
 		
@@ -133,20 +127,19 @@ public class Ampel implements Runnable{
 	}
 	
 	public synchronized void start(){
-		if(t==null){
+		isRunning = true;
+		
+		if(!t.isAlive()){
 			t=new Thread(this);
 			t.start();
 		}
 		else{
 			t.start();
 		}
-		
-		
 	}
 	
 	public void stop(){
-		t.stop();
-		t=null;
+		isRunning=false;
 	}
 
 }
