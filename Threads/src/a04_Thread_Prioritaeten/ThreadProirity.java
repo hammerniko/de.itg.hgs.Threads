@@ -1,4 +1,4 @@
-package a04_Thread_Prioritäten;
+package a04_Thread_Prioritaeten;
 
 import a03_Thread_unterbrechen.Unterbrechung;
 
