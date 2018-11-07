@@ -17,9 +17,7 @@ public class Gui extends JFrame {
 	PanelAmpel a4;
 	PanelAmpel a5;
 	PanelAmpel a6;
-	JButton btStart;
-	JButton btStop;
-	
+		
 	JPanel contentPane;
 
 		public Gui(){
@@ -38,54 +36,13 @@ public class Gui extends JFrame {
 			
 			contentPane.setDoubleBuffered(true);
 			
-			btStart = new JButton("Start");
-			btStart.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					startClicked();
-					
-				}
-			});
-			
-			btStop = new JButton("Stop");
-			btStop.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					stopClicked();
-					
-				}
-			});
-			
-			contentPane.add(btStart);
-			contentPane.add(btStop);
 			setContentPane(contentPane);
 			
 		}
 
-		protected synchronized void stopClicked() {
-			System.out.println("Beenden geklickt");
-			a1.beendeAmpel();
-			a2.beendeAmpel();
-			
-		}
+		
 
-		protected void startClicked() {
-			a1.starteAmpel();
-			a2.starteAmpel();
-			a3.starteAmpel();
-		}
-
-		@Override
-		protected void finalize() throws Throwable {
-			System.out.println("****************Gui beendet ");
-			// TODO Auto-generated method stub
-			super.finalize();
-			a1.beendeAmpel();
-			a2.beendeAmpel();
-			a3.beendeAmpel();
-		}
+		
 		
 		
 }

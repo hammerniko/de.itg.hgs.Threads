@@ -9,6 +9,7 @@ public class Ampel implements Runnable{
 	public static final int GRUEN = 3;
 	public static final int GELB = 4;
 	public static final int BLINKEN = 5;
+	
 	public static final String[] ZUSTAND_STR = {"Aus","Rot","RotGelb","Gruen","Gelb","Blinken"};
 	
 	//Variablen
@@ -78,9 +79,11 @@ public class Ampel implements Runnable{
 	public void run() {
 		
 		while(aktZustand!=AUS){
+			
+			//Switch While Idiom
 			switch (aktZustand) {
 			case AUS:break;			
-			case ROT:			warte(dauerRot); 		aktZustand=ROTGELB;		break;
+			case ROT:			warte(dauerRot); 		setAktZustand(ROTGELB);		break;
 			case ROTGELB:		warte(dauerRotGelb); 	aktZustand=GRUEN;		break;
 			case GRUEN:			warte(dauerGruen);		aktZustand=GELB;	    break;
 			case GELB:			warte(dauerGelb);		aktZustand=ROT;			break;		

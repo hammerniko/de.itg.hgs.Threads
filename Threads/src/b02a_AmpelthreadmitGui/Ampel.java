@@ -2,7 +2,7 @@ package b02a_AmpelthreadmitGui;
 
 public class Ampel implements Runnable{
 	
-	//zugeh�riges Panel
+	//zugehoeriges Panel
 	PanelAmpel panel;
 	
 	//Konstanten fuer Zustaende
@@ -12,7 +12,8 @@ public class Ampel implements Runnable{
 	public static final int GRUEN = 3;
 	public static final int GELB = 4;
 	public static final int BLINKEN = 5;
-	public static final String[] ZUSTAND_STR = {"warten...","Rot","RotGelb","Gruen","Gelb","Blinken"};
+	public static final int AUS = 6;
+	public static final String[] ZUSTAND_STR = {"warten...","Rot","RotGelb","Gruen","Gelb","Blinken","Aus"};
 	
 	//Variablen
 	private volatile boolean isRunning=false;
@@ -86,7 +87,13 @@ public class Ampel implements Runnable{
 	public void run() {
 		System.out.println("Ampel gestartet");
 		
-		while(isRunning){
+		while(true){
+			
+			//Wenn eine Unterbrechung angefordert wurde
+			if(t.isInterrupted()) break;
+			
+			
+			//Falls keine Unterbrechung angefordert wurde
 			switch (aktZustand) {
 			case WARTEN: 		warte(1000);	break;
 			case ROT:			warte(dauerRot); 		aktZustand=ROTGELB;		break;
@@ -97,6 +104,8 @@ public class Ampel implements Runnable{
 			case BLINKEN: blinken(); break;
 				}
 			}//ende switch case
+		
+			setAktZustand(AUS);
 			
 		}
 		
@@ -113,9 +122,7 @@ public class Ampel implements Runnable{
 			panel.setzeAmpel(aktZustand);
 			Thread.sleep(dauer);
 		} catch (InterruptedException e) {
-		
-				e.printStackTrace();
-			
+			t.interrupt();
 		}
 	}
 	
@@ -127,9 +134,9 @@ public class Ampel implements Runnable{
 	}
 	
 	public synchronized void start(){
-		isRunning = true;
 		
-		if(!t.isAlive()){
+		
+		if(t==null){
 			t=new Thread(this);
 			t.start();
 		}

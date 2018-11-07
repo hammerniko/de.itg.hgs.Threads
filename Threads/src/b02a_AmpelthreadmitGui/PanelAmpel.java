@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -14,6 +15,9 @@ public class PanelAmpel extends JPanel{
 		private static final int GRUEN = 3;
 		
 		LabelLampe lbRot,lbGelb,lbGruen;
+		JButton btStart;
+		JButton btStop;
+		
 		String name;
 		JLabel lbName;
 		Ampel a;
@@ -22,6 +26,9 @@ public class PanelAmpel extends JPanel{
 			//Neuer Ampelthread
 			a = new Ampel(name, ROT, zeit, zeit, zeit, zeit,this);
 			this.name = name;
+			
+			btStart = new JButton("On");
+			btStop = new JButton("Off");
 			
 			setDoubleBuffered(true);
 			setLayout(new GridLayout(4,1));
