@@ -1,4 +1,4 @@
-package b03_ThreadSongplayerMitInterface;
+package b04_SongplayerSamples;
 
 import org.jfugue.player.Player;
 import org.jfugue.theory.ChordProgression;
