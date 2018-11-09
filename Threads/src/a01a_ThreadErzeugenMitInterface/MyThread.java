@@ -33,9 +33,11 @@ public class MyThread implements Runnable{
 	
 	public void start(){
 		t.start();
+		
 	}
 
 	public void stop(){
 		t.stop();
+		t.resume();
 	}
 }
