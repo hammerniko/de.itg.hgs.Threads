@@ -32,8 +32,6 @@ public class Ampel extends Thread {
 		this.dauerGelb = dauerGelb;
 	}
 	
-	
-
 	public int getAktZustand() {
 		return aktZustand;
 	}
@@ -76,6 +74,10 @@ public class Ampel extends Thread {
 
 	@Override
 	public void run() {
+		
+		super.run();
+		
+		//Switch While Idiom
 		while(aktZustand!=AUS){
 			
 			switch (aktZustand) {

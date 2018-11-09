@@ -11,7 +11,7 @@ public class StartKlasse {
 		
 		//Thread Objekt erzeugen
 		SongPlayer t = new SongPlayer("A",0,'C');
-		SongPlayer t2 = new SongPlayer("B",4000,'G');
+		SongPlayer t2 = new SongPlayer("B",4000,'G'); 
 		SongPlayer t3 = new SongPlayer("C",8000,'E');
 		SongPlayer t4 = new SongPlayer("D",12000,'E');
 		
