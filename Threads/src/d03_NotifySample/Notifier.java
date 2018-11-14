@@ -11,12 +11,17 @@ public class Notifier implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("Notifier schläft ...");
+		System.out.print("Notifier schläft ...");
 		try {
-			Thread.sleep(1000);
+			for (int i = 0; i < 15; i++) {
+				System.out.print(".");
+				Thread.sleep(500);
+			}
+			
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
+		
 		synchronized (message) {
 			//message.setText("Notifier nach der Pause");
 			System.out.println("Notifier ruft notifying auf um:\t" + new Date());

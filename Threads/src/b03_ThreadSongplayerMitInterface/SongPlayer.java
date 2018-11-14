@@ -35,8 +35,7 @@ public class SongPlayer implements Runnable {
         
         //Threadobjekt erzeugen
         t = new Thread(this);
-        
-        
+                
         pattern1 = new Pattern("I[Piano] C5q D5q E5q C5q");
 
         // "Dormez-vous?"
