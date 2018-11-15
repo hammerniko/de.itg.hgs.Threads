@@ -23,6 +23,7 @@ public class PanelAmpel extends JPanel {
 	LabelLampe lbRot, lbGelb, lbGruen;
 	JButton btStart;
 	JButton btStop;
+	JButton btBlinken;
 
 	String name;
 	JLabel lbName;
@@ -35,9 +36,10 @@ public class PanelAmpel extends JPanel {
 
 		btStart = new JButton("On");
 		btStop = new JButton("Off");
+		btBlinken = new JButton("B");
 
 		setDoubleBuffered(true);
-		setLayout(new GridLayout(6, 1));
+		setLayout(new GridLayout(7, 1));
 		lbName = new JLabel(name);
 		lbName.setAlignmentX(CENTER_ALIGNMENT);
 		lbRot = new LabelLampe(Color.red);
@@ -49,6 +51,7 @@ public class PanelAmpel extends JPanel {
 		add(lbGruen);
 		add(btStart);
 		add(btStop);
+		add(btBlinken);
 
 		btStart.addActionListener(new ActionListener() {
 
@@ -65,6 +68,18 @@ public class PanelAmpel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				stoppeAmpel();
 
+			}
+		});
+		
+		btBlinken.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				synchronized (this) {
+					a.setAktZustand(BLINKEN);
+					System.out.println("Blinken geklickt");
+				}
+				
 			}
 		});
 
@@ -103,6 +118,13 @@ public class PanelAmpel extends JPanel {
 			lbRot.ausschalten();
 			lbGelb.ausschalten();
 			break;
+		
+		case BLINKEN: 
+			lbGruen.ausschalten();
+			lbRot.ausschalten(); 
+			
+			break;
+		
 		default:
 
 			break;
@@ -126,5 +148,17 @@ public class PanelAmpel extends JPanel {
 
 	public void starteAmpel() {
 		a.start();
+	}
+	
+	public void setBlinkLampe(boolean zustandOrange){
+		
+		if(zustandOrange){
+			lbGelb.ausschalten();
+			System.out.println("B AN");
+		}
+		else{
+			lbGelb.einschalten();
+			System.out.println("B AUS");
+		}
 	}
 }

@@ -17,7 +17,7 @@ public class Ampel implements Runnable {
 			"Gruen", "Gelb", "Blinken", "Aus" };
 
 	// Variablen
-	private volatile boolean isRunning = false;
+	private boolean istOrangeAn = false;
 	private String name = null;
 	private int aktZustand = ROT;
 	private int dauerRot = 0;
@@ -30,9 +30,9 @@ public class Ampel implements Runnable {
 	public Ampel(String name, int aktZustand, int dauerRot, int dauerRotGelb,
 			int dauerGruen, int dauerGelb, PanelAmpel p) {
 		panel = p;
-		
+
 		this.name = name;
-		
+
 		this.aktZustand = aktZustand;
 		this.dauerRot = dauerRot;
 		this.dauerRotGelb = dauerRotGelb;
@@ -47,8 +47,9 @@ public class Ampel implements Runnable {
 	}
 
 	public synchronized void setAktZustand(int aktZustand) {
-		System.out.println("Threadzustand:"+aktZustand);
+		System.out.println("Threadzustand:" + aktZustand);
 		this.aktZustand = aktZustand;
+		
 	}
 
 	public int getDauerRot() {
@@ -93,6 +94,8 @@ public class Ampel implements Runnable {
 			if (t.isInterrupted())
 				break;
 
+			panel.setzeAmpel(aktZustand);
+			
 			// Falls keine Unterbrechung angefordert wurde
 			switch (aktZustand) {
 			case WARTEN:
@@ -112,36 +115,46 @@ public class Ampel implements Runnable {
 				break;
 			case GELB:
 				warte(dauerGelb);
-				setAktZustand(ROT);
+				if(aktZustand!=BLINKEN){
+					setAktZustand(ROT);
+				}
 				break;
 
 			case BLINKEN:
+				
 				blinken();
 				break;
-			
-			
+
 			case AUS:
-				
+
 				break;
-			
+
 			}
-			
+
 		}// ende switch case
 
-		
-		t=null;
+		t = null;
 
 	}
 
 	private void blinken() {
+		setAktZustand(BLINKEN);		
+		panel.setzeAmpel(BLINKEN);
+		
+		if (istOrangeAn) {
+			panel.setBlinkLampe(false);
+			istOrangeAn = false;
+		} else {
+			panel.setBlinkLampe(true);
+			istOrangeAn = true;
+		}
+		warte(dauerBlinken);
 
-		System.out.println(name + ":\tblinken");
 	}
 
 	private void warte(int dauer) {
 		try {
 			ausgabe();
-			panel.setzeAmpel(aktZustand);
 			Thread.sleep(dauer);
 		} catch (InterruptedException e) {
 			// Falls versucht wurde während der Sleep Phase ein Interrupt
@@ -149,7 +162,7 @@ public class Ampel implements Runnable {
 			// Dannach muss das Flag erneut gesetzt werden.
 			setAktZustand(AUS);
 			t.interrupt();
-			
+
 		}
 	}
 
@@ -164,18 +177,17 @@ public class Ampel implements Runnable {
 		if (t == null) {
 			t = new Thread(this);
 			t.start();
-			setAktZustand(ROT);
-			
-		} 
-		
+		}
+		setAktZustand(ROT);
+
 	}
 
 	public void stop() {
 		// Setze Flag um Ampel zu unterbrechen
-		//Falls mehrfach versucht wird zu stoppen, muss
-		//geprüft werden ob t noch existiert.
-		if(t!=null){
-			
+		// Falls mehrfach versucht wird zu stoppen, muss
+		// geprüft werden ob t noch existiert.
+		if (t != null) {
+
 			setAktZustand(AUS);
 			t.interrupt();
 		}

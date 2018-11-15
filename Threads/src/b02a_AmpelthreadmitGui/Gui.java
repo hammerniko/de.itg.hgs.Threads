@@ -9,7 +9,7 @@ import javax.swing.*;
 public class Gui extends JFrame {
 	
 	public static final int BREITE = 400;
-	public static final int HOEHE = 400;
+	public static final int HOEHE = 600;
 	
 	PanelAmpel a1;
 	PanelAmpel a2;
