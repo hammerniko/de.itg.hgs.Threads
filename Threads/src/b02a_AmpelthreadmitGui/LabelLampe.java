@@ -16,7 +16,7 @@ public class LabelLampe extends JLabel {
 		farbeAn = color;
 		farbeAus = Color.gray;
 		aktFarbe = farbeAus;
-		groesse = 30;
+		groesse = 60;
 		setPreferredSize(new Dimension(groesse, groesse));
 		setOpaque(true);
 		setDoubleBuffered(true);
