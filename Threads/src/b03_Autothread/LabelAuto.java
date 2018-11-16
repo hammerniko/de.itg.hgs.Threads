@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 public class LabelAuto extends JLabel {
 	
 	/**
-	 * 
+	 * Zeichnet 
 	 */
 	private static final long serialVersionUID = 1L;
 	Graphics gr;
@@ -20,7 +20,7 @@ public class LabelAuto extends JLabel {
 	int laenge;
 	BufferedImage imgAuto;
 	
-	int x,y; //Linke untere Ecke des Autos
+	int x,y; //Position des Autos
 	int aktuellerZustand;
 		
 	public static final int STEHEN = 0;
@@ -32,7 +32,7 @@ public class LabelAuto extends JLabel {
 		this.x=x;
 		this.y=y;
 		laenge = 100;
-		breite =40;
+		breite =50;
 		aktuellerZustand = STEHEN;
 		
 		setPreferredSize(new Dimension(laenge, breite));
@@ -44,28 +44,24 @@ public class LabelAuto extends JLabel {
 	private void ladeImage() {
 		try
 		{
+			//Laedt ein Bild aus dem Resourcen-Ordener 'Bilder' welcher im
+			//Projektordner liegt.
 			imgAuto= ImageIO.read(new File("Bilder\\auto.jpg")); //Schreibe in image das Bild. try ist nötig, da ImageIO eine Exception wirft. Von nun an ist image nicht mehr 'null' und es kann darauf zugegriffen werden. Backslash muss Espaped werden!
-						
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace(); //Schlägt das laden fehl (z. B. Datei wurde nicht gefunden) gebe den StackTrace aus. Das ist eine Liste mit den vor geraumer Zeit aufgerufenen Methoden. Denke daran dass image noch immer 'null' ist.
+			e.printStackTrace(); 
 		}
 	}
 	
-	
-	
 	@Override
 	protected void paintComponent(Graphics g) {
-		this.gr = g;
-		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		
 		g.setColor(Color.BLACK);
 		int w = getWidth();
 		int h = getHeight();
-		
-		g.drawLine(0, 0, 200, 200);
+			
+		//Zeichnet ein BufferedImage und skaliert es auf laenge und breite an der Position 0,0
 		g.drawImage(imgAuto,0, 0,laenge,breite,null,this);
 	}
 	

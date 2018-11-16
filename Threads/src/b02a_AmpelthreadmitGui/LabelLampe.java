@@ -33,6 +33,8 @@ public class LabelLampe extends JLabel {
 		int h = getHeight();
 		g.fillOval(0, 0, w, h);
 		
+		
+		
 	}
 	
 	public void einschalten(){

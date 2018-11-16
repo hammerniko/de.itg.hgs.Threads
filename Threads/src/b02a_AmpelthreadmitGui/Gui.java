@@ -14,9 +14,7 @@ public class Gui extends JFrame {
 	PanelAmpel a1;
 	PanelAmpel a2;
 	PanelAmpel a3;
-	PanelAmpel a4;
-	PanelAmpel a5;
-	PanelAmpel a6;
+	
 		
 	JPanel contentPane;
 
