@@ -16,5 +16,26 @@ public class Steuerung {
 		dieOberflaeche = new OberFlaeche(this); 
 	}
 	
+	
+	private void initSpielObjekte() {
+		
+	}
+	
+	private void zeichneSpielObjekte() {
+		
+	}
+	
+	public void starteSpiel() {
+		
+	}
+	
+	public void verarbeiteTastenDruck(int pRichtung) {
+		
+	}
+	
+	public void tickTimer() {
+		
+	}
+	
 
 }
