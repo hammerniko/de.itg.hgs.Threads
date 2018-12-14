@@ -4,7 +4,7 @@ public class Steuerung {
 	
 	//Deklaration der Gui, damit die Steuerung
 	//eine bidirektionale Assoziation zur Gui aufbauen kann
-	Gui dieOberflaeche;
+	OberFlaeche dieOberflaeche;
 	
 	public Steuerung() {
 		
@@ -13,7 +13,7 @@ public class Steuerung {
 		//an den Konstruktor der
 		//Gui, damit eine bidirektionale Assoziation
 		//erstellt werden kann
-		dieOberflaeche = new Gui(this); 
+		dieOberflaeche = new OberFlaeche(this); 
 	}
 	
 

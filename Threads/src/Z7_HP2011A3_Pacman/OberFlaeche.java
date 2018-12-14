@@ -9,7 +9,7 @@ import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
 
-public class Gui extends JFrame {
+public class OberFlaeche extends JFrame {
 	
 	//Deklaration für Bidirektionale Assoziation
 	//Gui-Steuerung
@@ -34,7 +34,7 @@ public class Gui extends JFrame {
 	public static final int SIZE_FRAME_Y = 480;
 	
 	
-	public Gui(Steuerung s) {
+	public OberFlaeche(Steuerung s) {
 		
 		//Die eigene Steuerung zeigt auf 
 		//das übergebene Steuerungsobjekt
