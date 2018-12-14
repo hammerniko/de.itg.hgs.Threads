@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
 
 public class Gui extends JFrame {
 	
@@ -52,11 +54,15 @@ public class Gui extends JFrame {
 		BorderLayout bl = new BorderLayout();
 				
 		contentPane = new JPanel(bl);
+		bl.setVgap(10);
+		bl.setHgap(10);
 		
 		panelSpielfeld = new JPanel();
 		panelSpielfeld.setLayout(null);
+		panelSpielfeld.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 		
-		GridLayout gl = new  GridLayout(8, 1,10,10);
+		
+		GridLayout gl = new  GridLayout(10, 1,10,10);
 		gl.setHgap(10);
 				
 		panelStart = new JPanel(gl);
