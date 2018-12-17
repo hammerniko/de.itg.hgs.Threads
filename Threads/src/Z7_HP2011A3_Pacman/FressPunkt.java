@@ -5,6 +5,7 @@ public class FressPunkt extends SpielFigur{
 	private boolean gefressen;
 	
 	
+	//Konstruktor mit Paramtern für Oberklasse
 	public FressPunkt(int pPosX, int pPosY) {
 		super.setzePos(pPosX, pPosY);
 	}
