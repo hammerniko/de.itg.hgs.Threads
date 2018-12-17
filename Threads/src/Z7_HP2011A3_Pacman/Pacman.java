@@ -2,9 +2,9 @@ package Z7_HP2011A3_Pacman;
 
 public class Pacman extends SpielFigur {
 
-	public static final int ANZAHL_SPALTEN = 15;
-	public static final int ANZAHL_ZEILEN = 9;
-	public static final int ANZAHL_FRESSPUNKTE = (ANZAHL_SPALTEN*ANZAHL_ZEILEN)-1;
+	private int anzSpalten = ZeichenFlaeche.ANZAHL_SPALTEN;
+	private int anzZeilen = ZeichenFlaeche.ANZAHL_ZEILEN;
+	final int ANZAHL_FRESSPUNKTE = (anzSpalten*anzZeilen)-1;
 	
 	
 	FressPunkt derFresspunkt[];
@@ -24,12 +24,19 @@ public class Pacman extends SpielFigur {
 	private void initFresspunkte(){
 		derFresspunkt = new FressPunkt[ANZAHL_FRESSPUNKTE];
 		
+		//lokale Variablen für berechnete Position im Grid
 		int x,y = 0;
 		
 		for (int i = 0; i < derFresspunkt.length; i++) {
-			x = i%ANZAHL_SPALTEN;
-			y = i/ANZAHL_SPALTEN;
-			System.out.println("i:"+i+" x:"+x+" y:"+y);
+			
+			//Berechne Position im Grid
+			x = i%anzSpalten;
+			y = i/anzZeilen;
+			
+			//Umgehe/überspringe Start-Position des Pacman in der Mitte
+			if(x==anzSpalten/2 && y==anzZeilen/2) {i++;}
+			
+			//Erzeuge Fresspunkt mit Position für Grid
 			derFresspunkt[i] = new FressPunkt(x, y);
 		}
 		
