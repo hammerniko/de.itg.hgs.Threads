@@ -18,11 +18,11 @@ public class OberFlaeche extends JFrame implements KeyListener{
 	//
 	private ZeichenFlaeche zeichenFlaeche;
 	
-	//Deklaration für Bidirektionale Assoziation
+	//Deklaration fï¿½r Bidirektionale Assoziation
 	//Gui-Steuerung
 	Steuerung dieSteuerung;
 	
-	//Komponenten für grafische Oberfläche
+	//Komponenten fï¿½r grafische Oberflï¿½che
 	JPanel contentPane;
 	JPanel panelSpielfeld;
 	JPanel panelStart;
@@ -44,7 +44,7 @@ public class OberFlaeche extends JFrame implements KeyListener{
 	public OberFlaeche(Steuerung s) {
 		
 		//Die eigene Steuerung zeigt auf 
-		//das übergebene Steuerungsobjekt
+		//das ï¿½bergebene Steuerungsobjekt
 		//damit ist die bidirektionale Assoziation
 		//zwischen Gui und Steuerung erstellt
 		dieSteuerung = s;
@@ -132,6 +132,10 @@ public class OberFlaeche extends JFrame implements KeyListener{
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public ZeichenFlaeche gibZeichenFlaeche(){
+		return zeichenFlaeche;
 	}
 
 }
