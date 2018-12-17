@@ -6,7 +6,7 @@ public class FressPunkt extends SpielFigur{
 	
 	
 	public FressPunkt(int pPosX, int pPosY) {
-		// TODO Auto-generated constructor stub
+		super.setzePos(pPosX, pPosY);
 	}
 
 
@@ -24,6 +24,12 @@ public class FressPunkt extends SpielFigur{
 	public void zeichne(ZeichenFlaeche pZF) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 
 }
