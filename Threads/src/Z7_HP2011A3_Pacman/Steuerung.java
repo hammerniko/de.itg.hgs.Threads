@@ -6,8 +6,6 @@ public class Steuerung {
 	Pacman pacMan;
 	FressPunkt derFressPunkt[];
 	Geist derGeist[];
-	
-
 	MyTimer timer;
 	
 	private static final int ANZAHL_GEISTER = 4;
@@ -23,12 +21,11 @@ public class Steuerung {
 	//Konstruktor der Steuerung
 	public Steuerung() {
 		erzeugeObjekte();
-		
 		initSpielObjekte();
 	}
 	
 	
-	private void erzeugeObjekte() {
+	private synchronized void erzeugeObjekte() {
 				//Die Steuerung kennt dieOberflaeche
 				//und uebergeibt sich selbst als Objekt
 				//an den Konstruktor der
@@ -104,7 +101,7 @@ public class Steuerung {
 	private void initFresspunkte(){
 		derFressPunkt = new FressPunkt[ANZAHL_FRESSPUNKTE];
 		
-		//lokale Variablen für berechnete Position im Grid
+		//lokale Variablen f�r berechnete Position im Grid
 		int x,y = 0;
 		
 		for (int i = 0; i < derFressPunkt.length; i++) {
@@ -114,7 +111,7 @@ public class Steuerung {
 			y = i/anzZeilen;
 			
 			//Umgehe/überspringe Start-Position des Pacman in der Mitte
-			if(x==anzSpalten/2 && y==anzZeilen/2) {i++;}
+			//if(x==anzSpalten/2 && y==anzZeilen/2) {i++;}
 			
 			//Erzeuge Fresspunkt mit Position für Grid
 			derFressPunkt[i] = new FressPunkt(x, y);
