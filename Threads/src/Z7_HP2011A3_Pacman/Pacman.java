@@ -4,12 +4,12 @@ public class Pacman extends SpielFigur {
 
 	
 	
+	
 	FressPunkt derFresspunkt[];
 	private int diePunkte;
 	
-	public Pacman() {
-		
-		
+	public Pacman(FressPunkt[] pFP) {
+		derFresspunkt = pFP;
 	}
 
 	@Override
@@ -29,7 +29,6 @@ public class Pacman extends SpielFigur {
 	}
 	
 	public void aktualisierePunkte() {
-		
 		
 	}
 	

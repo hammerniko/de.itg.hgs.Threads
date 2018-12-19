@@ -1,6 +1,6 @@
 package Z7_HP2011A3_Pacman;
 
-public class FressPunkt extends SpielFigur{
+public class FressPunkt extends Spielelement{
 
 	private boolean gefressen;
 	
