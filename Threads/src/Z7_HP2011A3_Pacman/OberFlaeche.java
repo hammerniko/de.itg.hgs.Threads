@@ -115,6 +115,7 @@ public class OberFlaeche extends JFrame implements KeyListener{
 	public void clickStart() {
 		System.out.println("Start clicked");
 		dieSteuerung.starteSpiel();
+		btStart.setEnabled(false);
 	}
 
 	@Override
@@ -141,6 +142,12 @@ public class OberFlaeche extends JFrame implements KeyListener{
 
 	public void schreibePunkte(int punktePacman) {
 		tfPunkte.setText(""+punktePacman);
+		
+	}
+
+	public void zeigeMeldung(String meldung) {
+		
+		JOptionPane.showMessageDialog(this, meldung);
 		
 	}
 
