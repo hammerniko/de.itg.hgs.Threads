@@ -21,7 +21,7 @@ public class Steuerung {
 	//Konstruktor der Steuerung
 	public Steuerung() {
 		erzeugeObjekte();
-		initSpielObjekte();
+		
 	}
 	
 	
@@ -34,7 +34,7 @@ public class Steuerung {
 				dieOberflaeche = new OberFlaeche(this); 
 				
 				//Erzeuge Timer mit wiederholrate der die Steuerung kennt und umgekehrt (bidirektional)
-				timer = new MyTimer(this, 500);
+				timer = new MyTimer(this, 200);
 				
 				//Erzeuge Fresspunkte
 				initFresspunkte();	
@@ -73,7 +73,7 @@ public class Steuerung {
 			derFressPunkt[i].setzeGefressen(false);
 		}
 		
-		
+		timer.starte();
 	}
 	
 	private void zeichneSpielObjekte() {
@@ -83,7 +83,7 @@ public class Steuerung {
 	}
 	
 	public void starteSpiel() {
-		
+		initSpielObjekte();
 	}
 	
 	public void verarbeiteTastenDruck(int pRichtung) {
@@ -91,6 +91,7 @@ public class Steuerung {
 	}
 	
 	public void tickTimer() {
+		System.out.println("tick");
 		pacMan.bewege();	
 		pacMan.aktualisierePunkte();
 		
@@ -101,7 +102,7 @@ public class Steuerung {
 	private void initFresspunkte(){
 		derFressPunkt = new FressPunkt[ANZAHL_FRESSPUNKTE];
 		
-		//lokale Variablen für berechnete Position im Grid
+		//lokale Variablen fï¿½r berechnete Position im Grid
 		int x,y = 0;
 		
 		for (int i = 0; i < derFressPunkt.length; i++) {

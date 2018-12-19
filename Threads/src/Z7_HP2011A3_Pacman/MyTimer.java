@@ -9,16 +9,16 @@ public class MyTimer {
 	
 	Timer timer;
 	Steuerung dieSteuerung;
-	private int dasIntervall;
+	private long dasIntervall;
 
 	public MyTimer(Steuerung s, int pIntervall) {
 		dieSteuerung = s;
-		dasIntervall = pIntervall;
+		dasIntervall = (long) pIntervall;
 	}
 	
 	public void starte() {
 		timer = new Timer();
-		timer.schedule(new Task(), dasIntervall);
+		timer.schedule(new Task(), 1000, dasIntervall);
 		
 	}
 	
@@ -31,10 +31,13 @@ public class MyTimer {
 
 	    // run is a abstract method that defines task performed at scheduled time.
 	    public void run() {
-	        System.out.println(count+" :Timer");
-	        count++;
+	    	
+	        //System.out.println(count+" :Timer");
+	        //count++;
+	    	dieSteuerung.tickTimer();
+	    	}
 	    }
 	}
 
 	
-}
+

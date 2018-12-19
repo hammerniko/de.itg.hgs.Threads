@@ -113,6 +113,7 @@ public class OberFlaeche extends JFrame implements KeyListener{
 	}
 	
 	public void clickStart() {
+		System.out.println("Start clicked");
 		dieSteuerung.starteSpiel();
 	}
 
