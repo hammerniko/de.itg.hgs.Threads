@@ -18,7 +18,7 @@ public class OberFlaeche extends JFrame implements KeyListener{
 	//
 	private ZeichenFlaeche zeichenFlaeche;
 	
-	//Deklaration f�r Bidirektionale Assoziation
+	//Deklaration fr Bidirektionale Assoziation
 	//Gui-Steuerung
 	Steuerung dieSteuerung;
 	
@@ -148,6 +148,15 @@ public class OberFlaeche extends JFrame implements KeyListener{
 	public void zeigeMeldung(String meldung) {
 		
 		JOptionPane.showMessageDialog(this, meldung);
+		
+	}
+
+	public void setZeichenflaeche(ZeichenFlaeche zf) {
+		System.out.println("Zeichenflaeche gesetzt");
+		zeichenFlaeche = zf;
+		panelSpielfeld.add(zf);
+		panelSpielfeld.revalidate();
+		
 		
 	}
 

@@ -23,7 +23,7 @@ public class FressPunkt extends Spielelement{
 
 	@Override
 	public void zeichne(ZeichenFlaeche pZF) {
-		// TODO Auto-generated method stub
+		pZF.zeichneFresspunkte(getPosX(), getPosY());
 		
 	}
 	

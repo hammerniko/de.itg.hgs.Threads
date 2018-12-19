@@ -19,8 +19,10 @@ public class Steuerung {
 
 	// Konstruktor der Steuerung
 	public Steuerung() {
+		//Objekt für Zeichenflaeche
+	    zf = new ZeichenFlaeche();
 		erzeugeObjekte();
-
+		
 	}
 
 	private synchronized void erzeugeObjekte() {
@@ -30,6 +32,9 @@ public class Steuerung {
 		// Gui, damit eine bidirektionale Assoziation
 		// erstellt werden kann
 		dieOberflaeche = new OberFlaeche(this);
+		dieOberflaeche.setZeichenflaeche(zf);
+		
+		
 
 		// Erzeuge Timer mit wiederholrate der die Steuerung kennt und umgekehrt
 		// (bidirektional)
@@ -46,6 +51,8 @@ public class Steuerung {
 		for (int i = 0; i < derGeist.length; i++) {
 			derGeist[i] = new Geist(pacMan);
 		}
+		
+		
 
 	}
 
