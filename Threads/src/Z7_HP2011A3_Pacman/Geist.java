@@ -2,11 +2,11 @@ package Z7_HP2011A3_Pacman;
 
 public class Geist extends SpielFigur {
 
-	
-	
+	Pacman pacMan;
+	int xPM,yPM;
 	
 	public Geist(Pacman pPacman) {
-		// TODO Auto-generated constructor stub
+		pacMan = pPacman;
 	}
 
 	@Override
@@ -16,6 +16,11 @@ public class Geist extends SpielFigur {
 	}
 	
 	public void berechneRichtung() {
+		
+		//Wo ist der Pacman
+		xPM = pacMan.getPosX();
+		yPM = pacMan.getPosY();
+		
 		
 	}
 	

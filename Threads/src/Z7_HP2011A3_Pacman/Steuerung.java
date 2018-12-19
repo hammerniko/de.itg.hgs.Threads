@@ -79,7 +79,19 @@ public class Steuerung {
 	private void zeichneSpielObjekte() {
 		zf = dieOberflaeche.gibZeichenFlaeche();
 		
+		//Zeichne Fresspunkte
+		for (int i = 0; i < derFressPunkt.length; i++) {
+			derFressPunkt[i].zeichne(zf);
+		}
 		
+		//Zeichne Pacman
+		pacMan.zeichne(zf);
+
+		//Zeichne Geister
+		for (int i = 0; i < derGeist.length; i++) {
+			derGeist[i].zeichne(zf);
+			
+		}
 	}
 	
 	public void starteSpiel() {
@@ -91,14 +103,31 @@ public class Steuerung {
 	}
 	
 	public void tickTimer() {
+		
 		System.out.println("tick");
 		pacMan.bewege();	
 		pacMan.aktualisierePunkte();
 		
+		//Für alle Geister
+		for (int i = 0; i < derGeist.length; i++) {
+			derGeist[i].berechneRichtung();
+			derGeist[i].bewege();
+			
+		}
 		
+		zeichneSpielObjekte();
+		
+		pruefeSpielZustand();
 		
 	}
 	
+	private void pruefeSpielZustand() {
+		dieOberflaeche.schreibePunkte(pacMan.gibPunkte());
+		
+		
+	}
+
+
 	private void initFresspunkte(){
 		derFressPunkt = new FressPunkt[ANZAHL_FRESSPUNKTE];
 		

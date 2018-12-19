@@ -46,4 +46,8 @@ public class Pacman extends SpielFigur {
 	
 	}
 
+	public int gibPunkte() {
+		return diePunkte;
+	}
+
 }

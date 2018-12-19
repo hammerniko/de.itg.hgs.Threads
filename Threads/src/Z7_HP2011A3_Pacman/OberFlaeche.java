@@ -139,4 +139,9 @@ public class OberFlaeche extends JFrame implements KeyListener{
 		return zeichenFlaeche;
 	}
 
+	public void schreibePunkte(int punktePacman) {
+		tfPunkte.setText(""+punktePacman);
+		
+	}
+
 }
