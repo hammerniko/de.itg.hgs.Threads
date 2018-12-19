@@ -5,6 +5,14 @@ public abstract class Spielelement {
 	protected int posX;
 	protected int posY;
 	
+	public int getPosX() {
+		return posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
 	public void setzePos(int pPosX, int pPosY) {
 		posX = pPosX;
 		posY = pPosY;

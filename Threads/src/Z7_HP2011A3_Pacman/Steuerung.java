@@ -22,32 +22,61 @@ public class Steuerung {
 	
 	//Konstruktor der Steuerung
 	public Steuerung() {
+		erzeugeObjekte();
+		
 		initSpielObjekte();
 	}
 	
 	
+	private void erzeugeObjekte() {
+				//Die Steuerung kennt dieOberflaeche
+				//und uebergeibt sich selbst als Objekt
+				//an den Konstruktor der
+				//Gui, damit eine bidirektionale Assoziation
+				//erstellt werden kann
+				dieOberflaeche = new OberFlaeche(this); 
+				
+				//Erzeuge Timer mit wiederholrate der die Steuerung kennt und umgekehrt (bidirektional)
+				timer = new MyTimer(this, 500);
+				
+				//Erzeuge Fresspunkte
+				initFresspunkte();	
+				
+				//Erzeuge Pacman der die Fresspunkte kennt
+				pacMan = new Pacman(derFressPunkt);
+				
+				//Erzeuge Geister die den Pacman kennen
+				derGeist = new Geist[ANZAHL_GEISTER];
+				for (int i = 0; i < derGeist.length; i++) {
+					derGeist[i]=new Geist(pacMan);
+				}
+		
+	}
+
+
 	private void initSpielObjekte() {
-		//Die Steuerung kennt dieOberflaeche
-		//und uebergeibt sich selbst als Objekt
-		//an den Konstruktor der
-		//Gui, damit eine bidirektionale Assoziation
-		//erstellt werden kann
-		dieOberflaeche = new OberFlaeche(this); 
 		
-		//Erzeuge Timer mit wiederholrate der die Steuerung kennt und umgekehrt (bidirektional)
-		timer = new MyTimer(this, 500);
+		//Keine Bewegung
+		pacMan.setzeRichtung(0);
 		
-		//Erzeuge Fresspunkte
-		initFresspunkte();	
+		//Pacman in der Mitte positionieren
+		pacMan.setzePos(7, 4);
 		
-		//Erzeuge Pacman der die Fresspunkte kennt
-		pacMan = new Pacman(derFressPunkt);
+		//loeschen aller Wertungspunkte
+		pacMan.loeschePunkte();
 		
-		//Erzeuge Geister die den Pacman kennen
-		derGeist = new Geist[ANZAHL_GEISTER];
-		for (int i = 0; i < derGeist.length; i++) {
-			derGeist[i]=new Geist(pacMan);
+		//Geister in die Ecken setzen
+		derGeist[0].setzePos(0, 0);
+		derGeist[1].setzePos(14, 0);
+		derGeist[2].setzePos(0, 8);
+		derGeist[3].setzePos(14, 8);
+		
+		//Fresspunkte auf nicht gefressen setzen
+		for (int i = 0; i < derFressPunkt.length; i++) {
+			derFressPunkt[i].setzeGefressen(false);
 		}
+		
+		
 	}
 	
 	private void zeichneSpielObjekte() {
