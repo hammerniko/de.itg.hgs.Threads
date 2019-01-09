@@ -22,7 +22,7 @@ public class ZeichenFlaeche extends JLabel {
 		setOpaque(true);
 		setDoubleBuffered(true);
 		setBackground(Color.BLUE);
-		spriteNr = 0;
+		spriteNr = 1;
 	}
 
 	@Override
@@ -63,18 +63,35 @@ public class ZeichenFlaeche extends JLabel {
 		
 		//Pacman geht nach rechts
 		//und oeffnet und schliesst das Maul
-		spriteNr = (spriteNr + 1) % 4;
+		spriteNr = (spriteNr % 6) +1;
+		System.out.println(spriteNr);
 		g.setColor(Color.BLUE);
 		switch (spriteNr) {
 		case 1: g.fillArc(x, y, 20, 20, 45, -90); break; //Ganz auf
 		case 2: g.fillArc(x, y, 20, 20, 40, -85); break;
 		case 3: g.fillArc(x, y, 20, 20, 30, -70); break;
 		case 4: g.fillArc(x, y, 20, 20, 20, -20); break; //geschlossen
+		case 5: g.fillArc(x, y, 20, 20, 30, -70); break;
+		case 6: g.fillArc(x, y, 20, 20, 40, -85); break;
 
 		default:
 			break;
 		}
 		
+		//Pacman Auge
+		g.setColor(Color.WHITE);
+		
+		switch (spriteNr) {
+		case 1: g.fillOval(x+5, y+3, 5, 5); break; //
+		case 2: g.fillOval(x+6, y+3, 5, 5); break;
+		case 3: g.fillOval(x+7, y+3, 5, 5); break;
+		case 4: g.fillOval(x+7, y+3, 5, 5); break; //geschlossen
+		case 5: g.fillOval(x+7, y+3, 5, 5); break;
+		case 6: g.fillOval(x+6, y+3, 5, 5); break; //geschlosse
+
+		default:
+			break;
+		}
 		
 	}
 
