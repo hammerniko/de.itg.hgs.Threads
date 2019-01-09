@@ -19,7 +19,7 @@ public class Steuerung {
 
 	// Konstruktor der Steuerung
 	public Steuerung() {
-		//Objekt für Zeichenflaeche
+		//Objekt fuer Zeichenflaeche
 	    zf = new ZeichenFlaeche();
 		erzeugeObjekte();
 		

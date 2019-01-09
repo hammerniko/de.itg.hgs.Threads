@@ -32,8 +32,8 @@ public class MyTimer {
 	    // run is a abstract method that defines task performed at scheduled time.
 	    public void run() {
 	    	
-	        //System.out.println(count+" :Timer");
-	        //count++;
+	        System.out.println(count+" :Timer");
+	        count++;
 	    	dieSteuerung.tickTimer();
 	    	}
 	    }

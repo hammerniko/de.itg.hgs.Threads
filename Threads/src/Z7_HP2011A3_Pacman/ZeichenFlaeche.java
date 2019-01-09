@@ -1,12 +1,13 @@
 package Z7_HP2011A3_Pacman;
 
 import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-import javax.swing.JPanel;
+import javax.swing.JLabel;
 
-public class ZeichenFlaeche extends JPanel{
+public class ZeichenFlaeche extends JLabel{
 	
 	public static final int ANZAHL_SPALTEN = 15;
 	public static final int ANZAHL_ZEILEN = 9;
@@ -17,11 +18,18 @@ public class ZeichenFlaeche extends JPanel{
 	
 	public ZeichenFlaeche() {
 		super();
+		setText(" ");
+		setOpaque(true);
+		setDoubleBuffered(true);
+		setBackground(Color.BLUE );
 	}
 	
 	
 	@Override
 	protected void paintComponent(Graphics g) {
+		
+		super.paintComponent(g);
+		
 		// G2D Objekt erlaubt mehr Grafikoptionen als das normale Graphics Objekt
 				g2 = (Graphics2D) g;
 
@@ -32,15 +40,18 @@ public class ZeichenFlaeche extends JPanel{
 				super.paintComponent(g2);
 
 				// aktuelle Breite und Hoehe merken
-				b = getWidth();
-				h = getHeight();
-
-				g2.fillOval(10, 10, 5, 50);
+				b = this.getWidth();
+				h = this.getHeight();
+ 
+				
+				//g.drawLine(0, 0, 150, 150);
 	}
 	
 	public void zeichneFresspunkte(int x, int y){
 		
-		//g2.fillOval(x, y, 5, 50);
+		Graphics g = getGraphics();
+		g.drawLine(0, 0, 200, 200);
+		
 	}
 
 }
