@@ -12,9 +12,7 @@ public class Pacman extends SpielFigur {
 
 	@Override
 	public void zeichne(ZeichenFlaeche zf) {
-
 		zf.zeichnePacMan(getPosX(), getPosY());
-
 	}
 
 	public void setzeRichtung(int pRichtung) {

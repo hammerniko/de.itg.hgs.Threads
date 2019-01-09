@@ -40,7 +40,7 @@ public class Steuerung {
 
 		// Erzeuge Timer mit wiederholrate der die Steuerung kennt und umgekehrt
 		// (bidirektional)
-		timer = new MyTimer(this, 200);
+		timer = new MyTimer(this, 100);
 
 		// Erzeuge Pacman der die Fresspunkte kennt
 		pacMan = new Pacman(derFressPunkt);
@@ -59,7 +59,7 @@ public class Steuerung {
 		pacMan.setzeRichtung(0);
 
 		// Pacman in der Mitte positionieren
-		pacMan.setzePos(7, 4);
+		pacMan.setzePos(70, 40);
 
 		// loeschen aller Wertungspunkte
 		pacMan.loeschePunkte();
@@ -106,7 +106,7 @@ public class Steuerung {
 
 	public void tickTimer() {
 
-		System.out.println("tick");
+		//System.out.println("tick");
 		pacMan.bewege();
 		pacMan.aktualisierePunkte();
 

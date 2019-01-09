@@ -37,8 +37,7 @@ public class ZeichenFlaeche extends JLabel {
 		// Liniendicke Aendern
 		// g2.setStroke(new BasicStroke(LINIENDICKE));
 
-		// Methode der Oberklasse (JComponent) ausfuehren
-		super.paintComponent(g2);
+		
 
 		// aktuelle Breite und Hoehe merken
 		b = this.getWidth();
