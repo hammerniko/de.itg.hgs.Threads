@@ -12,6 +12,7 @@ public class ZeichenFlaeche extends JLabel {
 	public static final int ANZAHL_SPALTEN = 15;
 	public static final int ANZAHL_ZEILEN = 9;
 
+	private int spriteNr;
 	private int b;
 	private int h;
 	Graphics2D g2;
@@ -21,6 +22,7 @@ public class ZeichenFlaeche extends JLabel {
 		setOpaque(true);
 		setDoubleBuffered(true);
 		setBackground(Color.BLUE);
+		spriteNr = 0;
 	}
 
 	@Override
@@ -53,10 +55,27 @@ public class ZeichenFlaeche extends JLabel {
 	}
 	
 	public void zeichnePacMan(int x, int y) {
-		Graphics g = getGraphics();
+		Graphics2D g = (Graphics2D) getGraphics();
 		g.setColor(Color.red);
 		
-		g.fillOval(x, y, 10, 10);
+		g.fillOval(x, y, 20, 20);
+		g.setColor(Color.BLUE);
+		
+		
+		spriteNr = (spriteNr + 1) % 4;
+		
+		
+		//Pacman geht nach rechts
+		switch (spriteNr) {
+		case 1: g.fillArc(x, y, 20, 20, 45, -90); break;
+		case 2: g.fillArc(x, y, 20, 20, 40, -85); break;
+		case 3: g.fillArc(x, y, 20, 20, 30, -70); break;
+		case 4: g.fillArc(x, y, 20, 20, 10, -20); break;
+
+		default:
+			break;
+		}
+		
 		
 	}
 
