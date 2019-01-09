@@ -159,7 +159,9 @@ public class Steuerung {
 
 			// Berechne Position im Grid
 			x = i % anzSpalten;
-			y = i / anzZeilen;
+			y = i / anzSpalten;
+			
+			System.out.print("\nx: "+x+ " y:"+y);
 
 			// Umgehe/überspringe Start-Position des Pacman in der Mitte
 			// if(x==anzSpalten/2 && y==anzZeilen/2) {i++;}
