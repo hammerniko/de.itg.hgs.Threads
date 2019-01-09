@@ -7,11 +7,13 @@ public class Pacman extends SpielFigur {
 
 	public Pacman(FressPunkt[] pFP) {
 		derFresspunkt = pFP;
+		setzePos(350, 200);
 	}
 
 	@Override
-	public void zeichne(ZeichenFlaeche pZF) {
-		pZF.zeichnePacMan(getPosX(), getPosY());
+	public void zeichne(ZeichenFlaeche zf) {
+
+		zf.zeichnePacMan(getPosX(), getPosY());
 
 	}
 
@@ -43,7 +45,7 @@ public class Pacman extends SpielFigur {
 			}
 
 		}
-	
+
 	}
 
 	public int gibPunkte() {
