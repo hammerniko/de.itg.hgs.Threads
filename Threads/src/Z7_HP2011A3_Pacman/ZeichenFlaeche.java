@@ -49,7 +49,7 @@ public class ZeichenFlaeche extends JLabel {
 	public void zeichneFresspunkte(int x, int y) {
 		
 		Graphics g = getGraphics();
-		g.setColor(Color.BLACK);
+		g.setColor(Color.YELLOW);
 		g.fillOval(x, y, FressPunkt.GROESSE_IN_PX, FressPunkt.GROESSE_IN_PX);
 	}
 	
@@ -78,7 +78,7 @@ public class ZeichenFlaeche extends JLabel {
 		}
 		
 		//Pacman Auge
-		g.setColor(Color.WHITE);
+		g.setColor(Color.BLACK);
 		
 		switch (spriteNr) {
 		case 1: g.fillOval(x+5, y+3, 5, 5); break; //
