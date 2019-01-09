@@ -7,51 +7,64 @@ import java.awt.Graphics2D;
 
 import javax.swing.JLabel;
 
-public class ZeichenFlaeche extends JLabel{
-	
+public class ZeichenFlaeche extends JLabel {
+
 	public static final int ANZAHL_SPALTEN = 15;
 	public static final int ANZAHL_ZEILEN = 9;
-	
+
 	private int b;
 	private int h;
 	Graphics2D g2;
-	
+
 	public ZeichenFlaeche() {
 		super();
-		setText(" ");
 		setOpaque(true);
 		setDoubleBuffered(true);
-		setBackground(Color.BLUE );
+		setBackground(Color.BLUE);
 	}
-	
-	
+
 	@Override
 	protected void paintComponent(Graphics g) {
-		
+
 		super.paintComponent(g);
-		
-		// G2D Objekt erlaubt mehr Grafikoptionen als das normale Graphics Objekt
-				g2 = (Graphics2D) g;
 
-				// Liniendicke Aendern
-				//g2.setStroke(new BasicStroke(LINIENDICKE));
+		// G2D Objekt erlaubt mehr Grafikoptionen als das normale Graphics
+		// Objekt
+		g2 = (Graphics2D) g;
 
-				// Methode der Oberklasse (JComponent) ausfuehren
-				super.paintComponent(g2);
+		// Liniendicke Aendern
+		// g2.setStroke(new BasicStroke(LINIENDICKE));
 
-				// aktuelle Breite und Hoehe merken
-				b = this.getWidth();
-				h = this.getHeight();
- 
-				
-				//g.drawLine(0, 0, 150, 150);
+		// Methode der Oberklasse (JComponent) ausfuehren
+		super.paintComponent(g2);
+
+		// aktuelle Breite und Hoehe merken
+		b = this.getWidth();
+		h = this.getHeight();
+
+		// g.drawLine(0, 0, 150, 150);
 	}
-	
-	public void zeichneFresspunkte(int x, int y){
-		
+
+	public void zeichneFresspunkte(int x, int y) {
+
 		Graphics g = getGraphics();
-		g.drawLine(0, 0, 200, 200);
-		
+		g.fillOval(x, y, 5, 5);
+
 	}
 
+	public int getB() {
+		return b;
+	}
+
+	public int getH() {
+		return h;
+	}
+
+	public void setB(int b) {
+		this.b = b;
+	}
+
+	public void setH(int h) {
+		this.h = h;
+	}
 }

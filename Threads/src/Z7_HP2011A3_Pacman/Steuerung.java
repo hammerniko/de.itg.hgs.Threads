@@ -21,27 +21,29 @@ public class Steuerung {
 	public Steuerung() {
 		//Objekt fuer Zeichenflaeche
 	    zf = new ZeichenFlaeche();
+	    dieOberflaeche = new OberFlaeche(this);
+		dieOberflaeche.setZeichenflaeche(zf);
+		
+		
 		erzeugeObjekte();
 		
 	}
 
-	private synchronized void erzeugeObjekte() {
+	private void erzeugeObjekte() {
 		// Die Steuerung kennt dieOberflaeche
 		// und uebergeibt sich selbst als Objekt
 		// an den Konstruktor der
 		// Gui, damit eine bidirektionale Assoziation
 		// erstellt werden kann
-		dieOberflaeche = new OberFlaeche(this);
-		dieOberflaeche.setZeichenflaeche(zf);
 		
-		
+		// Erzeuge Fresspunkte
+		initFresspunkte();
 
 		// Erzeuge Timer mit wiederholrate der die Steuerung kennt und umgekehrt
 		// (bidirektional)
 		timer = new MyTimer(this, 200);
 
-		// Erzeuge Fresspunkte
-		initFresspunkte();
+		
 
 		// Erzeuge Pacman der die Fresspunkte kennt
 		pacMan = new Pacman(derFressPunkt);
@@ -149,7 +151,7 @@ public class Steuerung {
 		
 	}
 
-	private void initFresspunkte() {
+	private synchronized void initFresspunkte() {
 		derFressPunkt = new FressPunkt[ANZAHL_FRESSPUNKTE];
 
 		// lokale Variablen f�r berechnete Position im Grid
@@ -157,14 +159,34 @@ public class Steuerung {
 
 		for (int i = 0; i < derFressPunkt.length; i++) {
 
-			// Berechne Position im Grid
+			
+			// Umgehe/überspringe Start-Position des Pacman in der Mitte
+			// if(x==anzSpalten/2 && y==anzZeilen/2) {i++;}
+			
+			
+			// Berechne Positionsnr im Grid
 			x = i % anzSpalten;
 			y = i / anzSpalten;
 			
-			System.out.print("\nx: "+x+ " y:"+y);
+			//Kontrolle der Positionen auf der Konsole
+			//System.out.print("\nx: "+x+ " y:"+y);
 
-			// Umgehe/überspringe Start-Position des Pacman in der Mitte
-			// if(x==anzSpalten/2 && y==anzZeilen/2) {i++;}
+			//Berechne echte Position auf der Zeichenflaeche
+			//abhaengig von der Positionsnr
+			int breite = zf.getB();
+			int hoehe = zf.getH();
+			int abstandX = breite / (anzSpalten+1);
+			int abstandY = hoehe / (anzZeilen+1);
+			
+			//System.out.println("breite"+breite);
+			//System.out.println("hoehe"+hoehe);
+			x = (x+1)*abstandX;
+			y= (y+1)*abstandY;
+			
+			//Kontrolle der echten Positionen auf der Konsole
+			//System.out.print("\nx: "+x+ " y:"+y);
+			
+			
 
 			// Erzeuge Fresspunkt mit Position für Grid
 			derFressPunkt[i] = new FressPunkt(x, y);

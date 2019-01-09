@@ -147,6 +147,8 @@ public class OberFlaeche extends JFrame implements KeyListener {
 	public void setZeichenflaeche(ZeichenFlaeche zf) {
 		System.out.println("Zeichenflaeche gesetzt");
 		zeichenFlaeche = zf;
+		zeichenFlaeche.setB(panelSpielfeld.getWidth());
+		zeichenFlaeche.setH(panelSpielfeld.getHeight());
 		zeichenFlaeche.setSize(panelSpielfeld.getWidth(),panelSpielfeld.getHeight());
 		if (zf != null) {
 			panelSpielfeld.add(zf);
