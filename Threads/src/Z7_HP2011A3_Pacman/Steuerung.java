@@ -11,7 +11,7 @@ public class Steuerung {
 	private static final int ANZAHL_GEISTER = 4;
 	private int anzSpalten = ZeichenFlaeche.ANZAHL_SPALTEN;
 	private int anzZeilen = ZeichenFlaeche.ANZAHL_ZEILEN;
-	final int ANZAHL_FRESSPUNKTE = (anzSpalten * anzZeilen) - 1;
+	final int ANZAHL_FRESSPUNKTE = (anzSpalten * anzZeilen) ;
 
 	// Deklaration der Gui, damit die Steuerung
 	// eine bidirektionale Assoziation zur Gui aufbauen kann
@@ -19,14 +19,13 @@ public class Steuerung {
 
 	// Konstruktor der Steuerung
 	public Steuerung() {
-		//Objekt fuer Zeichenflaeche
-	    zf = new ZeichenFlaeche();
-	    dieOberflaeche = new OberFlaeche(this);
+		// Objekt fuer Zeichenflaeche
+		zf = new ZeichenFlaeche();
+		dieOberflaeche = new OberFlaeche(this);
 		dieOberflaeche.setZeichenflaeche(zf);
-		
-		
+
 		erzeugeObjekte();
-		
+
 	}
 
 	private void erzeugeObjekte() {
@@ -35,15 +34,13 @@ public class Steuerung {
 		// an den Konstruktor der
 		// Gui, damit eine bidirektionale Assoziation
 		// erstellt werden kann
-		
+
 		// Erzeuge Fresspunkte
 		initFresspunkte();
 
 		// Erzeuge Timer mit wiederholrate der die Steuerung kennt und umgekehrt
 		// (bidirektional)
 		timer = new MyTimer(this, 200);
-
-		
 
 		// Erzeuge Pacman der die Fresspunkte kennt
 		pacMan = new Pacman(derFressPunkt);
@@ -53,8 +50,6 @@ public class Steuerung {
 		for (int i = 0; i < derGeist.length; i++) {
 			derGeist[i] = new Geist(pacMan);
 		}
-		
-		
 
 	}
 
@@ -132,64 +127,57 @@ public class Steuerung {
 		boolean gefressen;
 		int punkte = pacMan.gibPunkte();
 		dieOberflaeche.schreibePunkte(punkte);
-		
+
 		for (int i = 0; i < derGeist.length; i++) {
-		gefressen = derGeist[i].pruefePacManGefressen();
-			if(gefressen || punkte >=133){
-			timer.stoppe();
-			
-			if(gefressen==false){
-				dieOberflaeche.zeigeMeldung("Gratuliere, Du Hast gewonnen");
-			}
-			else{
-				dieOberflaeche.zeigeMeldung("Du Hast verloren und "+punkte+" erreicht");
-			}
-				
+			gefressen = derGeist[i].pruefePacManGefressen();
+			if (gefressen || punkte >= 133) {
+				timer.stoppe();
+
+				if (gefressen == false) {
+					dieOberflaeche.zeigeMeldung("Gratuliere, Du Hast gewonnen");
+				} else {
+					dieOberflaeche.zeigeMeldung("Du Hast verloren und "
+							+ punkte + " erreicht");
+				}
+
 			}
 		}
-		
-		
+
 	}
 
 	private synchronized void initFresspunkte() {
 		derFressPunkt = new FressPunkt[ANZAHL_FRESSPUNKTE];
 
-		// lokale Variablen f�r berechnete Position im Grid
-		int x, y = 0;
+		// lokale Variablen fuer berechnete PositionsNr im Grid
+		int x = 0, y = 0;
+		int xPos = 0, yPos = 0;
 
 		for (int i = 0; i < derFressPunkt.length; i++) {
 
-			
-			// Umgehe/überspringe Start-Position des Pacman in der Mitte
-			// if(x==anzSpalten/2 && y==anzZeilen/2) {i++;}
-			
-			
 			// Berechne Positionsnr im Grid
 			x = i % anzSpalten;
 			y = i / anzSpalten;
-			
-			//Kontrolle der Positionen auf der Konsole
-			//System.out.print("\nx: "+x+ " y:"+y);
 
-			//Berechne echte Position auf der Zeichenflaeche
-			//abhaengig von der Positionsnr
+			// Kontrolle der Positionen auf der Konsole
+			// System.out.print("\nx: "+x+ " y:"+y);
+
+			// Berechne echte Position auf der Zeichenflaeche
+			// abhaengig von der Positionsnr
 			int breite = zf.getB();
 			int hoehe = zf.getH();
-			int abstandX = breite / (anzSpalten+1);
-			int abstandY = hoehe / (anzZeilen+1);
+			int abstandX = breite / (anzSpalten + 1);
+			int abstandY = hoehe / (anzZeilen + 1);
+
+			// System.out.println("breite"+breite);
+			// System.out.println("hoehe"+hoehe);
+			xPos = (x + 1) * abstandX;
+			yPos = (y + 1) * abstandY;
+
 			
-			//System.out.println("breite"+breite);
-			//System.out.println("hoehe"+hoehe);
-			x = (x+1)*abstandX;
-			y= (y+1)*abstandY;
-			
-			//Kontrolle der echten Positionen auf der Konsole
-			//System.out.print("\nx: "+x+ " y:"+y);
-			
-			
+		
 
 			// Erzeuge Fresspunkt mit Position für Grid
-			derFressPunkt[i] = new FressPunkt(x, y);
+			derFressPunkt[i] = new FressPunkt(xPos, yPos);
 		}
 
 	}
