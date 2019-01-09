@@ -7,10 +7,9 @@ import java.awt.Graphics2D;
 
 import javax.swing.JLabel;
 
-public class ZeichenFlaeche extends JLabel {
+public class ZeichenFlaeche extends JLabel implements Grid {
 
-	public static final int ANZAHL_SPALTEN = 15;
-	public static final int ANZAHL_ZEILEN = 9;
+	
 
 	private int spriteNr;
 	private int b;

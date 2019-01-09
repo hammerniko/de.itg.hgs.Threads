@@ -2,8 +2,11 @@ package Z7_HP2011A3_Pacman;
 
 public abstract class SpielFigur extends Spielelement {
 
-	protected int dieRichtung; //1=rechts, 2=oben, 3=links, 4=unten
-
+	protected int dieRichtung; 
+	public static final int RECHTS = 1;
+	public static final int OBEN = 2;
+	public static final int LINKS = 3;
+	public static final int UNTEN = 4;
 	
 
 	public void bewege() {

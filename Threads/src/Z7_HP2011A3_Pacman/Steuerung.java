@@ -60,7 +60,8 @@ public class Steuerung {
 		pacMan.setzeRichtung(0);
 
 		// Pacman in der Mitte positionieren
-		pacMan.setzePos(70, 40);
+		
+		pacMan.setzePos(7, 4);
 
 		// loeschen aller Wertungspunkte
 		pacMan.loeschePunkte();

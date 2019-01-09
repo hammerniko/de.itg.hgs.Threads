@@ -1,6 +1,6 @@
 package Z7_HP2011A3_Pacman;
 
-public abstract class Spielelement {
+public abstract class Spielelement implements Grid {
 	
 	protected int posX;
 	protected int posY;
@@ -14,6 +14,7 @@ public abstract class Spielelement {
 	}
 
 	public void setzePos(int pPosX, int pPosY) {
+		
 		posX = pPosX;
 		posY = pPosY;
 	}
