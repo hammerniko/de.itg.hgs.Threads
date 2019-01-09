@@ -46,10 +46,18 @@ public class ZeichenFlaeche extends JLabel {
 	}
 
 	public void zeichneFresspunkte(int x, int y) {
-
+		
 		Graphics g = getGraphics();
-		g.fillOval(x, y, 5, 5);
-
+		g.setColor(Color.BLACK);
+		g.fillOval(x, y, FressPunkt.GROESSE_IN_PX, FressPunkt.GROESSE_IN_PX);
+	}
+	
+	public void zeichnePacMan(int x, int y) {
+		Graphics g = getGraphics();
+		g.setColor(Color.red);
+		
+		g.fillOval(x, y, 10, 10);
+		
 	}
 
 	public int getB() {

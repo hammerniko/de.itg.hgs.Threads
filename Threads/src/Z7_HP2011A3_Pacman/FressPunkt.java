@@ -3,6 +3,8 @@ package Z7_HP2011A3_Pacman;
 public class FressPunkt extends Spielelement{
 
 	private boolean gefressen;
+	public static final int GROESSE_IN_PX = 5;
+	
 	
 	
 	//Konstruktor mit Paramtern für Oberklasse

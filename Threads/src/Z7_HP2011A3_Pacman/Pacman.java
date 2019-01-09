@@ -11,7 +11,7 @@ public class Pacman extends SpielFigur {
 
 	@Override
 	public void zeichne(ZeichenFlaeche pZF) {
-		// TODO Auto-generated method stub
+		pZF.zeichnePacMan(getPosX(), getPosY());
 
 	}
 
