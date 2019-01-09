@@ -58,19 +58,18 @@ public class ZeichenFlaeche extends JLabel {
 		Graphics2D g = (Graphics2D) getGraphics();
 		g.setColor(Color.red);
 		
+		//Grundkoerper
 		g.fillOval(x, y, 20, 20);
-		g.setColor(Color.BLUE);
-		
-		
-		spriteNr = (spriteNr + 1) % 4;
-		
 		
 		//Pacman geht nach rechts
+		//und oeffnet und schliesst das Maul
+		spriteNr = (spriteNr + 1) % 4;
+		g.setColor(Color.BLUE);
 		switch (spriteNr) {
-		case 1: g.fillArc(x, y, 20, 20, 45, -90); break;
+		case 1: g.fillArc(x, y, 20, 20, 45, -90); break; //Ganz auf
 		case 2: g.fillArc(x, y, 20, 20, 40, -85); break;
 		case 3: g.fillArc(x, y, 20, 20, 30, -70); break;
-		case 4: g.fillArc(x, y, 20, 20, 10, -20); break;
+		case 4: g.fillArc(x, y, 20, 20, 20, -20); break; //geschlossen
 
 		default:
 			break;
