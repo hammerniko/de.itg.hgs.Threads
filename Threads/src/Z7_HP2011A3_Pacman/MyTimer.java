@@ -7,9 +7,10 @@ import java.util.TimerTask;
 
 public class MyTimer {
 	
-	Timer timer;
+	
 	Steuerung dieSteuerung;
 	private long dasIntervall;
+	private Timer timer;
 
 	public MyTimer(Steuerung s, int pIntervall) {
 		dieSteuerung = s;

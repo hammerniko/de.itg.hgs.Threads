@@ -2,6 +2,7 @@ package Z7_HP2011A3_Pacman;
 
 public class Steuerung {
 
+	//Assoziationen
 	ZeichenFlaeche zf;
 	Pacman pacMan;
 	FressPunkt derFressPunkt[];
