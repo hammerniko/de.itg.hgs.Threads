@@ -42,7 +42,7 @@ public class ZeichenFlaeche extends JLabel implements Grid {
 		b = this.getWidth();
 		h = this.getHeight();
 
-		// g.drawLine(0, 0, 150, 150);
+		
 	}
 
 	public void zeichneFresspunkte(int x, int y) {
@@ -54,6 +54,9 @@ public class ZeichenFlaeche extends JLabel implements Grid {
 	
 	public void zeichnePacMan(int x, int y) {
 		Graphics2D g = (Graphics2D) getGraphics();
+		g.setColor(Color.BLUE);
+		g.fillRect(x-1, y, 25, 25);
+		
 		g.setColor(Color.red);
 		
 		//Grundkoerper

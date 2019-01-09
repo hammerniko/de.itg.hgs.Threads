@@ -57,11 +57,11 @@ public class Steuerung {
 	private void initSpielObjekte() {
 
 		// Keine Bewegung
-		pacMan.setzeRichtung(0);
+		pacMan.setzeRichtung(SpielFigur.LINKS);
 
 		// Pacman in der Mitte positionieren
 		
-		pacMan.setzePos(7, 4);
+		pacMan.setzePos(70, 40);
 
 		// loeschen aller Wertungspunkte
 		pacMan.loeschePunkte();
@@ -178,7 +178,7 @@ public class Steuerung {
 			
 		
 
-			// Erzeuge Fresspunkt mit Position für Grid
+			// Erzeuge Fresspunkt mit Position fuer Grid
 			derFressPunkt[i] = new FressPunkt(xPos, yPos);
 		}
 
