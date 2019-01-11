@@ -101,8 +101,30 @@ public class OberFlaeche extends JFrame implements KeyListener {
 
 	}
 
-	public void ereignisTastatur() {
-
+	public void ereignisTastatur(KeyEvent ke) {
+		
+		System.out.println("Pressed");
+		
+		int keyCode = ke.getKeyCode();
+		int richtung=SpielFigur.STOPP;
+		
+		switch( keyCode ) { 
+        case KeyEvent.VK_UP:
+            richtung = SpielFigur.OBEN;
+            break;
+        case KeyEvent.VK_DOWN:
+        	richtung = SpielFigur.UNTEN;
+            break;
+        case KeyEvent.VK_LEFT:
+        	richtung = SpielFigur.LINKS;
+            break;
+        case KeyEvent.VK_RIGHT :
+        	richtung=SpielFigur.RECHTS;
+            break;
+            
+        default: break;     
+		} 
+        dieSteuerung.verarbeiteTastenDruck(richtung);   
 	}
 
 	public void clickStart() {
@@ -113,28 +135,8 @@ public class OberFlaeche extends JFrame implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent ke) {
-		int keyCode = ke.getKeyCode();
-		
-		
-		switch( keyCode ) { 
-        case KeyEvent.VK_UP:
-            dieSteuerung.verarbeiteTastenDruck(SpielFigur.OBEN);
-            break;
-        case KeyEvent.VK_DOWN:
-        	dieSteuerung.verarbeiteTastenDruck(SpielFigur.UNTEN);
-            break;
-        case KeyEvent.VK_LEFT:
-        	dieSteuerung.verarbeiteTastenDruck(SpielFigur.LINKS);
-            break;
-        case KeyEvent.VK_RIGHT :
-        	dieSteuerung.verarbeiteTastenDruck(SpielFigur.RECHTS);
-            break;
+		ereignisTastatur(ke);
      }
-		
-		
-		
-
-	}
 
 	@Override
 	public void keyReleased(KeyEvent ke) {
@@ -182,6 +184,11 @@ public class OberFlaeche extends JFrame implements KeyListener {
 		
 		this.addKeyListener(this);
 
+		
+	}
+
+	public void setFocus() {
+		this.requestFocus();
 		
 	}
 

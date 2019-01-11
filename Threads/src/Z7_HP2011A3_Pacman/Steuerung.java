@@ -105,11 +105,14 @@ public class Steuerung {
 	}
 
 	public void verarbeiteTastenDruck(int pRichtung) {
-
+		pacMan.setzeRichtung(pRichtung);
 	}
 
 	public void tickTimer() {
 
+		//Keylistener abfragen
+		dieOberflaeche.setFocus();
+		
 		//System.out.println("tick");
 		pacMan.bewege();
 		pacMan.aktualisierePunkte();
