@@ -1,15 +1,14 @@
 package Z7_HP2011A3_Pacman;
 
 public class Pacman extends SpielFigur {
-
-	
 	
 	FressPunkt derFresspunkt[];
 	private int diePunkte;
 
-	public Pacman(FressPunkt[] pFP) {
+	public Pacman(FressPunkt[] pFP, int groesse) {
 		derFresspunkt = pFP;
-		
+		breite = groesse;
+		hoehe = groesse;
 	}
 
 	@Override

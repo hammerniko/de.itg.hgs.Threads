@@ -8,8 +8,8 @@ public class FressPunkt extends Spielelement{
 	
 	
 	//Konstruktor mit Paramtern für Oberklasse
-	public FressPunkt(int pPosX, int pPosY) {
-		super.setzePos(pPosX, pPosY);
+	public FressPunkt(int pX, int pY) {
+		super.setzePos(pX, pY);
 	}
 
 

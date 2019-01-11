@@ -44,12 +44,15 @@ public class Steuerung {
 		timer = new MyTimer(this, 100);
 
 		// Erzeuge Pacman der die Fresspunkte kennt
-		pacMan = new Pacman(derFressPunkt);
-
+		pacMan = new Pacman(derFressPunkt, 20);
+        pacMan.setZeichenFlaeche(zf);
+		
+		
 		// Erzeuge Geister die den Pacman kennen
 		derGeist = new Geist[ANZAHL_GEISTER];
 		for (int i = 0; i < derGeist.length; i++) {
-			derGeist[i] = new Geist(pacMan);
+			derGeist[i] = new Geist(pacMan,20);
+			derGeist[i].setZeichenFlaeche(zf);
 		}
 
 	}
@@ -57,20 +60,19 @@ public class Steuerung {
 	private void initSpielObjekte() {
 
 		// Keine Bewegung
-		pacMan.setzeRichtung(SpielFigur.LINKS);
+		pacMan.setzeRichtung(SpielFigur.RECHTS);
 
 		// Pacman in der Mitte positionieren
-		
-		pacMan.setzePos(70, 40);
+		pacMan.setzePosImGrid(7, 4);
 
 		// loeschen aller Wertungspunkte
 		pacMan.loeschePunkte();
 
 		// Geister in die Ecken setzen
-		derGeist[0].setzePos(0, 0);
-		derGeist[1].setzePos(14, 0);
-		derGeist[2].setzePos(0, 8);
-		derGeist[3].setzePos(14, 8);
+		derGeist[0].setzePosImGrid(0, 0);
+		derGeist[1].setzePosImGrid(14, 0);
+		derGeist[2].setzePosImGrid(0, 8);
+		derGeist[3].setzePosImGrid(14, 8);
 
 		// Fresspunkte auf nicht gefressen setzen
 		for (int i = 0; i < derFressPunkt.length; i++) {
@@ -175,7 +177,9 @@ public class Steuerung {
 			xPos = (x + 1) * abstandX;
 			yPos = (y + 1) * abstandY;
 
-			
+			//Groesse der Fresspunkte 
+			xPos = xPos + FressPunkt.GROESSE_IN_PX/2;
+			yPos = yPos - FressPunkt.GROESSE_IN_PX/2;
 		
 
 			// Erzeuge Fresspunkt mit Position fuer Grid

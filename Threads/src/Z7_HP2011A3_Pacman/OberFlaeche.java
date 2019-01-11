@@ -42,7 +42,7 @@ public class OberFlaeche extends JFrame implements KeyListener {
 	public OberFlaeche(Steuerung s) {
 
 		// Die eigene Steuerung zeigt auf
-		// das �bergebene Steuerungsobjekt
+		// das uebergebene Steuerungsobjekt
 		// damit ist die bidirektionale Assoziation
 		// zwischen Gui und Steuerung erstellt
 		dieSteuerung = s;

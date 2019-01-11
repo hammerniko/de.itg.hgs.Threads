@@ -10,6 +10,7 @@ public abstract class SpielFigur extends Spielelement {
 	public static final int UNTEN = 4;
 	
 	private int x,y;
+	
 	public void bewege() {
 		x= getPosX();
 		y=getPosY();
@@ -44,13 +45,11 @@ public abstract class SpielFigur extends Spielelement {
 	}
 
 	public boolean hatGleichePos(int pPosX, int pPosY) {
-		if (this.posX == pPosX && this.posY == pPosY) {
-			return true;
-		} else {
-			return false;
-		}
+		
+		//Muss optimiert werden, so dass
+		//bei einer ersten Berührung des Koerperumrisses
+		//true zurueckgegeben wird-
+		
+		return (this.posX == pPosX && this.posY == pPosY);
 	}
-	
-	
-
 }

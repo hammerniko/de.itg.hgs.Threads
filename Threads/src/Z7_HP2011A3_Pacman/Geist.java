@@ -5,13 +5,15 @@ public class Geist extends SpielFigur {
 	Pacman pacMan;
 	int xPM,yPM;
 	
-	public Geist(Pacman pPacman) {
+	public Geist(Pacman pPacman, int groesse) {
 		pacMan = pPacman;
+		breite = groesse;
+		hoehe = groesse;
 	}
 
 	@Override
 	public void zeichne(ZeichenFlaeche pZF) {
-		// TODO Auto-generated method stub
+		pZF.zeichneGeist(getPosX(), getPosY());
 
 	}
 	
