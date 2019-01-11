@@ -187,9 +187,13 @@ public class OberFlaeche extends JFrame implements KeyListener {
 		
 	}
 
+	/*
+	 * Wird von der Steuerung aufgerufen,
+	 * damit auf den den Keylistener reagiert werden kann
+	 * in der Methode ereignisTastatur()
+	 */
 	public void setFocus() {
-		this.requestFocus();
-		
+		this.requestFocus();		
 	}
 
 	
