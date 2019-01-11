@@ -178,7 +178,7 @@ public class Steuerung {
 			yPos = (y + 1) * abstandY;
 
 			//Groesse der Fresspunkte 
-			xPos = xPos + FressPunkt.GROESSE_IN_PX/2;
+			xPos = xPos - FressPunkt.GROESSE_IN_PX/2;
 			yPos = yPos - FressPunkt.GROESSE_IN_PX/2;
 		
 

@@ -112,19 +112,38 @@ public class OberFlaeche extends JFrame implements KeyListener {
 	}
 
 	@Override
-	public void keyPressed(KeyEvent arg0) {
+	public void keyPressed(KeyEvent ke) {
+		int keyCode = ke.getKeyCode();
+		
+		
+		switch( keyCode ) { 
+        case KeyEvent.VK_UP:
+            dieSteuerung.verarbeiteTastenDruck(SpielFigur.OBEN);
+            break;
+        case KeyEvent.VK_DOWN:
+        	dieSteuerung.verarbeiteTastenDruck(SpielFigur.UNTEN);
+            break;
+        case KeyEvent.VK_LEFT:
+        	dieSteuerung.verarbeiteTastenDruck(SpielFigur.LINKS);
+            break;
+        case KeyEvent.VK_RIGHT :
+        	dieSteuerung.verarbeiteTastenDruck(SpielFigur.RECHTS);
+            break;
+     }
+		
+		
+		
+
+	}
+
+	@Override
+	public void keyReleased(KeyEvent ke) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void keyReleased(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void keyTyped(KeyEvent arg0) {
+	public void keyTyped(KeyEvent ke) {
 		// TODO Auto-generated method stub
 
 	}
@@ -160,8 +179,12 @@ public class OberFlaeche extends JFrame implements KeyListener {
 		else {
 			System.out.println("Zeichenflaeche = null");
 		}
+		
+		this.addKeyListener(this);
 
 		
 	}
 
+	
+	
 }
