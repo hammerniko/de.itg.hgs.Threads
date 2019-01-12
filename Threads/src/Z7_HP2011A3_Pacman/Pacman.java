@@ -4,6 +4,8 @@ public class Pacman extends SpielFigur {
 	
 	FressPunkt derFresspunkt[];
 	private int diePunkte;
+	
+	public static final int PUNKTE_FUER_FRESSPUNKT = 10;
 
 	public Pacman(FressPunkt[] pFP, int groesse) {
 		derFresspunkt = pFP;
@@ -40,6 +42,7 @@ public class Pacman extends SpielFigur {
 				if (!derFresspunkt[i].gibGefressen()) {
 					// friss ihn
 					derFresspunkt[i].setzeGefressen(true);
+					diePunkte+=PUNKTE_FUER_FRESSPUNKT;
 				}
 			}
 

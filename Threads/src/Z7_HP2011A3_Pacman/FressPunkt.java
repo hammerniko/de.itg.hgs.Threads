@@ -25,7 +25,9 @@ public class FressPunkt extends Spielelement{
 
 	@Override
 	public void zeichne(ZeichenFlaeche pZF) {
-		pZF.zeichneFresspunkte(getPosX(), getPosY());
+		if(!gefressen){
+			pZF.zeichneFresspunkte(getPosX(), getPosY());
+		}
 		
 	}
 	
