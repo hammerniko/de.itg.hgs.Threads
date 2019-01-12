@@ -150,6 +150,7 @@ public class Steuerung {
 							+ punkte + " erreicht");
 				}
 				dieOberflaeche.enableStartButton();
+				zf.loescheFlaeche();
 
 			}
 		}

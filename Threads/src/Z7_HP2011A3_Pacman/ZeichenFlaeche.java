@@ -161,4 +161,10 @@ public class ZeichenFlaeche extends JLabel implements Grid {
 	public void setH(int h) {
 		this.h = h;
 	}
+	
+	public void loescheFlaeche(){
+		Graphics g = getGraphics();
+		g.clearRect(0, 0, getWidth(), getHeight());
+		repaint();
+	}
 }
