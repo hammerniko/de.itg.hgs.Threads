@@ -9,6 +9,11 @@ public abstract class SpielFigur extends Spielelement {
 	public static final int LINKS = 3;
 	public static final int UNTEN = 4;
 	
+	public static final int SPEED_SLOW = 1; //px per Tick
+	public static final int SPEED_MID = 3;
+	public static final int SPEED_FAST = 5;
+	
+	
 	private int x,y;
 	
 	public void bewege() {
@@ -17,24 +22,24 @@ public abstract class SpielFigur extends Spielelement {
 		
 		switch (dieRichtung) {
 		case RECHTS:
-			if(x<X_RANDRECHTS) {setzePos(x+1, y);}
+			if(x<X_RANDRECHTS) {setzePos(x+SPEED_MID, y);}
 			break;
 		
 		case LINKS:
 			if(x>0) {
-				setzePos(x-1, y);
+				setzePos(x-SPEED_MID, y);
 			}
 			break;
 			
 		case UNTEN:
 			if(y<Y_RANDUNTEN) {
-				setzePos(x, y+1);
+				setzePos(x, y+SPEED_MID);
 			}
 			break;
 		
 		case OBEN:
 			if(y>0) {
-				setzePos(x, y-1);
+				setzePos(x, y-SPEED_MID);
 			}
 			break;
 

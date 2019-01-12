@@ -195,6 +195,10 @@ public class OberFlaeche extends JFrame implements KeyListener {
 	public void setFocus() {
 		this.requestFocus();		
 	}
+	
+	public void enableStartButton(){
+		btStart.setEnabled(true);
+	}
 
 	
 	

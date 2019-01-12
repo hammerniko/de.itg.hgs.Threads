@@ -54,7 +54,7 @@ public class ZeichenFlaeche extends JLabel implements Grid {
 
 		// Flaeche des Geistes loeschen
 		g.setColor(Color.BLUE);
-		g.fillRect(x - 1, y, 25, 25);
+		g.fillRect(x - 1, y, 30, 30);
 
 		farbNr = (farbNr % 2) + 1;
 
@@ -80,8 +80,9 @@ public class ZeichenFlaeche extends JLabel implements Grid {
 		Graphics2D g = (Graphics2D) getGraphics();
 
 		// Flaeche des Pacman loeschen
+		//Muss evtl. vom Speed abhängig gemacht werden.
 		g.setColor(Color.BLUE);
-		g.fillRect(x - 1, y, 25, 25);
+		g.fillRect(x - 5, y-5, 30, 30);
 
 		// Grundkoerper
 		g.setColor(Color.red);

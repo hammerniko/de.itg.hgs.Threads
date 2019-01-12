@@ -5,7 +5,7 @@ public class Pacman extends SpielFigur {
 	FressPunkt derFresspunkt[];
 	private int diePunkte;
 	
-	public static final int PUNKTE_FUER_FRESSPUNKT = 10;
+	public static final int PUNKTE_FUER_FRESSPUNKT = 1;
 
 	public Pacman(FressPunkt[] pFP, int groesse) {
 		derFresspunkt = pFP;
@@ -28,7 +28,7 @@ public class Pacman extends SpielFigur {
 
 	public void aktualisierePunkte() {
 		int x, y;
-		boolean gleichePos, gefressen = true;
+		boolean gleichePos;
 
 		// Für alle Fresspunkte
 		for (int i = 0; i < derFresspunkt.length; i++) {

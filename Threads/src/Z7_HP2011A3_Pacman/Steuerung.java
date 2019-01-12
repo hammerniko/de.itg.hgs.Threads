@@ -137,11 +137,14 @@ public class Steuerung {
 
 		for (int i = 0; i < derGeist.length; i++) {
 			gefressen = derGeist[i].pruefePacManGefressen();
-			if (gefressen || punkte >= 133) {
+			if (gefressen || punkte >= ANZAHL_FRESSPUNKTE) {
 				timer.stoppe();
 
 				if (gefressen == false) {
 					dieOberflaeche.zeigeMeldung("Gratuliere, Du Hast gewonnen");
+					dieOberflaeche.enableStartButton();
+
+
 				} else {
 					dieOberflaeche.zeigeMeldung("Du Hast verloren und "
 							+ punkte + " erreicht");
