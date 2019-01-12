@@ -46,10 +46,18 @@ public abstract class SpielFigur extends Spielelement {
 
 	public boolean hatGleichePos(int pPosX, int pPosY) {
 		
-		//Muss optimiert werden, so dass
-		//bei einer ersten Berührung des Koerperumrisses
-		//true zurueckgegeben wird-
 		
-		return (this.posX == pPosX && this.posY == pPosY);
+		//Wenn x,y innerhalb des Rechtecks um die Spielfigur
+		//ist, soll die Position gleich sein.
+		if(this.posX >= pPosX-getBreite()/2 && this.posX <= pPosX+getBreite()/2){
+			if(this.posY >= pPosY-getHoehe()/2 && this.posY <= pPosY+getHoehe()/2){
+				System.out.println("Kollision");
+				return true;
+				
+			}
+		}
+		
+		
+		return false;
 	}
 }
