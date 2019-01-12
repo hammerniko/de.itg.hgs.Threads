@@ -54,7 +54,7 @@ public class ZeichenFlaeche extends JLabel implements Grid {
 
 		// Flaeche des Geistes loeschen
 		g.setColor(Color.BLUE);
-		g.fillRect(x - 1, y, 30, 30);
+		g.fillRect(x - 5, y-5, 30, 30);
 
 		farbNr = (farbNr % 2) + 1;
 

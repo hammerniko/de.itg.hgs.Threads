@@ -142,13 +142,14 @@ public class Steuerung {
 
 				if (gefressen == false) {
 					dieOberflaeche.zeigeMeldung("Gratuliere, Du Hast gewonnen");
-					dieOberflaeche.enableStartButton();
+					
 
 
 				} else {
 					dieOberflaeche.zeigeMeldung("Du Hast verloren und "
 							+ punkte + " erreicht");
 				}
+				dieOberflaeche.enableStartButton();
 
 			}
 		}
