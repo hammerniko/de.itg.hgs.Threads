@@ -8,6 +8,11 @@ public abstract class Spielelement implements Grid {
 	protected int posX;
 	protected int posY;
 	
+	//Position im Grid
+	protected int gridPosX;
+	protected int gridPosY;
+	
+	
 	//Groesse des Spielelements
 	protected int breite;
 	protected int hoehe;
@@ -30,6 +35,7 @@ public abstract class Spielelement implements Grid {
 	}
 	
 	public void setzePosImGrid(int gridPosx, int gridPosY) {
+		
 					// Berechne echte Position auf der Zeichenflaeche
 					// abhaengig von der Positionsnr
 					int breite = zf.getB();
@@ -45,7 +51,11 @@ public abstract class Spielelement implements Grid {
 					posX = posX - getBreite()/2;
 					posY = posY - getHoehe()/2;
 					
+					
+					
 	}
+	
+
 	
 	public abstract void zeichne(ZeichenFlaeche pZF);
 

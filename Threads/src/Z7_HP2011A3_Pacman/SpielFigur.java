@@ -14,31 +14,43 @@ public abstract class SpielFigur extends Spielelement {
 	public static final int SPEED_FAST = 5;
 	
 	
-	private int x,y;
-	
+	private int x,y,xFressPunktAbstand, yFressPunkAbstand;
+	/**
+	 * Eine Bewegungsaenderung sollt erst erfolgen,
+	 * wenn die Bahn auf dem die Fresspunkte liegen
+	 * erreicht ist.
+	 * Im Moment führt jede Richtungs aenderung sofort
+	 * zur Änderung der Richtung
+	 */
 	public void bewege() {
-		x= getPosX();
+		
+		
+		
+		x=getPosX();
 		y=getPosY();
+		
+		xFressPunktAbstand = zf.getB()/(ANZAHL_SPALTEN+1)+ FressPunkt.GROESSE_IN_PX/2;
+		yFressPunkAbstand = zf.getH()/(ANZAHL_ZEILEN+1)- FressPunkt.GROESSE_IN_PX/2;
 		
 		switch (dieRichtung) {
 		case RECHTS:
-			if(x<X_RANDRECHTS) {setzePos(x+SPEED_MID, y);}
+			if(x<X_RANDRECHTS && y%yFressPunkAbstand <= 10) {setzePos(x+SPEED_MID, y);}
 			break;
 		
 		case LINKS:
-			if(x>0) {
+			if(x>0  && y%yFressPunkAbstand <= 10) {
 				setzePos(x-SPEED_MID, y);
 			}
 			break;
 			
 		case UNTEN:
-			if(y<Y_RANDUNTEN) {
+			if(y<Y_RANDUNTEN && x%xFressPunktAbstand <=10) {
 				setzePos(x, y+SPEED_MID);
 			}
 			break;
 		
 		case OBEN:
-			if(y>0) {
+			if(y>0 && x%xFressPunktAbstand <=10) {
 				setzePos(x, y-SPEED_MID);
 			}
 			break;

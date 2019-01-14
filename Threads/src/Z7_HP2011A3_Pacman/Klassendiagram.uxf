@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>91</x>
-      <y>0</y>
+      <y>21</y>
       <w>245</w>
       <h>112</h>
     </coordinates>
@@ -27,7 +27,7 @@ bg=light_gray</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>434</x>
-      <y>0</y>
+      <y>21</y>
       <w>231</w>
       <h>70</h>
     </coordinates>
@@ -47,7 +47,7 @@ bg=light_gray</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>399</x>
-      <y>133</y>
+      <y>154</y>
       <w>175</w>
       <h>140</h>
     </coordinates>
@@ -69,7 +69,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>91</x>
-      <y>147</y>
+      <y>168</y>
       <w>189</w>
       <h>119</h>
     </coordinates>
@@ -92,7 +92,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>826</x>
-      <y>378</y>
+      <y>399</y>
       <w>175</w>
       <h>126</h>
     </coordinates>
@@ -115,7 +115,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>721</x>
-      <y>154</y>
+      <y>175</y>
       <w>189</w>
       <h>84</h>
     </coordinates>
@@ -132,7 +132,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>434</x>
-      <y>378</y>
+      <y>399</y>
       <w>245</w>
       <h>203</h>
     </coordinates>
@@ -161,7 +161,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>385</y>
+      <y>406</y>
       <w>273</w>
       <h>196</h>
     </coordinates>
@@ -185,7 +185,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>672</x>
-      <y>406</y>
+      <y>427</y>
       <w>168</w>
       <h>35</h>
     </coordinates>
@@ -200,7 +200,7 @@ r2=derTimer</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>266</x>
-      <y>413</y>
+      <y>434</y>
       <w>182</w>
       <h>35</h>
     </coordinates>
@@ -215,7 +215,7 @@ r2=dieSteuerung</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>497</x>
-      <y>266</y>
+      <y>287</y>
       <w>56</w>
       <h>126</h>
     </coordinates>
@@ -229,7 +229,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>595</x>
-      <y>231</y>
+      <y>252</y>
       <w>238</w>
       <h>161</h>
     </coordinates>
@@ -243,7 +243,7 @@ r1=derGreist[ ]
     <id>Relation</id>
     <coordinates>
       <x>567</x>
-      <y>189</y>
+      <y>210</y>
       <w>168</w>
       <h>35</h>
     </coordinates>
@@ -257,7 +257,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>483</x>
-      <y>63</y>
+      <y>84</y>
       <w>21</w>
       <h>84</h>
     </coordinates>
@@ -268,7 +268,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>546</x>
-      <y>63</y>
+      <y>84</y>
       <w>217</w>
       <h>105</h>
     </coordinates>
@@ -279,7 +279,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>196</x>
-      <y>105</y>
+      <y>126</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -290,7 +290,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>329</x>
-      <y>28</y>
+      <y>49</y>
       <w>119</w>
       <h>21</h>
     </coordinates>
@@ -301,7 +301,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>231</x>
-      <y>259</y>
+      <y>280</y>
       <w>217</w>
       <h>154</h>
     </coordinates>
@@ -315,7 +315,7 @@ r1=derFressPunkt[ ]
     <id>Relation</id>
     <coordinates>
       <x>273</x>
-      <y>189</y>
+      <y>210</y>
       <w>140</w>
       <h>35</h>
     </coordinates>
