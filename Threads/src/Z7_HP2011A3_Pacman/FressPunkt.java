@@ -10,6 +10,7 @@ public class FressPunkt extends Spielelement{
 	//Konstruktor mit Paramtern für Oberklasse
 	public FressPunkt(int pX, int pY) {
 		super.setzePos(pX, pY);
+		gefressen =false;
 	}
 
 
@@ -20,6 +21,8 @@ public class FressPunkt extends Spielelement{
 
 	public void setzeGefressen(boolean pGefressen) {
 		this.gefressen = pGefressen;
+		
+		
 	}
 
 
@@ -27,6 +30,12 @@ public class FressPunkt extends Spielelement{
 	public void zeichne(ZeichenFlaeche pZF) {
 		if(!gefressen){
 			pZF.zeichneFresspunkte(getPosX(), getPosY());
+		}
+		else{
+			//Fresspunkt auf dem Spielfeld nehmen,
+			//damit keine doppelte Kollision
+			//mit einem gefressenen Fresspunkt entsteht.
+			setzePos(0, 0);
 		}
 		
 	}
