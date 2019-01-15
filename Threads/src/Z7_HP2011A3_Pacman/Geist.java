@@ -1,16 +1,20 @@
 package Z7_HP2011A3_Pacman;
 
+import java.util.Random;
+
 public class Geist extends SpielFigur {
 
 	Pacman pacMan;
+	
 	int xPM, yPM;
 	int richtung;
-	int zufallsTick;
+	int ticksToWait;
 
 	public Geist(Pacman pPacman, int groesse) {
 		pacMan = pPacman;
 		breite = groesse;
 		hoehe = groesse;
+		
 	}
 
 	@Override
@@ -24,16 +28,22 @@ public class Geist extends SpielFigur {
 		// Wo ist der Pacman
 		xPM = pacMan.getPosX();
 		yPM = pacMan.getPosY();
+		
+	
+		
 
-		// Einfach zufall Richtung 1-4
-
-		richtung = (int) (Math.random() * 4 + 1);
-		zufallsTick = (int) (Math.random() * 100 + 1);
-
-		if (zufallsTick >= 50 && zufallsTick <= 70) {
+		//Aendere Richtung erst, wenn Geist
+		//auf der Hoehe/Breite eines Fresspunktes ist
+		//Warte eine gewisse Zeit, bevor die 
+		//naechste Aenderung eintritt
+		//if(istBeiFressPunkt() ){
+			
+			richtung =UNTEN;
+			
 			setzeRichtung(richtung);
 		}
-	}
+		
+	//}
 
 	public void setzeRichtung(int pRichtung) {
 		this.dieRichtung = pRichtung;

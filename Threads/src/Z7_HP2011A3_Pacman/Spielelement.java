@@ -17,12 +17,21 @@ public abstract class Spielelement implements Grid {
 	protected int breite;
 	protected int hoehe;
 	
+	
 	public int getPosX() {
 		return posX;
 	}
 
 	public int getPosY() {
 		return posY;
+	}
+	
+	public int getMiddlePosX(){
+		return posX - breite/2;
+	}
+	
+	public int getMiddlePosY(){
+		return posY -hoehe/2;
 	}
 
 	/**

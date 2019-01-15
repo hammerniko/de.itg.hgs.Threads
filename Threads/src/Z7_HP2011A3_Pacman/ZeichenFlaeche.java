@@ -91,7 +91,7 @@ public class ZeichenFlaeche extends JLabel implements Grid {
 		// Pacman geht nach rechts
 		// und oeffnet und schliesst das Maul
 		spriteNr = (spriteNr % 6) + 1;
-		System.out.println(spriteNr);
+		
 		g.setColor(Color.BLUE);
 		switch (spriteNr) {
 		case 1:
