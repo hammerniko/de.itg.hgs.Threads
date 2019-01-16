@@ -30,6 +30,7 @@ public class FressPunkt extends Spielelement{
 	public void zeichne(ZeichenFlaeche pZF) {
 		if(!gefressen){
 			pZF.zeichneFresspunkte(getPosX(), getPosY());
+		
 		}
 		else{
 			//Fresspunkt auf dem Spielfeld nehmen,

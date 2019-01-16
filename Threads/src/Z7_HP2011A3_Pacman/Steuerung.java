@@ -58,7 +58,8 @@ public class Steuerung {
 	}
 
 	private void initSpielObjekte() {
-
+		
+		
 		// Keine Bewegung
 		pacMan.setzeRichtung(SpielFigur.STOPP);
 
@@ -151,6 +152,7 @@ public class Steuerung {
 				}
 				dieOberflaeche.enableStartButton();
 				zf.loescheFlaeche();
+				resetFresspunkte();
 
 			}
 		}
@@ -195,5 +197,44 @@ public class Steuerung {
 		}
 
 	}
+	
+	
+	private synchronized void resetFresspunkte() {
+		// lokale Variablen fuer berechnete PositionsNr im Grid
+		int x = 0, y = 0;
+		int xPos = 0, yPos = 0;
+
+		for (int i = 0; i < derFressPunkt.length; i++) {
+
+			// Berechne Positionsnr im Grid
+			x = i % anzSpalten;
+			y = i / anzSpalten;
+
+			// Kontrolle der Positionen auf der Konsole
+			// System.out.print("\nx: "+x+ " y:"+y);
+
+			// Berechne echte Position auf der Zeichenflaeche
+			// abhaengig von der Positionsnr
+			int breite = zf.getB();
+			int hoehe = zf.getH();
+			int abstandX = breite / (anzSpalten + 1);
+			int abstandY = hoehe / (anzZeilen + 1);
+
+			// System.out.println("breite"+breite);
+			// System.out.println("hoehe"+hoehe);
+			xPos = (x + 1) * abstandX;
+			yPos = (y + 1) * abstandY;
+
+			//Groesse der Fresspunkte 
+			xPos = xPos - FressPunkt.GROESSE_IN_PX/2;
+			yPos = yPos - FressPunkt.GROESSE_IN_PX/2;
+		
+
+			// Erzeuge Fresspunkt mit Position fuer Grid
+			derFressPunkt[i].setzePos(xPos, yPos);
+		}
+
+	}
+	
 
 }
