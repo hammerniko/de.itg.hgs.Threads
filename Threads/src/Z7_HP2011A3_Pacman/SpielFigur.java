@@ -29,6 +29,7 @@ public abstract class SpielFigur extends Spielelement {
 			if (istNichtAmRechtenRand() && istBeiFressPunktInYRichtung()) {
 				setzePos(getPosX() + SPEED_MID, getPosY());
 			}
+			break;
 
 		case LINKS:
 			if (istNichtAmLinkenRand() && istBeiFressPunktInYRichtung()) {
