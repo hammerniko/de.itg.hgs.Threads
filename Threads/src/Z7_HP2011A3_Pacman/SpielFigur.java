@@ -6,8 +6,8 @@ public abstract class SpielFigur extends Spielelement {
 	public static final int STOPP = 0;
 	public static final int RECHTS = 1;
 	public static final int OBEN = 2;
-	public static final int LINKS = -1;
-	public static final int UNTEN = -2;
+	public static final int LINKS = 3;
+	public static final int UNTEN = 4;
 
 	public static final int SPEED_SLOW = 1; // px per Tick
 	public static final int SPEED_MID = 3;

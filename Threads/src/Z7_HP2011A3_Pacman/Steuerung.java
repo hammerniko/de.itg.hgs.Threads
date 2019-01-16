@@ -70,7 +70,7 @@ public class Steuerung {
 		pacMan.loeschePunkte();
 
 		// Geister in die Ecken setzen
-		derGeist[0].setzePosImGrid(1, 0);
+		derGeist[0].setzePosImGrid(0, 0);
 		derGeist[1].setzePosImGrid(14, 0);
 		derGeist[2].setzePosImGrid(0, 8);
 		derGeist[3].setzePosImGrid(14, 8);

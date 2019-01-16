@@ -29,20 +29,12 @@ public class Geist extends SpielFigur {
 		xPM = pacMan.getPosX();
 		yPM = pacMan.getPosY();
 
-		//TODO Bewegung der Geister implementieren
-		if(istBeiFressPunktInXRichtung()) {
-			richtung = RECHTS;
-			
-		}
-	
-		if(istBeiFressPunktInYRichtung()) {
-			richtung = UNTEN;
-		}
 		
-		else {
+		
+			richtung = (int) (Math.random()*4+1);
 			
 			
-		}
+		
 		
 		setzeRichtung(richtung);
 			
