@@ -4,9 +4,13 @@ public abstract class Spielelement implements Grid {
 	
 	protected ZeichenFlaeche zf;
 	
-	//Position des Spielelements
+	//Position des Spielelements zum zeichenen (linke obere Ecke)
 	protected int posX;
 	protected int posY;
+	
+	//Mittlere position des Spielelements;
+	protected int xMiddle;
+	protected int yMiddle;
 	
 	//Position im Grid
 	protected int gridPosX;
@@ -36,6 +40,7 @@ public abstract class Spielelement implements Grid {
 
 	/**
 	 * Setzt die Position absolut in px.
+	 * Ecke links oben
 	 */
 	public void setzePos(int pPosX, int pPosY) {
 		
@@ -45,20 +50,22 @@ public abstract class Spielelement implements Grid {
 	
 	public void setzePosImGrid(int gridPosx, int gridPosY) {
 		
-					// Berechne echte Position auf der Zeichenflaeche
-					// abhaengig von der Positionsnr
+					// Ermittle die Groesse der Zeichenflaeche
 					int breite = zf.getB();
 					int hoehe = zf.getH();
+					
+					//Ermittle den Abstand der Mittelpunkte der zu zeichnenden Elemente
 					int abstandX = breite / (Grid.ANZAHL_SPALTEN + 1);
 					int abstandY = hoehe / (Grid.ANZAHL_ZEILEN + 1);
 					
-					// System.out.println("breite"+breite);
-					// System.out.println("hoehe"+hoehe);
-					posX =(gridPosx + 1) * abstandX;
-					posY = (gridPosY + 1) * abstandY;
+					//Ermittle die Position der MittelPunkte des SpielElements
+					xMiddle =(gridPosx + 1) * abstandX;
+					yMiddle = (gridPosY + 1) * abstandY;
 					
-					posX = posX - getBreite()/2;
-					posY = posY - getHoehe()/2;
+					//Ermittle die linke obere Ecke des Spielelements
+					//damit dieses gezeichnet werden kann
+					posX = xMiddle - getBreite()/2;
+					posY = yMiddle - getHoehe()/2;
 					
 					
 					
