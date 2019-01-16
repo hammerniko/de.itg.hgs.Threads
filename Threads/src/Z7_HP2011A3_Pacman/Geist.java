@@ -28,22 +28,28 @@ public class Geist extends SpielFigur {
 		// Wo ist der Pacman
 		xPM = pacMan.getPosX();
 		yPM = pacMan.getPosY();
-		
-	
-		
 
-		//Aendere Richtung erst, wenn Geist
-		//auf der Hoehe/Breite eines Fresspunktes ist
-		//Warte eine gewisse Zeit, bevor die 
-		//naechste Aenderung eintritt
-		//if(istBeiFressPunkt() ){
+		//TODO Bewegung der Geister implementieren
+		if(istBeiFressPunktInXRichtung()) {
+			richtung = RECHTS;
 			
-			richtung =UNTEN;
-			
-			setzeRichtung(richtung);
+		}
+	
+		if(istBeiFressPunktInYRichtung()) {
+			richtung = UNTEN;
 		}
 		
-	//}
+		else {
+			
+			
+		}
+		
+		setzeRichtung(richtung);
+			
+			
+		}
+		
+	
 
 	public void setzeRichtung(int pRichtung) {
 		this.dieRichtung = pRichtung;
