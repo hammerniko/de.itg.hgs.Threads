@@ -16,6 +16,7 @@ public abstract class SpielFigur extends Spielelement {
 	
 
 	private int abstandX, abstandY;
+	protected boolean richtungGesetzt;
 
 	/**
 	 * Eine Bewegungsaenderung sollt erst erfolgen, wenn die Bahn auf dem die
@@ -25,36 +26,51 @@ public abstract class SpielFigur extends Spielelement {
 
 		switch (dieRichtung) {
 		case RECHTS:
-			if (getMiddlePosX() <= zf.getB() - getBreite() && istBeiFressPunktInYRichtung()) {
+			if (istNichtAmRechtenRand() && istBeiFressPunktInYRichtung()) {
 				setzePos(getPosX() + SPEED_MID, getPosY());
 			}
 
-			break;
-
 		case LINKS:
-			if (getMiddlePosX() >= 0 && istBeiFressPunktInYRichtung()) {
+			if (istNichtAmLinkenRand() && istBeiFressPunktInYRichtung()) {
 				setzePos(getPosX() - SPEED_MID, getPosY());
 			}
+			
 			break;
 
 		case UNTEN:
-			if (getMiddlePosY() <= zf.getH() - getHoehe() && istBeiFressPunktInXRichtung()) {
+			if (istNichtAmUnterenRand() && istBeiFressPunktInXRichtung()) {
 				setzePos(getPosX(), getPosY() + SPEED_MID);
 			}
+			
 			break;
 
 		case OBEN:
-			if (getMiddlePosY() >= 0 && istBeiFressPunktInXRichtung()) {
+			if (istNichtAmOberenRand() && istBeiFressPunktInXRichtung()) {
 				setzePos(getPosX(), getPosY() - SPEED_MID);
 			}
 			break;
 
 		default:
-			System.out.println(this.getClass().getSimpleName() + "keine Richtung erkannt");
-			dieRichtung = dieRichtung * -1;
 			break;
 		}
+		
+		
+	}
 
+	private boolean istNichtAmOberenRand() {
+		return getMiddlePosY() > 0 + getAbstandY();
+	}
+
+	private boolean istNichtAmUnterenRand() {
+		return getMiddlePosY() <= zf.getH() - getAbstandY();
+	}
+
+	private boolean istNichtAmLinkenRand() {
+		return getMiddlePosX() > 0 + getAbstandX();
+	}
+
+	private boolean istNichtAmRechtenRand() {
+		return getMiddlePosX() < zf.getB() - getBreite()/2-getAbstandX();
 	}
 
 	private int getAbstandY() {
