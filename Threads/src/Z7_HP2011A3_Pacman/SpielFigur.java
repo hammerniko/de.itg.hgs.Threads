@@ -12,15 +12,14 @@ public abstract class SpielFigur extends Spielelement {
 	public static final int SPEED_SLOW = 1; // px per Tick
 	public static final int SPEED_MID = 3;
 	public static final int SPEED_FAST = 5;
-	public static final int MAX_ABSTAND_ZU_FRESSPUNKT = 20;
+	public static final int MAX_ABSTAND_ZU_FRESSPUNKT = 10;
 	
 
-	private int x, y,abstandX, abstandY;
+	private int abstandX, abstandY;
 
 	/**
 	 * Eine Bewegungsaenderung sollt erst erfolgen, wenn die Bahn auf dem die
-	 * Fresspunkte liegen erreicht ist. Im Moment führt jede Richtungs aenderung
-	 * sofort zur Aenderung der Richtung
+	 * Fresspunkte liegen erreicht ist. 
 	 */
 	public void bewege() {
 
@@ -58,15 +57,13 @@ public abstract class SpielFigur extends Spielelement {
 
 	}
 
-	private int getAbstandZuFressPunktY() {
-		abstandY = zf.getH() / (ANZAHL_ZEILEN + 1) - FressPunkt.GROESSE_IN_PX / 2;
-		System.out.println(this.getClass().getSimpleName()+": Abstand  zu FressPunkt Y"+abstandY);
+	private int getAbstandY() {
+		abstandY = zf.getH() / (ANZAHL_ZEILEN + 1);
 		return abstandY;
 	}
 
-	private int getAbstandzuFressPunktX() {
-		abstandX = zf.getB() / (ANZAHL_SPALTEN + 1) - FressPunkt.GROESSE_IN_PX / 2;
-		System.out.println(this.getClass().getSimpleName()+": Abstand  zu FressPunkt X"+abstandX);
+	private int getAbstandX() {
+		abstandX = zf.getB() / (ANZAHL_SPALTEN + 1);
 		return abstandX;
 	}
 
@@ -86,7 +83,7 @@ public abstract class SpielFigur extends Spielelement {
 	}
 
 	public boolean istBeiFressPunktInXRichtung() {
-		if (getMiddlePosX() % getAbstandzuFressPunktX() <= MAX_ABSTAND_ZU_FRESSPUNKT) {
+		if (getMiddlePosX() % getAbstandX() <= MAX_ABSTAND_ZU_FRESSPUNKT) {
 			
 			return true;
 		}
@@ -95,7 +92,7 @@ public abstract class SpielFigur extends Spielelement {
 	}
 
 	public boolean istBeiFressPunktInYRichtung() {
-		if (getMiddlePosY() % getAbstandZuFressPunktY() <= MAX_ABSTAND_ZU_FRESSPUNKT) {
+		if (getMiddlePosY() % getAbstandY() <= MAX_ABSTAND_ZU_FRESSPUNKT) {
 			return true;
 		}
 

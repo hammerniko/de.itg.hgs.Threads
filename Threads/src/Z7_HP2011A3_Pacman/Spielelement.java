@@ -31,11 +31,11 @@ public abstract class Spielelement implements Grid {
 	}
 	
 	public int getMiddlePosX(){
-		return posX - breite/2;
+		return posX+getBreite()/2;
 	}
 	
 	public int getMiddlePosY(){
-		return posY -hoehe/2;
+		return posY + getHoehe()/2;
 	}
 
 	/**
