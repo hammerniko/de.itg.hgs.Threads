@@ -32,12 +32,10 @@ public abstract class SpielFigur extends Spielelement {
 
 		switch (dieRichtung) {
 		case RECHTS:
-			if (x <= X_RANDRECHTS && istBeiFressPunkt()) {
+			if (x <= zf.getB()-getBreite() && istBeiFressPunkt()) {
 				setzePos(x + SPEED_MID, y);
 			}
-			else{
-				setzePos(x - SPEED_MID, y);
-			}
+			
 			break;
 
 		case LINKS:
@@ -47,7 +45,7 @@ public abstract class SpielFigur extends Spielelement {
 			break;
 
 		case UNTEN:
-			if (y <= Y_RANDUNTEN && istBeiFressPunkt()) {
+			if (y <= zf.getH()-getHoehe() && istBeiFressPunkt()) {
 				setzePos(x, y + SPEED_MID);
 			}
 			break;
