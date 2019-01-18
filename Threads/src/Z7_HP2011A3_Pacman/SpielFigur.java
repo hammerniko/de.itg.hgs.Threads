@@ -12,11 +12,11 @@ public abstract class SpielFigur extends Spielelement {
 	public static final int SPEED_SLOW = 1; // px per Tick
 	public static final int SPEED_MID = 3;
 	public static final int SPEED_FAST = 5;
-	public static final int MAX_ABSTAND_ZU_FRESSPUNKT = 10;
+	public static final int MAX_ABSTAND_ZU_FRESSPUNKT = 6;
 	
 
 	private int abstandX, abstandY;
-	protected boolean richtungGesetzt;
+	
 
 	/**
 	 * Eine Bewegungsaenderung sollt erst erfolgen, wenn die Bahn auf dem die
@@ -71,7 +71,7 @@ public abstract class SpielFigur extends Spielelement {
 	}
 
 	protected boolean istNichtAmRechtenRand() {
-		return getMiddlePosX() < zf.getB() - getBreite()/2-getAbstandX();
+		return getMiddlePosX() < zf.getB() - getAbstandX();
 	}
 
 	private int getAbstandY() {

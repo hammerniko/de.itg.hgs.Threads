@@ -6,7 +6,7 @@ public class Geist extends SpielFigur {
 
 	Pacman pacMan;
 
-	int xPM, yPM, dX, dY, abstandZuPacman, alterAbstand;
+	int xPM, yPM, dX, dY, abstandZuPacman;
 	int richtung;
 	int timerTicks;
 	int geistnr;
@@ -22,11 +22,7 @@ public class Geist extends SpielFigur {
 
 		// Anfangsbewegunsrichtung ist zufällig
 		richtung = (int) (Math.random() * 4 + 1);
-		richtungGesetzt = false;
-	}
-
-	public void setRichtungGesetzt(boolean richtungGesetzt) {
-		this.richtungGesetzt = richtungGesetzt;
+		
 	}
 
 	@Override
@@ -50,19 +46,19 @@ public class Geist extends SpielFigur {
 		if(istBeiFressPunktInXRichtung() || istBeiFressPunktInYRichtung()) {
 			timerTicks++;
 			
-			
-			//Ermittle evtl. neue Richtung
+			//Ermittle evtl. neue Richtung solange der 
+			//Geist auf Hoehe des Fresspunktes ist
 			richtung = (int) (Math.random()*4+1);
+			
+			//Warte eine bestimmte Zeit, bis der Geist
+			//vom Fresspunkt weg ist
+			if(timerTicks>20) {
+				setzeRichtung(richtung);
+				timerTicks = 0;
+			}
 		}
 		
-		//Warte eine bestimmte Zeit, bis der Geist
-		//vom Freepunkt weg ist
-		if(timerTicks>15) {
-			
-			
-			setzeRichtung(richtung);
-			timerTicks = 0;
-		}
+		
 		
 		
 		
@@ -72,11 +68,7 @@ public class Geist extends SpielFigur {
 	
 
 	public void setzeRichtung(int pRichtung) {
-		
-		//Merken das die Richtung gesetzt wurde
-		richtungGesetzt = true;
 		this.dieRichtung = pRichtung;
-
 	}
 
 	public boolean pruefePacManGefressen() {
