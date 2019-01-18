@@ -58,19 +58,19 @@ public abstract class SpielFigur extends Spielelement {
 		
 	}
 
-	private boolean istNichtAmOberenRand() {
+	protected boolean istNichtAmOberenRand() {
 		return getMiddlePosY() > 0 + getAbstandY();
 	}
 
-	private boolean istNichtAmUnterenRand() {
+	protected boolean istNichtAmUnterenRand() {
 		return getMiddlePosY() <= zf.getH() - getAbstandY();
 	}
 
-	private boolean istNichtAmLinkenRand() {
+	protected boolean istNichtAmLinkenRand() {
 		return getMiddlePosX() > 0 + getAbstandX();
 	}
 
-	private boolean istNichtAmRechtenRand() {
+	protected boolean istNichtAmRechtenRand() {
 		return getMiddlePosX() < zf.getB() - getBreite()/2-getAbstandX();
 	}
 

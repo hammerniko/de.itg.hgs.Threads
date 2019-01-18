@@ -6,14 +6,21 @@ public class Geist extends SpielFigur {
 
 	Pacman pacMan;
 
-	int xPM, yPM,dX, dY,abstandZuPacman,alterAbstand;
+	int xPM, yPM, dX, dY, abstandZuPacman, alterAbstand;
 	int richtung;
-	
+	int timerTicks;
+	int geistnr;
+	static int anzahlGeister = 0;
 
 	public Geist(Pacman pPacman, int groesse) {
+		anzahlGeister++;
+		geistnr = anzahlGeister;
+		timerTicks = 0;
 		pacMan = pPacman;
 		breite = groesse;
 		hoehe = groesse;
+
+		// Anfangsbewegunsrichtung ist zufällig
 		richtung = (int) (Math.random() * 4 + 1);
 		richtungGesetzt = false;
 	}
@@ -28,27 +35,48 @@ public class Geist extends SpielFigur {
 
 	}
 
+	/**
+	 * Aendert die Richtung des Geistes wenn sie geaendert werden 
+	 * kann auf Hoehe eines Fresspunktes.
+	 * 
+	 * Gesetzt wird diese Aenderung erst, wenn die Richtung nicht mehr 
+	 * geändert werden kann. D.h. ein Geist bewegt sich immer
+	 * von Fresspunkt zu Fresspunkt
+	 * 
+	 */
 	public void berechneRichtung() {
-	
-		if ((istBeiFressPunktInXRichtung() || istBeiFressPunktInYRichtung()) && !richtungGesetzt ) {
+		
+		//Geist ist auf Hoehe eines Fresspunktes
+		if(istBeiFressPunktInXRichtung() || istBeiFressPunktInYRichtung()) {
+			timerTicks++;
 			
-			System.out.println("Richtung gesetzt");
 			
-			//Waehle zufällige RIchtung
+			//Ermittle evtl. neue Richtung
 			richtung = (int) (Math.random()*4+1);
-			richtungGesetzt = true;
-			setzeRichtung(richtung);
 		}
+		
+		//Warte eine bestimmte Zeit, bis der Geist
+		//vom Freepunkt weg ist
+		if(timerTicks>15) {
 			
-
+			
+			setzeRichtung(richtung);
+			timerTicks = 0;
+		}
 		
 		
 		
 
 	}
 
+	
+
 	public void setzeRichtung(int pRichtung) {
+		
+		//Merken das die Richtung gesetzt wurde
+		richtungGesetzt = true;
 		this.dieRichtung = pRichtung;
+
 	}
 
 	public boolean pruefePacManGefressen() {
@@ -69,13 +97,13 @@ public class Geist extends SpielFigur {
 		// Wo ist der Pacman
 		xPM = pacMan.getMiddlePosX();
 		yPM = pacMan.getMiddlePosY();
-		
-		dX = xPM-getMiddlePosX();
-		dY = xPM-getMiddlePosY();
-		
-		abstandZuPacman = (int) Math.sqrt(dX*dX+dY*dY);
-		System.out.println(this.getClass().getSimpleName()+" Abstand:"+abstandZuPacman);
-		
+
+		dX = xPM - getMiddlePosX();
+		dY = xPM - getMiddlePosY();
+
+		abstandZuPacman = (int) Math.sqrt(dX * dX + dY * dY);
+		System.out.println(this.getClass().getSimpleName() + " Abstand:" + abstandZuPacman);
+
 		return abstandZuPacman;
 	}
 
