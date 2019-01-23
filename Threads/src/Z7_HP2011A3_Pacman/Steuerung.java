@@ -118,7 +118,7 @@ public class Steuerung {
 		pacMan.bewege();
 		pacMan.aktualisierePunkte();
 
-		// Für alle Geister
+		// Fuer alle Geister
 		for (int i = 0; i < derGeist.length; i++) {
 			derGeist[i].berechneRichtung();
 			derGeist[i].bewege();

@@ -5,7 +5,7 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>175</x>
-      <y>133</y>
+      <y>105</y>
       <w>70</w>
       <h>21</h>
     </coordinates>
@@ -16,7 +16,7 @@
     <id>Relation</id>
     <coordinates>
       <x>203</x>
-      <y>147</y>
+      <y>119</y>
       <w>21</w>
       <h>49</h>
     </coordinates>
@@ -27,7 +27,7 @@
     <id>UMLGeneric</id>
     <coordinates>
       <x>203</x>
-      <y>182</y>
+      <y>154</y>
       <w>14</w>
       <h>385</h>
     </coordinates>
@@ -38,7 +38,7 @@
     <id>UMLActor</id>
     <coordinates>
       <x>0</x>
-      <y>161</y>
+      <y>133</y>
       <w>42</w>
       <h>77</h>
     </coordinates>
@@ -49,7 +49,7 @@
     <id>Relation</id>
     <coordinates>
       <x>28</x>
-      <y>175</y>
+      <y>147</y>
       <w>189</w>
       <h>28</h>
     </coordinates>
@@ -61,7 +61,7 @@ ereignisTastatur(ke)</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>21</x>
-      <y>84</y>
+      <y>56</y>
       <w>147</w>
       <h>49</h>
     </coordinates>
@@ -75,7 +75,7 @@ bg=yellow</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>364</x>
-      <y>133</y>
+      <y>105</y>
       <w>70</w>
       <h>21</h>
     </coordinates>
@@ -86,7 +86,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>392</x>
-      <y>147</y>
+      <y>119</y>
       <w>21</w>
       <h>70</h>
     </coordinates>
@@ -97,7 +97,7 @@ bg=yellow</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>392</x>
-      <y>203</y>
+      <y>175</y>
       <w>14</w>
       <h>336</h>
     </coordinates>
@@ -108,7 +108,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>210</x>
-      <y>189</y>
+      <y>161</y>
       <w>196</w>
       <h>28</h>
     </coordinates>
@@ -120,7 +120,7 @@ verarbeiteTastenDruck(richtung)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>546</x>
-      <y>133</y>
+      <y>105</y>
       <w>70</w>
       <h>21</h>
     </coordinates>
@@ -131,7 +131,7 @@ verarbeiteTastenDruck(richtung)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>574</x>
-      <y>147</y>
+      <y>119</y>
       <w>21</w>
       <h>98</h>
     </coordinates>
@@ -142,7 +142,7 @@ verarbeiteTastenDruck(richtung)</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>574</x>
-      <y>231</y>
+      <y>203</y>
       <w>14</w>
       <h>294</h>
     </coordinates>
@@ -153,12 +153,34 @@ verarbeiteTastenDruck(richtung)</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>399</x>
-      <y>217</y>
+      <y>189</y>
       <w>189</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 setzRichtung(richtung)</panel_attributes>
     <additional_attributes>250.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>399</x>
+      <y>483</y>
+      <w>189</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>497</y>
+      <w>196</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
   </element>
 </diagram>

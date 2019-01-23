@@ -42,12 +42,16 @@ public class Pacman extends SpielFigur {
 				if (!derFresspunkt[i].gibGefressen()) {
 					// friss ihn
 					derFresspunkt[i].setzeGefressen(true);
-					diePunkte+=PUNKTE_FUER_FRESSPUNKT;
+					addierePunkte();
 				}
 			}
 
 		}
 
+	}
+
+	private void addierePunkte() {
+		diePunkte+=PUNKTE_FUER_FRESSPUNKT;
 	}
 
 	public int gibPunkte() {

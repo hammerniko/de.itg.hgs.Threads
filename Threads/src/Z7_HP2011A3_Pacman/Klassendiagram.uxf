@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>161</x>
-      <y>0</y>
+      <x>91</x>
+      <y>147</y>
       <w>245</w>
       <h>112</h>
     </coordinates>
@@ -26,8 +26,8 @@ bg=light_gray</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>504</x>
-      <y>0</y>
+      <x>434</x>
+      <y>147</y>
       <w>231</w>
       <h>70</h>
     </coordinates>
@@ -46,8 +46,8 @@ bg=light_gray</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>469</x>
-      <y>133</y>
+      <x>399</x>
+      <y>280</y>
       <w>175</w>
       <h>140</h>
     </coordinates>
@@ -68,8 +68,8 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>161</x>
-      <y>147</y>
+      <x>91</x>
+      <y>294</y>
       <w>189</w>
       <h>119</h>
     </coordinates>
@@ -91,8 +91,8 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>896</x>
-      <y>378</y>
+      <x>826</x>
+      <y>525</y>
       <w>175</w>
       <h>126</h>
     </coordinates>
@@ -114,8 +114,8 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>791</x>
-      <y>154</y>
+      <x>721</x>
+      <y>301</y>
       <w>189</w>
       <h>84</h>
     </coordinates>
@@ -131,8 +131,8 @@ bg=pink</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>504</x>
-      <y>378</y>
+      <x>434</x>
+      <y>525</y>
       <w>245</w>
       <h>203</h>
     </coordinates>
@@ -161,8 +161,8 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>385</y>
+      <x>0</x>
+      <y>532</y>
       <w>273</w>
       <h>196</h>
     </coordinates>
@@ -187,8 +187,8 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>742</x>
-      <y>406</y>
+      <x>672</x>
+      <y>553</y>
       <w>168</w>
       <h>35</h>
     </coordinates>
@@ -202,8 +202,8 @@ r2=derTimer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>336</x>
-      <y>413</y>
+      <x>266</x>
+      <y>560</y>
       <w>182</w>
       <h>35</h>
     </coordinates>
@@ -217,8 +217,8 @@ r2=dieSteuerung</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>567</x>
-      <y>266</y>
+      <x>497</x>
+      <y>413</y>
       <w>56</w>
       <h>126</h>
     </coordinates>
@@ -231,8 +231,8 @@ r1=pacMan
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>665</x>
-      <y>231</y>
+      <x>595</x>
+      <y>378</y>
       <w>238</w>
       <h>161</h>
     </coordinates>
@@ -245,8 +245,8 @@ r1=derGreist[ ]
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>637</x>
-      <y>189</y>
+      <x>567</x>
+      <y>336</y>
       <w>168</w>
       <h>35</h>
     </coordinates>
@@ -259,8 +259,8 @@ r1=pacMan
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>553</x>
-      <y>63</y>
+      <x>483</x>
+      <y>210</y>
       <w>21</w>
       <h>84</h>
     </coordinates>
@@ -270,8 +270,8 @@ r1=pacMan
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>616</x>
-      <y>63</y>
+      <x>546</x>
+      <y>210</y>
       <w>217</w>
       <h>105</h>
     </coordinates>
@@ -281,8 +281,8 @@ r1=pacMan
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>266</x>
-      <y>105</y>
+      <x>196</x>
+      <y>252</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -292,8 +292,8 @@ r1=pacMan
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>399</x>
-      <y>28</y>
+      <x>329</x>
+      <y>175</y>
       <w>119</w>
       <h>21</h>
     </coordinates>
@@ -303,8 +303,8 @@ r1=pacMan
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>301</x>
-      <y>259</y>
+      <x>231</x>
+      <y>406</y>
       <w>217</w>
       <h>154</h>
     </coordinates>
@@ -317,8 +317,8 @@ r1=derFressPunkt[ ]
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>343</x>
-      <y>189</y>
+      <x>273</x>
+      <y>336</y>
       <w>140</w>
       <h>35</h>
     </coordinates>

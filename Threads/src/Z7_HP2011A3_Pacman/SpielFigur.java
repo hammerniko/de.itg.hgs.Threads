@@ -27,27 +27,27 @@ public abstract class SpielFigur extends Spielelement {
 		switch (dieRichtung) {
 		case RECHTS:
 			if (istNichtAmRechtenRand() && istBeiFressPunktInYRichtung()) {
-				setzePos(getPosX() + SPEED_MID, getPosY());
+				setzePos(posX + SPEED_MID, posY);
 			}
 			break;
 
 		case LINKS:
 			if (istNichtAmLinkenRand() && istBeiFressPunktInYRichtung()) {
-				setzePos(getPosX() - SPEED_MID, getPosY());
+				setzePos(posX - SPEED_MID, posY);
 			}
 			
 			break;
 
 		case UNTEN:
 			if (istNichtAmUnterenRand() && istBeiFressPunktInXRichtung()) {
-				setzePos(getPosX(), getPosY() + SPEED_MID);
+				setzePos(posX, posY + SPEED_MID);
 			}
 			
 			break;
 
 		case OBEN:
 			if (istNichtAmOberenRand() && istBeiFressPunktInXRichtung()) {
-				setzePos(getPosX(), getPosY() - SPEED_MID);
+				setzePos(posX, posY - SPEED_MID);
 			}
 			break;
 
