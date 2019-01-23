@@ -52,7 +52,7 @@ public class Geist extends SpielFigur {
 			
 			//Warte eine bestimmte Zeit, bis der Geist
 			//vom Fresspunkt weg ist
-			if(timerTicks>20) {
+			if(timerTicks>10) {
 				setzeRichtung(richtung);
 				timerTicks = 0;
 			}
