@@ -175,7 +175,7 @@ public class OberFlaeche extends JFrame implements KeyListener {
 		zeichenFlaeche.setSize(panelSpielfeld.getWidth(),panelSpielfeld.getHeight());
 		if (zf != null) {
 			panelSpielfeld.add(zf);
-			this.revalidate();
+			//this.revalidate();
 			this.repaint();
 		}
 		else {
