@@ -14,8 +14,29 @@ import java.nio.channels.FileChannel;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class Gui extends JFrame {
+/**
+ * In diesem Beispiel wird nach einem klick auf einen Button ein SwingWorker Thread
+ * getsartet, welcher langsam eine Schleife druchläuft.
+ * 
+ * Da Swing nicht Threadsicher ist, wird über die Callback-Methoden eines Swing-Worker
+ * Objekt die JProgressbar aktualisiert.
+ * 
+ * Nach erledigter Arbeit wird die JProgressbar auf den Maximalwert gesetzt.
+ * 
+ *Anstatt der for-Schleife könnte z.B. auch ein Up- oder Download einer größeren
+ *Datei stattfinden.  
+ * 
+ * @author Hammer
+ *
+ */
 
+
+public class Gui extends JFrame {
+	//Konstanten
+    private static final String STATUS = "Status";
+	private static final String SWINGWORKER_FINISHED = "Swingworker finished";
+	private static final int WAIT100MS = 100;
+	
 	private static final String TITLE = "Threads in Swing";
 	private static final String TU_WAS = "Tu was...";
 	private static final int HEIGHT = 500;
@@ -82,8 +103,8 @@ public class Gui extends JFrame {
 			protected Boolean doInBackground() throws Exception {
 				
 				//Irgendetwas tun was länger dauert
-				for (int i = 0; i < 30; i++) {
-					Thread.sleep(100);
+				for (int i = MIN; i < MAX; i++) {
+					Thread.sleep(WAIT100MS);
 					
 					//Testausgabe auf der Konsole
 					System.out.println("Hello"+i);
@@ -130,8 +151,8 @@ public class Gui extends JFrame {
 					//nach erledigter Arbeit Threadsicher ein Swing-Interface hier updaten 
 					//get holt den Boolschen Wert aus der doInBackgound Methode
 					Boolean status = get();
-					btnLoad.setText("Status"+status);
-					System.out.println("Swingworker finished");
+					btnLoad.setText(STATUS+status);
+					System.out.println(SWINGWORKER_FINISHED);
 					pb.setValue(MAX);
 					
 				} catch (InterruptedException | ExecutionException e) {
