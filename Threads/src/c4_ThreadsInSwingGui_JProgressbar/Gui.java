@@ -1,19 +1,3 @@
-package c4_ThreadsInSwingGui_JProgressbar;
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.RandomAccessFile;
-
-import javax.swing.*;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.RandomAccessFile;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-
 /**
  * In diesem Beispiel wird nach einem klick auf einen Button ein SwingWorker Thread
  * getsartet, welcher langsam eine Schleife druchläuft.
@@ -29,6 +13,18 @@ import java.util.concurrent.ExecutionException;
  * @author Hammer
  *
  */
+package c4_ThreadsInSwingGui_JProgressbar;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.SwingUtilities;
+import javax.swing.SwingWorker;
 
 
 public class Gui extends JFrame {
