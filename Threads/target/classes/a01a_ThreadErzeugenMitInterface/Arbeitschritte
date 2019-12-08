@@ -1,0 +1,12 @@
+
+ 1. Eigene Klasse MyThread mit Interface Runnable erstellen.
+
+ 2. Abstracte Methode run() implementieren.
+
+ 3. Klasse bekommt ein Thread Objekt.
+
+ 4. Delegationsmethoden für start() und stop() implementieren.
+
+    
+   
+     

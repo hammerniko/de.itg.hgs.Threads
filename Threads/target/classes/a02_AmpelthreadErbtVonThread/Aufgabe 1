@@ -1,0 +1,16 @@
+Eine Ampel soll die Zustände Rot, RotGelb, Gruen, Gelb, Blinken und Aus haben.
+Die Dauern der einzelnen Zustände sollen individuell und veränderbar sein.
+Dabei soll die Datenkapselung angewandt werden. Eine Ampel soll direkt mit allen Attributen
+erzeugt werden können. Es sollen mehrere Ampeln gleichzeitig laufen können. Jede Ampel hat eine
+Bezeichnung. Wird eine Ampel gestartet soll der Name, der aktive Zustand auf der Konsole
+ausgegeben werden.
+
+1.) Erzeugen Sie die Klasse Ampel
+
+2.) Erzeugen Sie 3 Ampelobjekte in der Klasse StarteAmpel
+
+3.) Starten und testen Sie die Ampeln
+
+4.) Zeichnen Sie ein Zustandsdiagramm eines Ampelobjektes
+
+5.) Zeichnen Sie ein Klassendiagramm
