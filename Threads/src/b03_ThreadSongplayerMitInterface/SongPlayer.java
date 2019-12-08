@@ -1,12 +1,10 @@
 package b03_ThreadSongplayerMitInterface;
 
-import java.awt.event.ActionListener;
 
-import javax.swing.text.DefaultEditorKit.BeepAction;
 
-import org.jfugue.Pattern;
-import org.jfugue.Player;
-import org.jfugue.Rhythm;
+import org.jfugue.player.Player;
+import org.jfugue.rhythm.Rhythm;
+import org.jfugue.pattern.*;
 
 public class SongPlayer implements Runnable {
 
@@ -65,15 +63,17 @@ public class SongPlayer implements Runnable {
             // TODO Automatisch generierter Erfassungsblock
             e.printStackTrace();
         }
-                
+            
     
-        player = new Player(); player.play(song);
+        player = new Player(); 
+        player.play(song);
   
     }
 
     public void start() {
         if (!t.isAlive()) {
             t.start();
+            System.out.println("Thread "+t.getName()+" gestartet");
         }
     }
 
