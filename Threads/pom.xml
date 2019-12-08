@@ -31,13 +31,17 @@
     </plugins>
   </build>
   <dependencies>
-<!-- https://mvnrepository.com/artifact/org.clojars.jmeeks/jfugue-with-musicxml -->
 <dependency>
-    <groupId>org.clojars.jmeeks</groupId>
-    <artifactId>jfugue-with-musicxml</artifactId>
-    <version>4.0.3</version>
+	<groupId>com.github.JensPiegsa</groupId>
+	<artifactId>jfugue</artifactId>
+	<version>5.0.9</version>
 </dependency>
 
-
   </dependencies>
+  <repositories>
+	<repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+</repositories>
 </project>
