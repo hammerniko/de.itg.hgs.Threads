@@ -31,14 +31,13 @@
     </plugins>
   </build>
   <dependencies>
-  <!-- https://mvnrepository.com/artifact/jfugue/jfugue -->
+<!-- https://mvnrepository.com/artifact/org.clojars.jmeeks/jfugue-with-musicxml -->
 <dependency>
-    <groupId>jfugue</groupId>
-    <artifactId>jfugue</artifactId>
+    <groupId>org.clojars.jmeeks</groupId>
+    <artifactId>jfugue-with-musicxml</artifactId>
     <version>4.0.3</version>
 </dependency>
 
-  
-  
+
   </dependencies>
 </project>
