@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>210</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>MyThread
+--
+name:Text
+wait:GZ
+--
++MyThread(name:text, wait:GZ)
++run()
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>20</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Thread
+--
+
+--
++start()
++stop()
++resume()
++run()
+...
+
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>200</y>
+      <w>150</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>330</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>StartMyThread
+--
+
+--
+
+_+main(args:Text[])_
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>370</y>
+      <w>170</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>50</x>
+      <y>460</y>
+      <w>380</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>In der Klasse MyThread werden die Objekte der Klasse
+MyThread erzeugt und gestartet. (DEPENDENCY)
+Die Methode run() der Threadobjekte wird nicht direkt aufgerufen,da
+sonst der Ablauf nicht nebenläufug ist.
+Über die Methode start() wird die Methode run()
+nebenläufug ausgeführt.
+
+Die Methoden zum starten, beenden, usw. eines
+Threads werden aus der Klasse Thread geerbt.
+
+Die Methode run() wird in der ebenden Klasse MyThread
+überschrieben. In dieser Methode wird implementiert,
+was der Thread während seiner Lebzeit tuen soll.
+Ist run() abgearbeitet, wird der Thread beendet.
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

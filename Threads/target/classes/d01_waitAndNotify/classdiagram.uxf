@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>96</x>
+      <y>186</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>Main
+--
+
+--
+_+main(args:Text[])_
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>102</x>
+      <y>30</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>MyResource
+--
+ready:boolean=false
+
+-
++waitFor() &lt;&lt;synchronized&gt;&gt;
++start() &lt;&lt;synchronized&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>306</x>
+      <y>30</y>
+      <w>162</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>MyThread
+--
+
+--
++Mythread(name:text, so:MyResource)
++run()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLInterface</id>
+    <coordinates>
+      <x>534</x>
+      <y>42</y>
+      <w>48</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Runnable
+--
++run()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>48</y>
+      <w>102</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>222</x>
+      <y>60</y>
+      <w>96</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=myResource   
+1
+
+
+
+</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>138</x>
+      <y>138</y>
+      <w>18</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+</diagram>

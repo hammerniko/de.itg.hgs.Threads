@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>630</y>
+      <w>650</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>AnimationPanel
+--
+-color = new Color[] { Color.RED, Color.BLUE, Color.ORANGE, Color.GREEN, Color.BLACK }: Color[]
+-colorIndex = 0: int
+-active = false: boolean
+--
++increaseIndex(): void
++setActive(boolean b): void
++isActive(): boolean
++paintComponent(Graphics g): void
+--
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>310</y>
+      <w>200</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>Gui
+--
+-start, stop: JButton
+-aniPanel: AnimationPanel
+--
++Gui(): ctor
++main(String[] args): void
+#stopClick(): void
+#startClick(): void
+-initialize(): void
+--
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>320</y>
+      <w>310</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>AnimationThread
+
+--
++AnimationThread(AnimationPanel panel): ctor
++run(): void
+-warte(): void
+--
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>430</y>
+      <w>60</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=panel
+</panel_attributes>
+    <additional_attributes>10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>380</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>90</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Object
+--
+
+--
++wait()
++notify()
++notifyAll()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>200</y>
+      <w>30</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>200</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>480</y>
+      <w>120</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+r1=animationPanel</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

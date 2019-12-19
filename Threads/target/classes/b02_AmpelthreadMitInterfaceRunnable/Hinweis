@@ -1,0 +1,26 @@
+Erzeugen eines nebenläufigen Objektes über das INterface Runnable. 
+
+1.) Klasse erbt von ein anderen Klasse, so dass nicht mehr von Thread geerbt werden kann. 
+    Stattdessen wird das Interface Runnable implementiert. Dies ist die Standard Methode zur 
+    Erzeugung von Threads, auch wenn nicht von anderen Klassen geerbt wird.
+    
+2.) Überschreiben der Methode run() des Interfaces Runnable.
+    Bisher wurde nur der main-Thread der in der main()-Methode implementiert 
+    ist, ausgeführt. Für ein nebenläufiges Objekt muss dieses über eine Methode
+    verfügen, in welcher der Ablauf implementiert ist. Dies ist immer die 
+    run()-Methode.
+    
+3.) Ein Thread Objekt muss deklariert werden.
+
+4.) Threadobjekt muss im Konstruktor erzeugt werden. Dabei wird this als Übergabewert übergeben.
+
+5.) Implementiern einer Start-Methode, die den Thread startet, 
+   
+6.) Erzeugen der Objekte in einer ausführbaren Java-Klasse (mit main()-Methode).
+    Die Objekte werden wie alle anderen Objekte auch über den Aufruf des Konstruktors
+    erstellt.
+    
+    Bsp. Meineklasse meinObjekt = new Meineklasse(...Übergabeparameter...);
+    
+7.) Starten der Threadfähigen Objekte von aussen über den Aufruf der Methode
+    start(), welche aus der Klasse Thread geerbt wurde.

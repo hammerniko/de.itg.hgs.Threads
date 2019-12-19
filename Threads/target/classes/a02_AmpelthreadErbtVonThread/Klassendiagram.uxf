@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>480</y>
+      <w>252</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>StarteAmpel
+--
+ 
+--
+_+main(args:Text[])_
+
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>300</y>
+      <w>516</w>
+      <h>528</h>
+    </coordinates>
+    <panel_attributes>Ampel
+--
+_+AUS:GZ=0_
+_+ROT:GZ=1_
+_+ROTGELB:GZ=2_
+_+GRUEN:GZ=3_
+_+GELB:GZ=4_
+_+BLINKEN:GZ=5_
+_+ZUSTAND_STR:text[]={"Aus",...,"Blinken"}_
+-aktuellerZustand=0
+-dauerRot=0
+-dauerRotgelb=0
+-dauerGruen=0
+-dauerGelb=0
+-dauerBlinken=1000
+
+--
++Ampel(name:text, aktZ:GZ, dR:GZ, dRG:GZ, dGr:GZ, dG:GZ,  
++run()
+-blinken()
+-warte(dauer:GZ)
+-ausgabe()
+
++getDauerRot():GZ
++setDauerRot(dauer:GZ)
+...
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>588</y>
+      <w>180</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>108</x>
+      <y>780</y>
+      <w>240</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Die Beziehung zwischen der Startklasse und der 
+Klasse Ampel ist eine Dependency</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>372</x>
+      <y>0</y>
+      <w>252</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>Thread
+--
+
+--
++run()
++start()
++stop()
+...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>504</x>
+      <y>216</y>
+      <w>96</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+</diagram>

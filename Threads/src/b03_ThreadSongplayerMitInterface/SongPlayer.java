@@ -1,17 +1,17 @@
 package b03_ThreadSongplayerMitInterface;
 
-import java.awt.event.ActionListener;
-
-import javax.swing.text.DefaultEditorKit.BeepAction;
-
-import org.jfugue.Pattern;
-import org.jfugue.Player;
-import org.jfugue.Rhythm;
+import org.jfugue.pattern.Pattern;
+import org.jfugue.player.Player;
+import org.jfugue.rhythm.Rhythm;
 
 public class SongPlayer implements Runnable {
 
     private String name;
-    private int wait;
+    public String getName() {
+		return name;
+	}
+
+	private int wait;
     private char note;
     
     //Threadobjekt
@@ -27,15 +27,16 @@ public class SongPlayer implements Runnable {
     
 
     public SongPlayer(String name, int wait, char note) {
+    	//Threadobjekt erzeugen
+        t = new Thread(this);
+
         player = new Player();
-        rythm = new Rhythm();
+        //rythm = new Rhythm();
         this.note = note;
         this.name = name;
         this.wait = wait;
         
-        //Threadobjekt erzeugen
-        t = new Thread(this);
-                
+                        
         pattern1 = new Pattern("I[Piano] C5q D5q E5q C5q");
 
         // "Dormez-vous?"
@@ -58,23 +59,22 @@ public class SongPlayer implements Runnable {
 
     @Override
     public void run() {
-        
+    	System.out.println("Songplayer "+getName()+" gestartet");
         try {
             Thread.sleep(wait);
         } catch (InterruptedException e) {
             // TODO Automatisch generierter Erfassungsblock
             e.printStackTrace();
         }
-                
-    
-        player = new Player(); player.play(song);
-  
-    }
+   
+        player.play(song); 
+     }
 
     public void start() {
-        if (!t.isAlive()) {
-            t.start();
-        }
-    }
+		if (t == null) {
+			t = new Thread(this);
+		}
+		t.start(); 
+	}
 
 }

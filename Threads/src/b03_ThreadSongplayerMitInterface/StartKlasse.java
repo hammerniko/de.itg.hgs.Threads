@@ -1,25 +1,23 @@
-package b03_ThreadSongplayerMitInterface;
+ package b03_ThreadSongplayerMitInterface;
 
 public class StartKlasse {
 
 	
 	public static void main(String[] args) {
-		//beginn main Thread
+		//Beginn main Thread
 		System.out.println("Main Thread gestartet");
 		
-		
-		
 		//Thread Objekt erzeugen
-		SongPlayer t = new SongPlayer("A",0,'C');
-		SongPlayer t2 = new SongPlayer("B",4000,'G'); 
-		SongPlayer t3 = new SongPlayer("C",8000,'E');
-		SongPlayer t4 = new SongPlayer("D",12000,'E');
+		SongPlayer songplayer1 = new SongPlayer("A",0,'C');
+		SongPlayer songplayer2 = new SongPlayer("B",4000,'G'); 
+		SongPlayer songplayer3 = new SongPlayer("C",8000,'E');
+		SongPlayer songplayer4 = new SongPlayer("D",12000,'E');
 		
-		//Thread nebenlaeufig starten
-		t.start();
-		t2.start();
-		t3.start();
-		t4.start();
+		//Thread nebenlaeufig starten 
+		songplayer1.start();
+		songplayer2.start();
+		songplayer3.start();
+		songplayer4.start();
 		
 		//Ende main-Thread
 		System.out.println("Main Thread zuende");
