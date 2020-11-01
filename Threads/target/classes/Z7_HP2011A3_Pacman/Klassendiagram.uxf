@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="13.1">
+<diagram program="umlet" version="14.3.0">
   <zoom_level>7</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>91</x>
-      <y>21</y>
+      <y>147</y>
       <w>245</w>
       <h>112</h>
     </coordinates>
@@ -27,7 +27,7 @@ bg=light_gray</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>434</x>
-      <y>21</y>
+      <y>147</y>
       <w>231</w>
       <h>70</h>
     </coordinates>
@@ -47,7 +47,7 @@ bg=light_gray</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>399</x>
-      <y>154</y>
+      <y>280</y>
       <w>175</w>
       <h>140</h>
     </coordinates>
@@ -69,7 +69,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>91</x>
-      <y>168</y>
+      <y>294</y>
       <w>189</w>
       <h>119</h>
     </coordinates>
@@ -92,7 +92,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>826</x>
-      <y>399</y>
+      <y>525</y>
       <w>175</w>
       <h>126</h>
     </coordinates>
@@ -115,7 +115,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>721</x>
-      <y>175</y>
+      <y>301</y>
       <w>189</w>
       <h>84</h>
     </coordinates>
@@ -132,7 +132,7 @@ bg=pink</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>434</x>
-      <y>399</y>
+      <y>525</y>
       <w>245</w>
       <h>203</h>
     </coordinates>
@@ -147,6 +147,7 @@ _ANZAHL_FRESSPUNKTE:GZ_
 +Steuerung() &lt;&lt;constructor&gt;&gt;
 +starteSpiel()
 +tickTimer()
++verarbeiteTastenDruck(pRichtung:GZ)
 
 -erzeugeObjekte()
 -initSpielObjekte()
@@ -161,11 +162,13 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>406</y>
+      <y>532</y>
       <w>273</w>
       <h>196</h>
     </coordinates>
     <panel_attributes>Oberflaeche
+--
+-richtung:GZ
 --
 +Oberflaeche(pSteuerung:Steuerung)
 &lt;&lt;constructor&gt;&gt;
@@ -185,7 +188,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>672</x>
-      <y>427</y>
+      <y>553</y>
       <w>168</w>
       <h>35</h>
     </coordinates>
@@ -200,7 +203,7 @@ r2=derTimer</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>266</x>
-      <y>434</y>
+      <y>560</y>
       <w>182</w>
       <h>35</h>
     </coordinates>
@@ -215,7 +218,7 @@ r2=dieSteuerung</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>497</x>
-      <y>287</y>
+      <y>413</y>
       <w>56</w>
       <h>126</h>
     </coordinates>
@@ -229,7 +232,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>595</x>
-      <y>252</y>
+      <y>378</y>
       <w>238</w>
       <h>161</h>
     </coordinates>
@@ -243,7 +246,7 @@ r1=derGreist[ ]
     <id>Relation</id>
     <coordinates>
       <x>567</x>
-      <y>210</y>
+      <y>336</y>
       <w>168</w>
       <h>35</h>
     </coordinates>
@@ -257,7 +260,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>483</x>
-      <y>84</y>
+      <y>210</y>
       <w>21</w>
       <h>84</h>
     </coordinates>
@@ -268,7 +271,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>546</x>
-      <y>84</y>
+      <y>210</y>
       <w>217</w>
       <h>105</h>
     </coordinates>
@@ -279,7 +282,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>196</x>
-      <y>126</y>
+      <y>252</y>
       <w>21</w>
       <h>56</h>
     </coordinates>
@@ -290,7 +293,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>329</x>
-      <y>49</y>
+      <y>175</y>
       <w>119</w>
       <h>21</h>
     </coordinates>
@@ -301,7 +304,7 @@ r1=pacMan
     <id>Relation</id>
     <coordinates>
       <x>231</x>
-      <y>280</y>
+      <y>406</y>
       <w>217</w>
       <h>154</h>
     </coordinates>
@@ -315,7 +318,7 @@ r1=derFressPunkt[ ]
     <id>Relation</id>
     <coordinates>
       <x>273</x>
-      <y>210</y>
+      <y>336</y>
       <w>140</w>
       <h>35</h>
     </coordinates>
