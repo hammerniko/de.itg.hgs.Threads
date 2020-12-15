@@ -151,7 +151,10 @@ public class Gui extends JFrame {
 					System.out.println(SWINGWORKER_FINISHED);
 					pb.setValue(MAX);
 					
-				} catch (InterruptedException | ExecutionException e) {
+				} catch (InterruptedException ie) {
+					// TODO Auto-generated catch block
+					ie.printStackTrace();
+				} catch (ExecutionException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} 
