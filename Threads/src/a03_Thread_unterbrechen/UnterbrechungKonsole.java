@@ -1,5 +1,7 @@
 package a03_Thread_unterbrechen;
 
+import java.util.Scanner;
+
 /*
  * Die Methoden stop() und suspend() zum unterbechen von Threads von aussen sind
  * veraltet und sollten nicht mehr verwendet werden.
@@ -11,8 +13,9 @@ package a03_Thread_unterbrechen;
  * 
  */
 
-public class Unterbrechung extends Thread {
-
+public class UnterbrechungKonsole extends Thread {
+	
+	static int i=0;
 	@Override
 	public void run() {
 		System.out.println("Thread start");
@@ -26,9 +29,14 @@ public class Unterbrechung extends Thread {
 			// Wenn nicht unterbrochen wurde mach weiter
 			System.out.println("Thread läuft...");
 			try {
-				Thread.sleep(250);
+				
+				for (i = 0; i < 100; i++) {
+					System.out.println("Thread:"+i);
+					Thread.sleep(1000);
+				}
+				
 			} catch (InterruptedException e) {
-				// Wenn während der Sleep-Phase unterbrochen
+				// Wenn waehrend der Sleep-Phase unterbrochen
 				// wurde und deshalb eine Exception ausgelöst wurde.
 				// Unterbechung nochmal anfordern.
 				interrupt();
@@ -40,16 +48,22 @@ public class Unterbrechung extends Thread {
 	
 	
 	public static void main(String[] args) {
-		System.out.println("Main Thread gestartet");
 		
-		Unterbrechung uThread = new Unterbrechung();
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println(" Main Thread gestartet");
+		
+		UnterbrechungKonsole uThread = new UnterbrechungKonsole();
 		uThread.start();
 		
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) { }
 		
-		uThread.interrupt();
+		System.out.println("Eingabe:");
+		if(s.nextInt()==0) {
+			
+			uThread.interrupt();
+		}
+		
+			
 		System.out.println("Main Thread zuende");
 		
 	}
