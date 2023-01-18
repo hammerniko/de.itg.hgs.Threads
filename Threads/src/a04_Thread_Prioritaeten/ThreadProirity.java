@@ -1,7 +1,5 @@
 package a04_Thread_Prioritaeten;
 
-import a03_Thread_unterbrechen.Unterbrechung;
-
 /*
  * Mit setPriority(Thread.MIN_PRIORITY) setzt man die minimale Priorität eines Threads.
  * Mit setPriority(Thread.MAX_PRIORITY) setzt man die maximale Priorität eines Threads.
