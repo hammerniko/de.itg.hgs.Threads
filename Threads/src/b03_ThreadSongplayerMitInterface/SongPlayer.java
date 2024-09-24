@@ -1,7 +1,10 @@
 package b03_ThreadSongplayerMitInterface;
 
+import javax.sound.midi.MidiUnavailableException;
+
 import org.jfugue.pattern.Pattern;
 import org.jfugue.player.Player;
+import org.jfugue.realtime.RealtimePlayer;
 import org.jfugue.rhythm.Rhythm;
 
 public class SongPlayer implements Runnable {
@@ -17,8 +20,7 @@ public class SongPlayer implements Runnable {
     //Threadobjekt
     private Thread t;
     
-    Player player;
-    Rhythm rythm; 
+    RealtimePlayer player;
     Pattern song; 
     Pattern pattern1;
     Pattern pattern2;
@@ -26,17 +28,20 @@ public class SongPlayer implements Runnable {
     Pattern pattern4;
     
 
-    public SongPlayer(String name, int wait, char note) {
+    public SongPlayer(String name, int wait) {
     	//Threadobjekt erzeugen
         t = new Thread(this);
-
-        player = new Player();
-        //rythm = new Rhythm();
-        this.note = note;
+       
+        try {
+			player = new RealtimePlayer();
+		} catch (MidiUnavailableException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
         this.name = name;
         this.wait = wait;
-        
-                        
+                                
         pattern1 = new Pattern("I[Piano] C5q D5q E5q C5q");
 
         // "Dormez-vous?"
@@ -61,12 +66,16 @@ public class SongPlayer implements Runnable {
     public void run() {
     	System.out.println("Songplayer "+getName()+" gestartet");
         try {
-            Thread.sleep(wait);
+            System.out.println("Thread"+name+" wartet");
+        	Thread.sleep(wait);
+            
         } catch (InterruptedException e) {
             // TODO Automatisch generierter Erfassungsblock
             e.printStackTrace();
         }
-   
+        
+        System.out.println("Thread"+name+" spielt");
+        
         player.play(song); 
      }
 

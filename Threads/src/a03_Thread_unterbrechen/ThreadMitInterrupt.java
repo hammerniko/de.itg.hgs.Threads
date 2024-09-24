@@ -12,7 +12,10 @@ public class ThreadMitInterrupt extends Thread {
 			System.out.println("Thread laeuft...");
 			try {
 				for (int i = 0; i < 100; i++) {
-					System.out.println("Thread:"+i);
+					System.out.print("\033[F");
+					System.out.print("Thread:"+i);
+					System.out.print("\033[F");
+					
 					Thread.sleep(1000);
 				}
 				
