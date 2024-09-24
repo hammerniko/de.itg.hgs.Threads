@@ -13,7 +13,25 @@ import java.util.Scanner;
  * 
  */
 
-public class UnterbrechungKonsole extends Thread {
+public class UnterbrechungKonsole implements Runnable{
+	
+	Thread t;
+	
+	public UnterbrechungKonsole() {
+		t = new Thread(this);
+	}
+	
+	public void start() {
+		t.start();
+	}
+	
+	public void interrupt() {
+		t.interrupt();
+	}
+	
+	public boolean isInterrupted() {
+		return t.isInterrupted();
+	}
 	
 	static int i=0;
 	@Override
@@ -52,20 +70,18 @@ public class UnterbrechungKonsole extends Thread {
 		Scanner s = new Scanner(System.in);
 		System.out.print("\033[H\033[2J");
 	    System.out.flush();
+	    
+	    
 		System.out.println(" Main Thread gestartet");
-		
-		
+				
 		UnterbrechungKonsole uThread = new UnterbrechungKonsole();
 		uThread.start();
-		
-		
+				
 		System.out.println("Eingabe:");
 		if(s.nextInt()==0) {
-			
 			uThread.interrupt();
 		}
 		
-			
 		System.out.println("Main Thread zuende");
 		
 	}
